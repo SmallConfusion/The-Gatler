@@ -45,10 +45,11 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_e2jyq")
 offset = Vector2(43.3333, 0)
 
-[node name="Hitbox2" type="Area2D" parent="Aim"]
+[node name="Hitbox2" type="Area2D" parent="Aim" node_paths=PackedStringArray("root_node")]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_lrth1")
+root_node = NodePath("../..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Aim/Hitbox2"]
 position = Vector2(13, 0)
