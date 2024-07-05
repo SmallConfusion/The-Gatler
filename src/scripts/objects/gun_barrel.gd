@@ -10,5 +10,5 @@ var speed := 1.5
 
 func _process(delta):
 	t += delta
-	var a = fmod(t * speed * TAU + TAU * index / 9 - global_rotation/2, TAU)
+	var a = fmod(t * speed * TAU + TAU * index / 9, TAU)
 	position = (original_position * 2).rotated(a) * Vector2(1, .5)
