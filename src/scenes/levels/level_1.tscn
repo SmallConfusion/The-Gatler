@@ -10,6 +10,13 @@ size = Vector2(2450, 68)
 
 [node name="Node2D" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+offset_left = -754.0
+offset_top = -204.0
+offset_right = 1825.0
+offset_bottom = 1003.0
+
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_milha")]
 position = Vector2(719, 354)
 

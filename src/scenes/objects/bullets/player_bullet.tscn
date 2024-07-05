@@ -1,26 +1,22 @@
-[gd_scene load_steps=10 format=3 uid="uid://f2no3a12nwma"]
+[gd_scene load_steps=9 format=3 uid="uid://f2no3a12nwma"]
 
 [ext_resource type="Script" path="res://scripts/objects/bullet.gd" id="1_lcclh"]
-[ext_resource type="Texture2D" uid="uid://c76lj64mx8xkk" path="res://sprites/small_bullet.svg" id="2_dsaut"]
+[ext_resource type="Texture2D" uid="uid://c4oqke5doi8wh" path="res://sprites/smaller_bullet.svg" id="2_s5xw0"]
 [ext_resource type="Script" path="res://scripts/components/bullet_movement.gd" id="3_b6pxg"]
 [ext_resource type="Script" path="res://scripts/components/death.gd" id="5_llu0b"]
 [ext_resource type="Script" path="res://scripts/components/hurtbox.gd" id="6_taqbn"]
 [ext_resource type="Script" path="res://scripts/components/health.gd" id="6_yiw07"]
 [ext_resource type="Script" path="res://scripts/components/hitbox.gd" id="7_47vwf"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bifuf"]
-radius = 6.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_idbpn"]
-radius = 6.0
+radius = 4.0
 
 [node name="Bullet" type="Node2D"]
 script = ExtResource("1_lcclh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -5
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_dsaut")
+texture = ExtResource("2_s5xw0")
 
 [node name="BulletMovement" type="Node" parent="."]
 script = ExtResource("3_b6pxg")
@@ -38,7 +34,7 @@ script = ExtResource("6_taqbn")
 self_damage = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-shape = SubResource("CircleShape2D_bifuf")
+shape = SubResource("CircleShape2D_idbpn")
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 4

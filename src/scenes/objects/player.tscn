@@ -1,19 +1,25 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxfytd662m1kl"]
+[gd_scene load_steps=13 format=3 uid="uid://dxfytd662m1kl"]
 
 [ext_resource type="Script" path="res://scripts/objects/player.gd" id="1_6snto"]
-[ext_resource type="Texture2D" uid="uid://bnb0ah6gxki3b" path="res://icon.png" id="2_tpl1p"]
 [ext_resource type="Script" path="res://scripts/components/gun.gd" id="3_exkqj"]
+[ext_resource type="Texture2D" uid="uid://cx4kufotll54o" path="res://sprites/barrel.svg" id="4_mu68i"]
 [ext_resource type="Script" path="res://scripts/components/hitbox.gd" id="5_mnns8"]
 [ext_resource type="Script" path="res://scripts/components/health.gd" id="6_5c56t"]
+[ext_resource type="Texture2D" uid="uid://koyxtcf54u7y" path="res://sprites/gun_support.svg" id="7_85gr7"]
 [ext_resource type="Script" path="res://scripts/components/death.gd" id="7_eu0sl"]
 [ext_resource type="PackedScene" uid="uid://f2no3a12nwma" path="res://scenes/objects/bullets/player_bullet.tscn" id="7_ivlbb"]
+[ext_resource type="Script" path="res://scripts/objects/gun_barrel.gd" id="8_rhdoc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xclvi"]
 friction = 0.0
 bounce = 0.1
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptnw6"]
-size = Vector2(96, 32)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n08da"]
+radius = 19.0
+height = 88.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ws7u3"]
+size = Vector2(60, 40)
 
 [node name="Player" type="RigidBody2D"]
 rotation = 1.5708
@@ -24,20 +30,100 @@ linear_damp = 0.5
 angular_damp = 1e+10
 script = ExtResource("1_6snto")
 
+[node name="Node2D" type="Node2D" parent="."]
+y_sort_enabled = true
+rotation = 1.57079
+
+[node name="GunSupport" type="Sprite2D" parent="Node2D"]
+y_sort_enabled = true
+rotation = -3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_85gr7")
+offset = Vector2(0, -1.335)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
+y_sort_enabled = true
+position = Vector2(-15.8798, -0.978633)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_mu68i")
+script = ExtResource("8_rhdoc")
+index = 1
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
+y_sort_enabled = true
+position = Vector2(-10.9066, -5.85336)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_mu68i")
+script = ExtResource("8_rhdoc")
+index = 2
+
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
+y_sort_enabled = true
+position = Vector2(-0.829977, -7.98923)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_mu68i")
+script = ExtResource("8_rhdoc")
+index = 3
+
+[node name="Sprite2D5" type="Sprite2D" parent="Node2D"]
+y_sort_enabled = true
+position = Vector2(9.63496, -6.38685)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_mu68i")
+script = ExtResource("8_rhdoc")
+index = 4
+
+[node name="Sprite2D6" type="Sprite2D" parent="Node2D"]
+y_sort_enabled = true
+position = Vector2(15.5916, -1.796)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_mu68i")
+script = ExtResource("8_rhdoc")
+index = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+y_sort_enabled = true
+position = Vector2(14.2527, 3.63522)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_mu68i")
+script = ExtResource("8_rhdoc")
+index = 6
+
+[node name="Sprite2D7" type="Sprite2D" parent="Node2D"]
+y_sort_enabled = true
+position = Vector2(6.24488, 7.36549)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_mu68i")
+script = ExtResource("8_rhdoc")
+index = 7
+
+[node name="Sprite2D8" type="Sprite2D" parent="Node2D"]
+y_sort_enabled = true
+position = Vector2(-4.68503, 7.64935)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_mu68i")
+script = ExtResource("8_rhdoc")
+index = 8
+
+[node name="Sprite2D9" type="Sprite2D" parent="Node2D"]
+y_sort_enabled = true
+position = Vector2(-13.4228, 4.35401)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_mu68i")
+script = ExtResource("8_rhdoc")
+index = 9
+
 [node name="Gun" type="Node2D" parent="."]
-position = Vector2(45, -1.96701e-06)
+position = Vector2(42, -0.00015204)
 script = ExtResource("3_exkqj")
 bullet_scene = ExtResource("7_ivlbb")
-cooldown = 0.025
-spread = 0.4
+cooldown = 0.05
+spread = 0.2
 spread_concentration = 2.1
 
-[node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 0.5)
-texture = ExtResource("2_tpl1p")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ptnw6")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_n08da")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.75, 0.75)
@@ -46,7 +132,7 @@ zoom = Vector2(0.75, 0.75)
 script = ExtResource("5_mnns8")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("RectangleShape2D_ptnw6")
+shape = SubResource("RectangleShape2D_ws7u3")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("6_5c56t")

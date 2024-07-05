@@ -56,7 +56,6 @@ shape = SubResource("RectangleShape2D_s5qnr")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("7_k8qtg")
-health = 5.0
 
 [node name="Death" type="Node" parent="."]
 script = ExtResource("8_r42ip")
