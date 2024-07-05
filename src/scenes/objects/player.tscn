@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dxfytd662m1kl"]
+[gd_scene load_steps=14 format=3 uid="uid://dxfytd662m1kl"]
 
 [ext_resource type="Script" path="res://scripts/objects/player.gd" id="1_6snto"]
+[ext_resource type="PackedScene" uid="uid://c5sjqlc2chtq" path="res://scenes/stickman.tscn" id="2_ycj2h"]
 [ext_resource type="Script" path="res://scripts/components/gun.gd" id="3_exkqj"]
 [ext_resource type="Texture2D" uid="uid://cx4kufotll54o" path="res://sprites/barrel.svg" id="4_mu68i"]
 [ext_resource type="Script" path="res://scripts/components/hitbox.gd" id="5_mnns8"]
@@ -19,7 +20,7 @@ radius = 19.0
 height = 88.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ws7u3"]
-size = Vector2(60, 40)
+size = Vector2(108, 40)
 
 [node name="Player" type="RigidBody2D"]
 rotation = 1.5708
@@ -29,6 +30,28 @@ continuous_cd = 1
 linear_damp = 0.5
 angular_damp = 1e+10
 script = ExtResource("1_6snto")
+
+[node name="Skeleton2D" parent="." instance=ExtResource("2_ycj2h")]
+position = Vector2(-67, 0.000242539)
+rotation = -1.5708
+
+[node name="LowerSpineBone2D" parent="Skeleton2D" index="0"]
+position = Vector2(0.000193119, 54)
+
+[node name="LeftArmTarget" parent="Skeleton2D" index="1"]
+position = Vector2(20.0002, 52.9999)
+
+[node name="RightArmTarget" parent="Skeleton2D" index="2"]
+position = Vector2(-19.9998, 53.0001)
+
+[node name="LeftLegTarget" parent="Skeleton2D" index="3"]
+position = Vector2(20.0003, 94.9999)
+
+[node name="RightLegTarget" parent="Skeleton2D" index="4"]
+position = Vector2(-19.9997, 95.0001)
+
+[node name="HeadTarget" parent="Skeleton2D" index="5"]
+position = Vector2(-0.000325441, -91)
 
 [node name="Node2D" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -43,7 +66,7 @@ offset = Vector2(0, -1.335)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(13.9763, -0.407502)
+position = Vector2(12.9858, 2.61581)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -51,7 +74,7 @@ index = 1
 
 [node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(11.2303, 4.17972)
+position = Vector2(6.58485, 6.17737)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -59,7 +82,7 @@ index = 2
 
 [node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(3.22957, 6.8112)
+position = Vector2(-2.89719, 6.84847)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -67,7 +90,7 @@ index = 3
 
 [node name="Sprite2D5" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(-6.28231, 6.25565)
+position = Vector2(-11.0236, 4.3151)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -75,7 +98,7 @@ index = 4
 
 [node name="Sprite2D6" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(-12.8546, 2.77301)
+position = Vector2(-13.9919, -0.23736)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -83,7 +106,7 @@ index = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(-13.4121, -2.00715)
+position = Vector2(-10.4133, -4.67876)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -91,7 +114,7 @@ index = 6
 
 [node name="Sprite2D7" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(-7.69394, -5.84815)
+position = Vector2(-1.96217, -6.93091)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -99,7 +122,7 @@ index = 7
 
 [node name="Sprite2D8" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(1.62433, -6.95273)
+position = Vector2(7.4071, -5.94001)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -107,7 +130,7 @@ index = 8
 
 [node name="Sprite2D9" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(10.1826, -4.80405)
+position = Vector2(13.3105, -2.16972)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -132,6 +155,7 @@ zoom = Vector2(0.75, 0.75)
 script = ExtResource("5_mnns8")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-24, 0)
 shape = SubResource("RectangleShape2D_ws7u3")
 
 [node name="Health" type="Node" parent="."]
@@ -140,3 +164,5 @@ health = 10.0
 
 [node name="Death" type="Node" parent="."]
 script = ExtResource("7_eu0sl")
+
+[editable path="Skeleton2D"]

@@ -1,0 +1,216 @@
+[gd_scene load_steps=11 format=3 uid="uid://c5sjqlc2chtq"]
+
+[ext_resource type="Texture2D" uid="uid://be4af8gpjkbme" path="res://sprites/body_segment_full.svg" id="1_lwkrv"]
+[ext_resource type="Texture2D" uid="uid://dkwplyg4jchd7" path="res://sprites/body_segment_closed.svg" id="2_pby05"]
+[ext_resource type="Texture2D" uid="uid://d3t3ll2qb12ot" path="res://sprites/body_head.svg" id="3_yowgs"]
+[ext_resource type="Texture2D" uid="uid://gkvjds75h6p0" path="res://sprites/body_segment_open.svg" id="4_4gs11"]
+
+[sub_resource type="SkeletonModification2DFABRIK" id="SkeletonModification2DFABRIK_asgvj"]
+target_nodepath = NodePath("HeadTarget")
+fabrik_data_chain_length = 3
+joint_data/0/bone_index = 0
+joint_data/0/bone2d_node = NodePath("LowerSpineBone2D")
+joint_data/1/bone_index = 1
+joint_data/1/bone2d_node = NodePath("LowerSpineBone2D/UpperSpineBone2D")
+joint_data/1/magnet_position = Vector2(0, 0)
+joint_data/2/bone_index = 2
+joint_data/2/bone2d_node = NodePath("LowerSpineBone2D/UpperSpineBone2D/HeadBone2D")
+joint_data/2/magnet_position = Vector2(0, 0)
+joint_data/2/use_target_rotation = false
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_odjx4"]
+target_nodepath = NodePath("LeftArmTarget")
+joint_one_bone_idx = 5
+joint_one_bone2d_node = NodePath("LowerSpineBone2D/UpperSpineBone2D/LeftUpperArmBone2D")
+joint_two_bone_idx = 6
+joint_two_bone2d_node = NodePath("LowerSpineBone2D/UpperSpineBone2D/LeftUpperArmBone2D/LeftForearmBone2D")
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_vbboy"]
+target_nodepath = NodePath("RightArmTarget")
+flip_bend_direction = true
+joint_one_bone_idx = 3
+joint_one_bone2d_node = NodePath("LowerSpineBone2D/UpperSpineBone2D/RightUpperArmBone2D")
+joint_two_bone_idx = 4
+joint_two_bone2d_node = NodePath("LowerSpineBone2D/UpperSpineBone2D/RightUpperArmBone2D/RightForearmBone2D")
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_hp03t"]
+target_nodepath = NodePath("LeftLegTarget")
+joint_one_bone_idx = 7
+joint_one_bone2d_node = NodePath("LowerSpineBone2D/LeftThighBone2D")
+joint_two_bone_idx = 8
+joint_two_bone2d_node = NodePath("LowerSpineBone2D/LeftThighBone2D/LeftLowerLegBone2D")
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_gshun"]
+target_nodepath = NodePath("RightLegTarget")
+flip_bend_direction = true
+joint_one_bone_idx = 9
+joint_one_bone2d_node = NodePath("LowerSpineBone2D/RightThighBone2D")
+joint_two_bone_idx = 10
+joint_two_bone2d_node = NodePath("LowerSpineBone2D/RightThighBone2D/RightLowerLegBone2D")
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_40lrg"]
+enabled = true
+modification_count = 5
+modifications/0 = SubResource("SkeletonModification2DFABRIK_asgvj")
+modifications/1 = SubResource("SkeletonModification2DTwoBoneIK_odjx4")
+modifications/2 = SubResource("SkeletonModification2DTwoBoneIK_vbboy")
+modifications/3 = SubResource("SkeletonModification2DTwoBoneIK_hp03t")
+modifications/4 = SubResource("SkeletonModification2DTwoBoneIK_gshun")
+
+[node name="Skeleton2D" type="Skeleton2D"]
+modification_stack = SubResource("SkeletonModificationStack2D_40lrg")
+
+[node name="LowerSpineBone2D" type="Bone2D" parent="."]
+position = Vector2(0, 65)
+scale = Vector2(0.3, 0.3)
+rest = Transform2D(0.3, 0, 0, 0.3, 0, 65)
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="LowerSpine" type="Sprite2D" parent="LowerSpineBone2D"]
+texture = ExtResource("1_lwkrv")
+offset = Vector2(0, -43)
+
+[node name="UpperSpineBone2D" type="Bone2D" parent="LowerSpineBone2D"]
+position = Vector2(0, -86.6667)
+rotation = -3.14159
+rest = Transform2D(-1, -4.44253e-06, 4.44253e-06, -1, 0, -86.6667)
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="UpperSpine" type="Sprite2D" parent="LowerSpineBone2D/UpperSpineBone2D"]
+texture = ExtResource("4_4gs11")
+offset = Vector2(0, 43)
+
+[node name="HeadBone2D" type="Bone2D" parent="LowerSpineBone2D/UpperSpineBone2D"]
+position = Vector2(1.35896e-05, 90)
+rotation = 3.14159
+rest = Transform2D(-1, 2.53518e-06, -2.53518e-06, -1, 1.35896e-05, 90)
+auto_calculate_length_and_angle = false
+length = 80.0
+bone_angle = -90.0
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Head" type="Sprite2D" parent="LowerSpineBone2D/UpperSpineBone2D/HeadBone2D"]
+texture = ExtResource("3_yowgs")
+offset = Vector2(0, -40)
+
+[node name="RightUpperArmBone2D" type="Bone2D" parent="LowerSpineBone2D/UpperSpineBone2D"]
+position = Vector2(-0.256619, 76.1606)
+rotation = -2.35619
+scale = Vector2(1, 1)
+rest = Transform2D(-0.707104, -0.707109, 0.707109, -0.707104, -0.256619, 76.1606)
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="RightUpperArm" type="Sprite2D" parent="LowerSpineBone2D/UpperSpineBone2D/RightUpperArmBone2D"]
+texture = ExtResource("1_lwkrv")
+offset = Vector2(0, 43)
+
+[node name="RightForearmBone2D" type="Bone2D" parent="LowerSpineBone2D/UpperSpineBone2D/RightUpperArmBone2D"]
+position = Vector2(-0.538844, 84.6767)
+rotation = 3.14159
+rest = Transform2D(-1, 4.44253e-06, -4.44253e-06, -1, -0.392101, 89.1747)
+auto_calculate_length_and_angle = false
+length = 90.0
+bone_angle = -90.0
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="RightForearm" type="Sprite2D" parent="LowerSpineBone2D/UpperSpineBone2D/RightUpperArmBone2D/RightForearmBone2D"]
+texture = ExtResource("2_pby05")
+offset = Vector2(0, -43)
+
+[node name="LeftUpperArmBone2D" type="Bone2D" parent="LowerSpineBone2D/UpperSpineBone2D"]
+position = Vector2(-0.256619, 76.1606)
+rotation = 2.35619
+scale = Vector2(1, 1)
+rest = Transform2D(-0.707104, 0.70711, -0.70711, -0.707104, -0.256619, 76.1606)
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="LeftUpperArm" type="Sprite2D" parent="LowerSpineBone2D/UpperSpineBone2D/LeftUpperArmBone2D"]
+texture = ExtResource("1_lwkrv")
+offset = Vector2(0, 43)
+
+[node name="LeftForearmBone2D" type="Bone2D" parent="LowerSpineBone2D/UpperSpineBone2D/LeftUpperArmBone2D"]
+position = Vector2(0.392128, 84.4607)
+rotation = 3.14159
+rest = Transform2D(-1, 2.53518e-06, -2.53518e-06, -1, 0.392128, 84.4607)
+auto_calculate_length_and_angle = false
+length = 90.0
+bone_angle = 270.0
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="LeftForearm" type="Sprite2D" parent="LowerSpineBone2D/UpperSpineBone2D/LeftUpperArmBone2D/LeftForearmBone2D"]
+texture = ExtResource("2_pby05")
+offset = Vector2(0, -43)
+
+[node name="LeftThighBone2D" type="Bone2D" parent="LowerSpineBone2D"]
+position = Vector2(0.256631, -6.16057)
+rotation = -0.785398
+scale = Vector2(1, 1)
+rest = Transform2D(0.707107, -0.707107, 0.707107, 0.707107, 0.256631, -6.16057)
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="LeftThigh" type="Sprite2D" parent="LowerSpineBone2D/LeftThighBone2D"]
+texture = ExtResource("1_lwkrv")
+offset = Vector2(0, 43)
+
+[node name="LeftLowerLegBone2D" type="Bone2D" parent="LowerSpineBone2D/LeftThighBone2D"]
+position = Vector2(0.357849, 84.4949)
+rotation = 3.14159
+rest = Transform2D(-1, 2.53518e-06, -2.53518e-06, -1, 0.357849, 84.4949)
+auto_calculate_length_and_angle = false
+length = 90.0
+bone_angle = 270.0
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="LeftLowerLeg" type="Sprite2D" parent="LowerSpineBone2D/LeftThighBone2D/LeftLowerLegBone2D"]
+texture = ExtResource("2_pby05")
+offset = Vector2(0, -43)
+
+[node name="RightThighBone2D" type="Bone2D" parent="LowerSpineBone2D"]
+position = Vector2(0.256631, -6.16057)
+rotation = 0.785398
+scale = Vector2(1, 1)
+rest = Transform2D(0.707107, 0.707107, -0.707107, 0.707107, 0.256631, -6.16057)
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="RightThigh" type="Sprite2D" parent="LowerSpineBone2D/RightThighBone2D"]
+texture = ExtResource("1_lwkrv")
+offset = Vector2(0, 43)
+
+[node name="RightLowerLegBone2D" type="Bone2D" parent="LowerSpineBone2D/RightThighBone2D"]
+position = Vector2(0, 84.676)
+rotation = -3.14159
+rest = Transform2D(-1, -2.53518e-06, 2.53518e-06, -1, -0.357834, 89.209)
+auto_calculate_length_and_angle = false
+length = 90.0
+bone_angle = -90.0
+editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
+
+[node name="RightLowerLeg" type="Sprite2D" parent="LowerSpineBone2D/RightThighBone2D/RightLowerLegBone2D"]
+texture = ExtResource("2_pby05")
+offset = Vector2(0, -43)
+
+[node name="LeftArmTarget" type="Node2D" parent="."]
+position = Vector2(20, 54)
+
+[node name="RightArmTarget" type="Node2D" parent="."]
+position = Vector2(-33, 53)
+
+[node name="LeftLegTarget" type="Node2D" parent="."]
+position = Vector2(17, 107)
+
+[node name="RightLegTarget" type="Node2D" parent="."]
+position = Vector2(-17, 110)
+
+[node name="HeadTarget" type="Node2D" parent="."]
+position = Vector2(0, -18)

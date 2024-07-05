@@ -26,6 +26,10 @@ window/stretch/mode="canvas_items"
 window/size/window_height_override.release=0
 window/size/window_width_override.release=0
 
+[editor_plugins]
+
+enabled=PackedStringArray()
+
 [importer_defaults]
 
 texture={

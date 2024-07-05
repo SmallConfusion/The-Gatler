@@ -3,6 +3,9 @@ extends RigidBody2D
 const SPEED := 1600.0
 const ROTATION_CHANGE_FORCE := 8.
 
+
+
+
 func _physics_process(delta):
 	var pointing_direction := (get_global_mouse_position() - global_position)
 	var force := Vector2.ZERO
@@ -21,3 +24,5 @@ func _physics_process(delta):
 		$Gun.fire_cooldown()
 	
 	apply_central_force(force)
+
+	$Skeleton2D/HeadTarget.global_position = lerp($Skeleton2D/HeadTarget.global_position, global_position + Vector2(100, 0).rotated((-pointing_direction).angle()), delta * 20)
