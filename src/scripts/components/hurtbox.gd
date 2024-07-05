@@ -2,7 +2,11 @@ extends Area2D
 class_name Hurtbox
 
 @export var damage := 1.0
-@export var self_damage := 1.0
+@export var self_damage := 0.0
+
+
+func _ready():
+	connect("area_entered", _on_area_entered)
 
 
 func _on_area_entered(area):

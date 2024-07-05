@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://f2no3a12nwma"]
+[gd_scene load_steps=9 format=3 uid="uid://f2no3a12nwma"]
 
 [ext_resource type="Script" path="res://scripts/objects/bullet.gd" id="1_lcclh"]
 [ext_resource type="Script" path="res://scripts/components/bullet_movement.gd" id="3_b6pxg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/components/death.gd" id="5_llu0b"]
 [ext_resource type="Script" path="res://scripts/components/hurtbox.gd" id="6_taqbn"]
 [ext_resource type="Script" path="res://scripts/components/health.gd" id="6_yiw07"]
+[ext_resource type="Script" path="res://scripts/components/hitbox.gd" id="7_47vwf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p37rw"]
 size = Vector2(12, 12)
@@ -27,7 +28,16 @@ script = ExtResource("5_llu0b")
 script = ExtResource("6_yiw07")
 
 [node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("6_taqbn")
+self_damage = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("RectangleShape2D_p37rw")
+
+[node name="Hitbox" type="Area2D" parent="."]
+script = ExtResource("7_47vwf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("RectangleShape2D_p37rw")
