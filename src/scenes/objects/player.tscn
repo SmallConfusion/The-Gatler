@@ -37,6 +37,8 @@ shape = SubResource("RectangleShape2D_ptnw6")
 position = Vector2(45, -1.96701e-06)
 script = ExtResource("3_exkqj")
 bullet_scene = ExtResource("7_ivlbb")
+spread = 0.4
+spread_concentration = 2.1
 
 [node name="Hitbox" type="Area2D" parent="."]
 script = ExtResource("5_mnns8")
