@@ -2,8 +2,6 @@ extends RigidBody2D
 
 const SPEED := 1600.0
 
-
-
 func _physics_process(delta):
 	var pointing_direction := (get_global_mouse_position() - global_position)
 	var force := Vector2.ZERO

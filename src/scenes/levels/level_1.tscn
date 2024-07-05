@@ -1,37 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4fbjm3v6knfp"]
+[gd_scene load_steps=4 format=3 uid="uid://d4fbjm3v6knfp"]
 
-[ext_resource type="Script" path="res://scripts/objects/player.gd" id="1_am2as"]
+[ext_resource type="PackedScene" uid="uid://dxfytd662m1kl" path="res://scenes/objects/player.tscn" id="1_milha"]
 [ext_resource type="Texture2D" uid="uid://bnb0ah6gxki3b" path="res://icon.png" id="1_n16tt"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xclvi"]
-friction = 0.0
-bounce = 0.1
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptnw6"]
-size = Vector2(96, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obiph"]
 size = Vector2(2450, 68)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player" type="RigidBody2D" parent="."]
-position = Vector2(651, 287)
-physics_material_override = SubResource("PhysicsMaterial_xclvi")
-can_sleep = false
-continuous_cd = 1
-linear_damp = 0.5
-angular_damp = 1e+10
-script = ExtResource("1_am2as")
-
-[node name="Icon" type="Sprite2D" parent="Player"]
-scale = Vector2(1.5, 0.5)
-texture = ExtResource("1_n16tt")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("RectangleShape2D_ptnw6")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Player" parent="." instance=ExtResource("1_milha")]
+position = Vector2(719, 354)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(495, 678)
@@ -69,7 +47,7 @@ position = Vector2(-9, 0)
 shape = SubResource("RectangleShape2D_obiph")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
-position = Vector2(468, -963)
+position = Vector2(562, -19)
 
 [node name="Icon" type="Sprite2D" parent="StaticBody2D4"]
 scale = Vector2(38.085, 1)
