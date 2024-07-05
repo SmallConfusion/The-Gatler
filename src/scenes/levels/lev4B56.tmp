@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4fbjm3v6knfp"]
+
+[ext_resource type="PackedScene" uid="uid://dxfytd662m1kl" path="res://scenes/objects/player.tscn" id="1_milha"]
+[ext_resource type="PackedScene" uid="uid://byddp4ekan6dx" path="res://scenes/objects/innocent.tscn" id="3_2st18"]
+[ext_resource type="PackedScene" uid="uid://c6p87lemetbn0" path="res://scenes/objects/enemies/sentry.tscn" id="4_1juoe"]
+[ext_resource type="Texture2D" uid="uid://cj43g2wfpqj47" path="res://sprites/Box.svg" id="4_akwu6"]
+[ext_resource type="Script" path="res://scenes/levels/level_wall_line.gd" id="4_l0fdr"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("1_milha")]
+position = Vector2(719, 354)
+
+[node name="Innocent" parent="." instance=ExtResource("3_2st18")]
+position = Vector2(-256, 645)
+
+[node name="Sentry" parent="." instance=ExtResource("4_1juoe")]
+position = Vector2(476, 16)
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(0, 720)
+points = PackedVector2Array(0, 0, 1280, 0, 1408, -120, 1576, -120)
+texture = ExtResource("4_akwu6")
+texture_mode = 2
+script = ExtResource("4_l0fdr")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://f2no3a12nwma"]
+[gd_scene load_steps=10 format=3 uid="uid://f2no3a12nwma"]
 
 [ext_resource type="Script" path="res://scripts/objects/bullet.gd" id="1_lcclh"]
 [ext_resource type="Texture2D" uid="uid://c4oqke5doi8wh" path="res://sprites/smaller_bullet.svg" id="2_s5xw0"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/components/hurtbox.gd" id="6_taqbn"]
 [ext_resource type="Script" path="res://scripts/components/health.gd" id="6_yiw07"]
 [ext_resource type="Script" path="res://scripts/components/hitbox.gd" id="7_47vwf"]
+[ext_resource type="Script" path="res://scripts/components/hit_staticbody.gd" id="8_f0q7g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_idbpn"]
 radius = 4.0
@@ -28,7 +29,7 @@ script = ExtResource("5_llu0b")
 script = ExtResource("6_yiw07")
 
 [node name="Hurtbox" type="Area2D" parent="."]
-collision_layer = 4
+collision_layer = 2
 collision_mask = 2
 script = ExtResource("6_taqbn")
 self_damage = 1.0
@@ -42,4 +43,12 @@ collision_mask = 4
 script = ExtResource("7_47vwf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_idbpn")
+
+[node name="HitStaticbody" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("8_f0q7g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitStaticbody"]
 shape = SubResource("CircleShape2D_idbpn")
