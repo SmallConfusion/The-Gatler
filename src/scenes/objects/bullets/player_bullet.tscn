@@ -28,7 +28,7 @@ script = ExtResource("5_llu0b")
 script = ExtResource("6_yiw07")
 
 [node name="Hurtbox" type="Area2D" parent="."]
-collision_layer = 2
+collision_layer = 4
 collision_mask = 2
 script = ExtResource("6_taqbn")
 self_damage = 1.0
@@ -37,6 +37,8 @@ self_damage = 1.0
 shape = SubResource("RectangleShape2D_p37rw")
 
 [node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("7_47vwf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]

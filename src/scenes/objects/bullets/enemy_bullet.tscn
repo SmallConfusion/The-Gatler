@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cougtubkjylop"]
+
+[ext_resource type="PackedScene" uid="uid://f2no3a12nwma" path="res://scenes/objects/bullets/player_bullet.tscn" id="1_vwaan"]
+
+[node name="Bullet" instance=ExtResource("1_vwaan")]
+
+[node name="Hurtbox" parent="." index="4"]
+collision_mask = 1

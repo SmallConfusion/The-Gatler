@@ -1,8 +1,8 @@
 extends Node
 class_name BulletMovement
 
+@export var speed := 1000.
 var forward := Vector2.RIGHT
-var speed := 1000.
 
 
 func _physics_process(delta):

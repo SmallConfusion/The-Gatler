@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6p87lemetbn0"]
+
+[ext_resource type="Texture2D" uid="uid://bnb0ah6gxki3b" path="res://icon.png" id="1_5y4m3"]
+[ext_resource type="Script" path="res://scripts/components/enemy/aim.gd" id="1_6ojdo"]
+[ext_resource type="Script" path="res://scripts/components/autofire_gun.gd" id="3_66cjj"]
+[ext_resource type="PackedScene" uid="uid://cougtubkjylop" path="res://scenes/objects/bullets/enemy_bullet.tscn" id="4_54mxp"]
+
+[node name="Sentry" type="Node2D"]
+
+[node name="Aim" type="Node2D" parent="."]
+position = Vector2(0, 33)
+script = ExtResource("1_6ojdo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Aim"]
+scale = Vector2(1, 0.21875)
+texture = ExtResource("1_5y4m3")
+offset = Vector2(-12, 0)
+
+[node name="AutofireGun" type="Node2D" parent="Aim"]
+script = ExtResource("3_66cjj")
+bullet_scene = ExtResource("4_54mxp")

@@ -1,15 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4fbjm3v6knfp"]
+[gd_scene load_steps=6 format=3 uid="uid://d4fbjm3v6knfp"]
 
 [ext_resource type="PackedScene" uid="uid://dxfytd662m1kl" path="res://scenes/objects/player.tscn" id="1_milha"]
 [ext_resource type="Texture2D" uid="uid://bnb0ah6gxki3b" path="res://icon.png" id="1_n16tt"]
 [ext_resource type="PackedScene" uid="uid://byddp4ekan6dx" path="res://scenes/objects/innocent.tscn" id="3_2st18"]
+[ext_resource type="PackedScene" uid="uid://c6p87lemetbn0" path="res://scenes/objects/enemies/sentry.tscn" id="4_1juoe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obiph"]
 size = Vector2(2450, 68)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_milha")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("1_milha")]
 position = Vector2(719, 354)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -60,3 +61,6 @@ shape = SubResource("RectangleShape2D_obiph")
 
 [node name="Innocent" parent="." instance=ExtResource("3_2st18")]
 position = Vector2(-256, 645)
+
+[node name="Sentry" parent="." instance=ExtResource("4_1juoe")]
+position = Vector2(476, 16)
