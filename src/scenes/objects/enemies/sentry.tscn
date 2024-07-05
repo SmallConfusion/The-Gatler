@@ -1,21 +1,62 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6p87lemetbn0"]
+[gd_scene load_steps=11 format=3 uid="uid://c6p87lemetbn0"]
 
-[ext_resource type="Texture2D" uid="uid://bnb0ah6gxki3b" path="res://icon.png" id="1_5y4m3"]
 [ext_resource type="Script" path="res://scripts/components/enemy/aim.gd" id="1_6ojdo"]
+[ext_resource type="Texture2D" uid="uid://dvc105lcjqp7e" path="res://sprites/sentry_base.svg" id="1_ynd8b"]
+[ext_resource type="Script" path="res://scripts/components/hitbox.gd" id="2_lrth1"]
 [ext_resource type="Script" path="res://scripts/components/autofire_gun.gd" id="3_66cjj"]
+[ext_resource type="Texture2D" uid="uid://bkbj4biv7n4le" path="res://sprites/sentry_gun.svg" id="3_e2jyq"]
 [ext_resource type="PackedScene" uid="uid://cougtubkjylop" path="res://scenes/objects/bullets/enemy_bullet.tscn" id="4_54mxp"]
+[ext_resource type="Script" path="res://scripts/components/health.gd" id="7_k8qtg"]
+[ext_resource type="Script" path="res://scripts/components/death.gd" id="8_r42ip"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ronsb"]
+size = Vector2(69, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5qnr"]
+size = Vector2(80, 20)
 
 [node name="Sentry" type="Node2D"]
+
+[node name="SentryBase" type="Sprite2D" parent="."]
+position = Vector2(0, 18)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_ynd8b")
+
+[node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(0, 8)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_lrth1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_ronsb")
 
 [node name="Aim" type="Node2D" parent="."]
 position = Vector2(0, 33)
 script = ExtResource("1_6ojdo")
 
-[node name="Sprite2D" type="Sprite2D" parent="Aim"]
-scale = Vector2(1, 0.21875)
-texture = ExtResource("1_5y4m3")
-offset = Vector2(-12, 0)
-
 [node name="AutofireGun" type="Node2D" parent="Aim"]
+position = Vector2(53, 0)
 script = ExtResource("3_66cjj")
 bullet_scene = ExtResource("4_54mxp")
+
+[node name="SentryGun" type="Sprite2D" parent="Aim"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_e2jyq")
+offset = Vector2(43.3333, 0)
+
+[node name="Hitbox2" type="Area2D" parent="Aim"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_lrth1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Aim/Hitbox2"]
+position = Vector2(13, 0)
+shape = SubResource("RectangleShape2D_s5qnr")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("7_k8qtg")
+health = 5.0
+
+[node name="Death" type="Node" parent="."]
+script = ExtResource("8_r42ip")

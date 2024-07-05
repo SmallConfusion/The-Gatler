@@ -24,6 +24,14 @@ linear_damp = 0.5
 angular_damp = 1e+10
 script = ExtResource("1_6snto")
 
+[node name="Gun" type="Node2D" parent="."]
+position = Vector2(45, -1.96701e-06)
+script = ExtResource("3_exkqj")
+bullet_scene = ExtResource("7_ivlbb")
+cooldown = 0.025
+spread = 0.4
+spread_concentration = 2.1
+
 [node name="Icon" type="Sprite2D" parent="."]
 scale = Vector2(1.5, 0.5)
 texture = ExtResource("2_tpl1p")
@@ -34,14 +42,6 @@ shape = SubResource("RectangleShape2D_ptnw6")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.75, 0.75)
 
-[node name="Gun" type="Node2D" parent="."]
-position = Vector2(45, -1.96701e-06)
-script = ExtResource("3_exkqj")
-bullet_scene = ExtResource("7_ivlbb")
-cooldown = 0.025
-spread = 0.4
-spread_concentration = 2.1
-
 [node name="Hitbox" type="Area2D" parent="."]
 script = ExtResource("5_mnns8")
 
@@ -50,6 +50,7 @@ shape = SubResource("RectangleShape2D_ptnw6")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("6_5c56t")
+health = 10.0
 
 [node name="Death" type="Node" parent="."]
 script = ExtResource("7_eu0sl")

@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 const SPEED := 1600.0
-const ROTATION_CHANGE_FORCE := 3.
+const ROTATION_CHANGE_FORCE := 8.
 
 func _physics_process(delta):
 	var pointing_direction := (get_global_mouse_position() - global_position)
