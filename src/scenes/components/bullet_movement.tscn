@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://wdqxmy4hr5y0"]
-
-[ext_resource type="Script" path="res://scripts/components/bullet_movement.gd" id="1_08f12"]
-
-[node name="BulletMovement" type="Node"]
-script = ExtResource("1_08f12")

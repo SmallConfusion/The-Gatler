@@ -1,4 +1,4 @@
-extends Node
+extends Area2D
 class_name Hurtbox
 
 @export var damage := 1.0
