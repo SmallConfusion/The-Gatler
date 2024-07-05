@@ -1,13 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxfytd662m1kl"]
+[gd_scene load_steps=11 format=3 uid="uid://dxfytd662m1kl"]
 
 [ext_resource type="Script" path="res://scripts/objects/player.gd" id="1_6snto"]
 [ext_resource type="Texture2D" uid="uid://bnb0ah6gxki3b" path="res://icon.png" id="2_tpl1p"]
+[ext_resource type="PackedScene" uid="uid://br31566vlf14n" path="res://scenes/components/hitbox.tscn" id="3_8jei0"]
+[ext_resource type="PackedScene" uid="uid://ynife4nm3j14" path="res://scenes/components/health.tscn" id="4_txch8"]
+[ext_resource type="PackedScene" uid="uid://g10lgrsy5kkh" path="res://scenes/components/death.tscn" id="5_aikqp"]
+[ext_resource type="PackedScene" uid="uid://dt6egjbb5g5um" path="res://scenes/components/gun.tscn" id="6_6io1q"]
+[ext_resource type="PackedScene" uid="uid://f2no3a12nwma" path="res://scenes/objects/bullets/player_bullet.tscn" id="7_ivlbb"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xclvi"]
 friction = 0.0
 bounce = 0.1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptnw6"]
+size = Vector2(96, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28hxc"]
 size = Vector2(96, 32)
 
 [node name="Player" type="RigidBody2D"]
@@ -27,3 +35,19 @@ texture = ExtResource("2_tpl1p")
 shape = SubResource("RectangleShape2D_ptnw6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Hitbox" parent="." instance=ExtResource("3_8jei0")]
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(-2.08432e-14, -4.76837e-07)
+shape = SubResource("RectangleShape2D_28hxc")
+
+[node name="Health" parent="." instance=ExtResource("4_txch8")]
+
+[node name="Death" parent="." instance=ExtResource("5_aikqp")]
+
+[node name="Gun" parent="." instance=ExtResource("6_6io1q")]
+position = Vector2(38, 0)
+bullet_scene = ExtResource("7_ivlbb")
+
+[editable path="Hitbox"]

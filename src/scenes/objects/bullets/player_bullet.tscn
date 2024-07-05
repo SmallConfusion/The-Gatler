@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://f2no3a12nwma"]
+
+[ext_resource type="Script" path="res://scripts/objects/bullet.gd" id="1_lcclh"]
+[ext_resource type="PackedScene" uid="uid://wdqxmy4hr5y0" path="res://scenes/components/bullet_movement.tscn" id="2_o0f6w"]
+[ext_resource type="PackedScene" uid="uid://bnk3gn6riy7xw" path="res://scenes/components/hurtbox.tscn" id="3_od46q"]
+[ext_resource type="Texture2D" uid="uid://bnb0ah6gxki3b" path="res://icon.png" id="4_napun"]
+[ext_resource type="Script" path="res://scripts/components/death.gd" id="5_llu0b"]
+[ext_resource type="Script" path="res://scripts/components/health.gd" id="6_yiw07"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p37rw"]
+size = Vector2(12, 12)
+
+[node name="Bullet" type="Node2D"]
+script = ExtResource("1_lcclh")
+
+[node name="BulletMovement" parent="." instance=ExtResource("2_o0f6w")]
+
+[node name="Hurtbox" parent="." instance=ExtResource("3_od46q")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("RectangleShape2D_p37rw")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.1875, 0.1875)
+texture = ExtResource("4_napun")
+
+[node name="Death" type="Node" parent="."]
+script = ExtResource("5_llu0b")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("6_yiw07")
+
+[editable path="Hurtbox"]

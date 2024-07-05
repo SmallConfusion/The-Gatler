@@ -10,5 +10,6 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("Fire"):
 		force = -Vector2.from_angle(rotation) * SPEED
+		$Gun.fire()
 	
 	apply_central_force(force)
