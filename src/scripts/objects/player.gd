@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-const SPEED := 1600.0
+const SPEED := 1200.0
 const ROTATION_CHANGE_FORCE := 8.
 
 @onready var gun_audio_tween : Tween

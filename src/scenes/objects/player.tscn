@@ -28,7 +28,7 @@ rotation = 1.5708
 physics_material_override = SubResource("PhysicsMaterial_xclvi")
 can_sleep = false
 continuous_cd = 1
-linear_damp = 0.5
+linear_damp = 0.2
 angular_damp = 1e+10
 script = ExtResource("1_6snto")
 
@@ -67,7 +67,7 @@ offset = Vector2(0, 54.855)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(-5.72763, 6.38738)
+position = Vector2(2.31454, 6.90368)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -75,7 +75,7 @@ index = 1
 
 [node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(-12.5991, 3.05219)
+position = Vector2(-7.10216, 6.0324)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -83,7 +83,7 @@ index = 2
 
 [node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(-13.5753, -1.71115)
+position = Vector2(-13.1957, 2.3385)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -91,7 +91,7 @@ index = 3
 
 [node name="Sprite2D5" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(-8.19945, -5.67382)
+position = Vector2(-13.1148, -2.44961)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -99,7 +99,7 @@ index = 4
 
 [node name="Sprite2D6" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(1.01299, -6.98165)
+position = Vector2(-6.89734, -6.09152)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -107,7 +107,7 @@ index = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(9.75143, -5.02269)
+position = Vector2(2.54744, -6.88314)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -115,7 +115,7 @@ index = 6
 
 [node name="Sprite2D7" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(13.9271, -0.713552)
+position = Vector2(10.8002, -4.45406)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -123,7 +123,7 @@ index = 7
 
 [node name="Sprite2D8" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(11.5861, 3.92946)
+position = Vector2(13.9995, 0.059124)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -131,7 +131,7 @@ index = 8
 
 [node name="Sprite2D9" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(3.82383, 6.73384)
+position = Vector2(10.6482, 4.54464)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
