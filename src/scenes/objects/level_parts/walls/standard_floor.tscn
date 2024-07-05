@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bpxs04ndp3v8"]
 
-[ext_resource type="Texture2D" uid="uid://cj43g2wfpqj47" path="res://sprites/box.svg" id="1_omu56"]
+[ext_resource type="Texture2D" uid="uid://cj43g2wfpqj47" path="res://sprites/game/level/box.svg" id="1_omu56"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n45le"]
 size = Vector2(232, 30)

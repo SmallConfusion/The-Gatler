@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvc105lcjqp7e"
-path="res://.godot/imported/sentry_base.svg-b799fef150434d0f1792d1b1c93dd4cb.ctex"
+uid="uid://gkvjds75h6p0"
+path="res://.godot/imported/body_segment_open.svg-b36815b063ebaeaf0698a0ae8f02502d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/sentry_base.svg"
-dest_files=["res://.godot/imported/sentry_base.svg-b799fef150434d0f1792d1b1c93dd4cb.ctex"]
+source_file="res://sprites/game/stickman/body_segment_open.svg"
+dest_files=["res://.godot/imported/body_segment_open.svg-b36815b063ebaeaf0698a0ae8f02502d.ctex"]
 
 [params]
 

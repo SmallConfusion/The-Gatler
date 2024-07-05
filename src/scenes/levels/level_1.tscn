@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dxfytd662m1kl" path="res://scenes/objects/player.tscn" id="1_milha"]
 [ext_resource type="Shader" path="res://shaders/fade_to_black.gdshader" id="1_q6v4i"]
+[ext_resource type="Texture2D" uid="uid://cj43g2wfpqj47" path="res://sprites/game/level/box.svg" id="2_t3yy4"]
 [ext_resource type="PackedScene" uid="uid://byddp4ekan6dx" path="res://scenes/objects/innocent.tscn" id="3_2st18"]
+[ext_resource type="Script" path="res://scripts/objects/level_wall_line.gd" id="3_yuddh"]
 [ext_resource type="PackedScene" uid="uid://c6p87lemetbn0" path="res://scenes/objects/enemies/sentry.tscn" id="4_1juoe"]
-[ext_resource type="Texture2D" uid="uid://cj43g2wfpqj47" path="res://sprites/box.svg" id="4_akwu6"]
-[ext_resource type="Script" path="res://scenes/levels/level_wall_line.gd" id="4_l0fdr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wfsef"]
 shader = ExtResource("1_q6v4i")
@@ -24,10 +24,10 @@ material = SubResource("ShaderMaterial_wfsef")
 position = Vector2(0, 720)
 points = PackedVector2Array(0, 0, 1280, 0, 1408, -120, 1576, -120)
 width = 32.0
-texture = ExtResource("4_akwu6")
+texture = ExtResource("2_t3yy4")
 texture_mode = 1
 joint_mode = 1
-script = ExtResource("4_l0fdr")
+script = ExtResource("3_yuddh")
 
 [node name="Player" parent="." instance=ExtResource("1_milha")]
 position = Vector2(719, 354)

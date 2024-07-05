@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be4af8gpjkbme"
-path="res://.godot/imported/body_segment_full.svg-9e4950d6ecf999f1a61a53bb7fb2aed3.ctex"
+uid="uid://d3t3ll2qb12ot"
+path="res://.godot/imported/body_head.svg-db95fad55edbd698857a20c6e69c4dcb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/body_segment_full.svg"
-dest_files=["res://.godot/imported/body_segment_full.svg-9e4950d6ecf999f1a61a53bb7fb2aed3.ctex"]
+source_file="res://sprites/game/stickman/body_head.svg"
+dest_files=["res://.godot/imported/body_head.svg-db95fad55edbd698857a20c6e69c4dcb.ctex"]
 
 [params]
 

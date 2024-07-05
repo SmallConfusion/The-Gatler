@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7d6le151hsls"]
+
+[ext_resource type="Script" path="res://scripts/ui/load_scene_button.gd" id="1_3ka77"]
+[ext_resource type="PackedScene" uid="uid://d4fbjm3v6knfp" path="res://scenes/levels/level_1.tscn" id="2_u2rer"]
+[ext_resource type="Texture2D" uid="uid://0oo5ey21amqi" path="res://sprites/ui/logo w text.svg" id="3_85oy4"]
+[ext_resource type="Script" path="res://scenes/menu/splash_screen.gd" id="3_pj0m8"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+script = ExtResource("1_3ka77")
+scene = ExtResource("2_u2rer")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+visible = false
+script = ExtResource("3_pj0m8")
+debug = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasGroup"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(640, 360)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_85oy4")
+
+[node name="Label" type="Label" parent="CanvasGroup"]
+offset_top = 461.0
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_type_variation = &"h2"
+text = "Made for
+MiniJam 162: Heat"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cougtubkjylop"]
 
 [ext_resource type="PackedScene" uid="uid://f2no3a12nwma" path="res://scenes/objects/bullets/player_bullet.tscn" id="1_vwaan"]
-[ext_resource type="Texture2D" uid="uid://c76lj64mx8xkk" path="res://sprites/small_bullet.svg" id="2_xgxj0"]
+[ext_resource type="Texture2D" uid="uid://c76lj64mx8xkk" path="res://sprites/game/gun/small_bullet.svg" id="2_ta26w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y7265"]
 radius = 6.0
@@ -12,7 +12,7 @@ radius = 6.0
 [node name="Bullet" instance=ExtResource("1_vwaan")]
 
 [node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_xgxj0")
+texture = ExtResource("2_ta26w")
 
 [node name="Hurtbox" parent="." index="4"]
 collision_mask = 1

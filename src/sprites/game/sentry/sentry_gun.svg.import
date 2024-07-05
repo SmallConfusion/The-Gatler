@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://koyxtcf54u7y"
-path="res://.godot/imported/gun_support.svg-162acd0a979b9dd61912dbe4181e9ff8.ctex"
+uid="uid://bkbj4biv7n4le"
+path="res://.godot/imported/sentry_gun.svg-c23021c4023ddbf313771e2f5958d1c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/gun_support.svg"
-dest_files=["res://.godot/imported/gun_support.svg-162acd0a979b9dd61912dbe4181e9ff8.ctex"]
+source_file="res://sprites/game/sentry/sentry_gun.svg"
+dest_files=["res://.godot/imported/sentry_gun.svg-c23021c4023ddbf313771e2f5958d1c6.ctex"]
 
 [params]
 

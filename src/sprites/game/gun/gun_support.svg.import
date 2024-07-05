@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx4kufotll54o"
-path="res://.godot/imported/barrel.svg-a6cb3b372c8831952b303398a0b33727.ctex"
+uid="uid://koyxtcf54u7y"
+path="res://.godot/imported/gun_support.svg-ca8acb6d892405d8215b17aa7f8c5cf1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/barrel.svg"
-dest_files=["res://.godot/imported/barrel.svg-a6cb3b372c8831952b303398a0b33727.ctex"]
+source_file="res://sprites/game/gun/gun_support.svg"
+dest_files=["res://.godot/imported/gun_support.svg-ca8acb6d892405d8215b17aa7f8c5cf1.ctex"]
 
 [params]
 
