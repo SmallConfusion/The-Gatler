@@ -99,7 +99,6 @@ offset = Vector2(0, -40)
 [node name="RightUpperArmBone2D" type="Bone2D" parent="LowerSpineBone2D/UpperSpineBone2D"]
 position = Vector2(-0.256619, 76.1606)
 rotation = -2.35619
-scale = Vector2(1, 1)
 rest = Transform2D(-0.707104, -0.707109, 0.707109, -0.707104, -0.256619, 76.1606)
 editor_settings/show_bone_gizmo = false
 metadata/_local_pose_override_enabled_ = true
@@ -125,7 +124,6 @@ offset = Vector2(0, -43)
 [node name="LeftUpperArmBone2D" type="Bone2D" parent="LowerSpineBone2D/UpperSpineBone2D"]
 position = Vector2(-0.256619, 76.1606)
 rotation = 2.35619
-scale = Vector2(1, 1)
 rest = Transform2D(-0.707104, 0.70711, -0.70711, -0.707104, -0.256619, 76.1606)
 editor_settings/show_bone_gizmo = false
 metadata/_local_pose_override_enabled_ = true
@@ -151,7 +149,6 @@ offset = Vector2(0, -43)
 [node name="LeftThighBone2D" type="Bone2D" parent="LowerSpineBone2D"]
 position = Vector2(0.256631, -6.16057)
 rotation = -0.785398
-scale = Vector2(1, 1)
 rest = Transform2D(0.707107, -0.707107, 0.707107, 0.707107, 0.256631, -6.16057)
 editor_settings/show_bone_gizmo = false
 metadata/_local_pose_override_enabled_ = true
@@ -177,7 +174,6 @@ offset = Vector2(0, -43)
 [node name="RightThighBone2D" type="Bone2D" parent="LowerSpineBone2D"]
 position = Vector2(0.256631, -6.16057)
 rotation = 0.785398
-scale = Vector2(1, 1)
 rest = Transform2D(0.707107, 0.707107, -0.707107, 0.707107, 0.256631, -6.16057)
 editor_settings/show_bone_gizmo = false
 metadata/_local_pose_override_enabled_ = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dxfytd662m1kl"]
+[gd_scene load_steps=15 format=3 uid="uid://dxfytd662m1kl"]
 
 [ext_resource type="Script" path="res://scripts/objects/player.gd" id="1_6snto"]
 [ext_resource type="PackedScene" uid="uid://c5sjqlc2chtq" path="res://scenes/stickman.tscn" id="2_ycj2h"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/components/death.gd" id="7_eu0sl"]
 [ext_resource type="PackedScene" uid="uid://f2no3a12nwma" path="res://scenes/objects/bullets/player_bullet.tscn" id="7_ivlbb"]
 [ext_resource type="Script" path="res://scripts/objects/gun_barrel.gd" id="8_rhdoc"]
+[ext_resource type="AudioStream" uid="uid://oa4rhloo53wh" path="res://sounds/shoot.ogg" id="11_7a5m5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xclvi"]
 friction = 0.0
@@ -66,7 +67,7 @@ offset = Vector2(0, 54.855)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(-13.8702, 0.950858)
+position = Vector2(-5.72763, 6.38738)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -74,7 +75,7 @@ index = 1
 
 [node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(-11.8476, -3.72941)
+position = Vector2(-12.5991, 3.05219)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -82,7 +83,7 @@ index = 2
 
 [node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(-4.28137, -6.66464)
+position = Vector2(-13.5753, -1.71115)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -90,7 +91,7 @@ index = 3
 
 [node name="Sprite2D5" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(5.28818, -6.48142)
+position = Vector2(-8.19945, -5.67382)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -98,7 +99,7 @@ index = 4
 
 [node name="Sprite2D6" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(12.3833, -3.26547)
+position = Vector2(1.01299, -6.98165)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -106,7 +107,7 @@ index = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(13.6842, 1.47843)
+position = Vector2(9.75143, -5.02269)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -114,7 +115,7 @@ index = 6
 
 [node name="Sprite2D7" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(8.58206, 5.53056)
+position = Vector2(13.9271, -0.713552)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -122,7 +123,7 @@ index = 7
 
 [node name="Sprite2D8" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(-0.535714, 6.99487)
+position = Vector2(11.5861, 3.92946)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -130,7 +131,7 @@ index = 8
 
 [node name="Sprite2D9" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
-position = Vector2(-9.40282, 5.18621)
+position = Vector2(3.82383, 6.73384)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -164,5 +165,8 @@ health = 10.0
 
 [node name="Death" type="Node" parent="."]
 script = ExtResource("7_eu0sl")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_7a5m5")
 
 [editable path="Skeleton2D"]

@@ -3,7 +3,7 @@ extends RigidBody2D
 const SPEED := 1600.0
 const ROTATION_CHANGE_FORCE := 8.
 
-
+@onready var gun_audio_tween : Tween
 
 
 func _physics_process(delta):
@@ -26,3 +26,23 @@ func _physics_process(delta):
 	apply_central_force(force)
 
 	$Skeleton2D/HeadTarget.global_position = lerp($Skeleton2D/HeadTarget.global_position, global_position + Vector2(100, 0).rotated((-pointing_direction).angle()), delta * 20)
+
+
+	if Input.is_action_just_pressed("Fire"):
+		if gun_audio_tween:
+			gun_audio_tween.stop()
+			
+		$AudioStreamPlayer.volume_db = -5
+		
+		gun_audio_tween = get_tree().create_tween()
+		gun_audio_tween.tween_property($AudioStreamPlayer, "volume_db", 0, 0.5)
+		
+		$AudioStreamPlayer.play()
+	elif Input.is_action_just_released("Fire"):
+		if gun_audio_tween:
+			gun_audio_tween.stop()
+		
+		gun_audio_tween = get_tree().create_tween()
+		gun_audio_tween.tween_property($AudioStreamPlayer, "volume_db", -50, 0.5)
+		await gun_audio_tween.finished
+		$AudioStreamPlayer.stop()

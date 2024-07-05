@@ -29,7 +29,7 @@ texture_mode = 1
 joint_mode = 1
 script = ExtResource("4_l0fdr")
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("1_milha")]
+[node name="Player" parent="." instance=ExtResource("1_milha")]
 position = Vector2(719, 354)
 
 [node name="Innocent" parent="." instance=ExtResource("3_2st18")]
