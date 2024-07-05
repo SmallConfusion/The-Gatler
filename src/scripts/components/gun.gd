@@ -2,12 +2,28 @@ extends Node2D
 class_name Gun
 
 @export var bullet_scene : PackedScene
+
+@export var cooldown : float = 1.
+
 @export var spread := 0.1
 @export var spread_concentration := 1.
 
 @onready var spread_pow := spread ** spread_concentration
 
-func fire():
+var cooldown_timer := 0.0
+
+
+func _process(delta):
+	cooldown_timer -= delta
+
+
+func fire_cooldown():
+	if cooldown_timer <= 0:
+		cooldown_timer = cooldown
+		_fire()
+
+
+func _fire():
 	var bullet = bullet_scene.instantiate()
 	bullet.global_position = global_position
 	

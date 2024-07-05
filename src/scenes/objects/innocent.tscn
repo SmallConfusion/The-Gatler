@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://byddp4ekan6dx"]
+
+[ext_resource type="Script" path="res://scripts/components/hitbox.gd" id="1_0di2j"]
+[ext_resource type="Texture2D" uid="uid://bnb0ah6gxki3b" path="res://icon.png" id="2_052oh"]
+[ext_resource type="Script" path="res://scripts/components/health.gd" id="3_p11w1"]
+[ext_resource type="Script" path="res://scripts/components/death.gd" id="4_1sish"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6ebx"]
+size = Vector2(64, 64)
+
+[node name="Innocent" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = ExtResource("2_052oh")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_0di2j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_g6ebx")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("3_p11w1")
+health = 10.0
+
+[node name="Death" type="Node" parent="."]
+script = ExtResource("4_1sish")
