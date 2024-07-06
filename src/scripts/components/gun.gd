@@ -34,5 +34,8 @@ func _fire():
 	bullet_forward_rotation += remap(abs(spread_value) ** spread_concentration * sign(spread_value), -spread_pow, spread_pow, -spread, spread)
 	
 	bullet.set_forward(Vector2.from_angle(bullet_forward_rotation))
+	
+	if get_parent() is RigidBody2D: 
+		bullet.set_player_velocity(get_parent().linear_velocity)
 	get_tree().get_root().add_child(bullet)
 	
