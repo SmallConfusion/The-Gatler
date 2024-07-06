@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dxfytd662m1kl"]
+[gd_scene load_steps=29 format=3 uid="uid://dxfytd662m1kl"]
 
 [ext_resource type="Script" path="res://scripts/objects/player.gd" id="1_6snto"]
 [ext_resource type="PackedScene" uid="uid://bwbq0bher7mux" path="res://scenes/vfx/particles/player_gun_fire.tscn" id="2_gaq08"]
@@ -16,6 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://f2no3a12nwma" path="res://scenes/objects/bullets/player_bullet.tscn" id="7_ivlbb"]
 [ext_resource type="Script" path="res://scripts/objects/gun_barrel.gd" id="8_rhdoc"]
 [ext_resource type="AudioStream" uid="uid://oa4rhloo53wh" path="res://sounds/shoot.ogg" id="11_7a5m5"]
+[ext_resource type="Shader" path="res://shaders/heat_bar.gdshader" id="17_gwk7e"]
+[ext_resource type="Texture2D" uid="uid://bnb0ah6gxki3b" path="res://icon.png" id="18_q0vsx"]
+[ext_resource type="Script" path="res://scripts/components/keep_offset.gd" id="19_jvqpk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xclvi"]
 friction = 0.0
@@ -39,6 +42,20 @@ height = 88.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ws7u3"]
 size = Vector2(108, 40)
+
+[sub_resource type="Gradient" id="Gradient_7tcqw"]
+interpolation_mode = 2
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.280172, 0.568965, 0.806035, 1)
+colors = PackedColorArray(0.364398, 0.467909, 1, 1, 1, 0.479015, 0.976151, 1, 1, 0.980392, 0.239216, 1, 0.911844, 0.274191, 0, 1, 0.989643, 0, 0.0315306, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rak5h"]
+gradient = SubResource("Gradient_7tcqw")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gd2ti"]
+shader = ExtResource("17_gwk7e")
+shader_parameter/t = 0.415
+shader_parameter/gradient = SubResource("GradientTexture1D_rak5h")
 
 [node name="Player" type="RigidBody2D" groups=["player"]]
 z_index = 5
@@ -112,7 +129,7 @@ offset = Vector2(0, 54.855)
 [node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(12.5226, 3.1299)
+position = Vector2(-13.8186, -1.12316)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -121,7 +138,7 @@ index = 1
 [node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(5.56914, 6.42232)
+position = Vector2(-9.14175, -5.30161)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -130,7 +147,7 @@ index = 2
 [node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-3.99017, 6.70967)
+position = Vector2(-0.187373, -6.99937)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -139,7 +156,7 @@ index = 3
 [node name="Sprite2D5" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-11.6824, 3.85749)
+position = Vector2(8.85468, -5.42205)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -148,7 +165,7 @@ index = 4
 [node name="Sprite2D6" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-13.9084, -0.799651)
+position = Vector2(13.7535, -1.30769)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -157,7 +174,7 @@ index = 5
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-9.6264, -5.08263)
+position = Vector2(12.217, 3.41855)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -166,7 +183,7 @@ index = 6
 [node name="Sprite2D7" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-0.840153, -6.98738)
+position = Vector2(4.96393, 6.54522)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -175,7 +192,7 @@ index = 7
 [node name="Sprite2D8" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(8.33921, -5.62267)
+position = Vector2(-4.61178, 6.6093)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -184,7 +201,7 @@ index = 8
 [node name="Sprite2D9" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(13.6166, -1.62704)
+position = Vector2(-12.0296, 3.58082)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -225,5 +242,15 @@ script = ExtResource("7_eu0sl")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_7a5m5")
+
+[node name="HeatBar" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_gd2ti")
+position = Vector2(-107, -71.9996)
+rotation = -1.5708
+scale = Vector2(0.860642, 0.860642)
+texture = ExtResource("18_q0vsx")
+
+[node name="KeepOffset" type="Node" parent="HeatBar"]
+script = ExtResource("19_jvqpk")
 
 [editable path="Skeleton2D"]
