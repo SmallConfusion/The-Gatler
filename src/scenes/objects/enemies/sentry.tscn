@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6p87lemetbn0"]
+[gd_scene load_steps=15 format=3 uid="uid://c6p87lemetbn0"]
 
 [ext_resource type="Script" path="res://scripts/components/enemy/aim.gd" id="1_6ojdo"]
 [ext_resource type="Texture2D" uid="uid://dvc105lcjqp7e" path="res://sprites/game/sentry/sentry_base.svg" id="1_b3206"]
@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://bkbj4biv7n4le" path="res://sprites/game/sentry/sentry_gun.svg" id="6_qqc7l"]
 [ext_resource type="Script" path="res://scripts/components/health.gd" id="7_k8qtg"]
 [ext_resource type="Script" path="res://scripts/components/death.gd" id="8_r42ip"]
+[ext_resource type="Script" path="res://scripts/components/particle_emitter.gd" id="9_ajgra"]
+[ext_resource type="PackedScene" uid="uid://3vi3fg7ssyyj" path="res://scenes/vfx/particles/explosion_small.tscn" id="9_uc1mt"]
+[ext_resource type="PackedScene" uid="uid://cpcmyoe3ey46k" path="res://scenes/vfx/explosion_effect.tscn" id="12_u5il0"]
+[ext_resource type="Script" path="res://scripts/components/screen_effect.gd" id="12_vtg0j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ronsb"]
 size = Vector2(69, 18)
@@ -18,12 +22,12 @@ size = Vector2(80, 20)
 [node name="Sentry" type="Node2D"]
 
 [node name="SentryBase" type="Sprite2D" parent="."]
-position = Vector2(0, 18)
+position = Vector2(0, -15.55)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_b3206")
 
 [node name="Hitbox" type="Area2D" parent="."]
-position = Vector2(0, 8)
+position = Vector2(0, -25.55)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_lrth1")
@@ -32,7 +36,7 @@ script = ExtResource("2_lrth1")
 shape = SubResource("RectangleShape2D_ronsb")
 
 [node name="Aim" type="Node2D" parent="."]
-position = Vector2(0, 33)
+position = Vector2(0, -0.549999)
 script = ExtResource("1_6ojdo")
 
 [node name="AutofireGun" type="Node2D" parent="Aim"]
@@ -60,3 +64,15 @@ script = ExtResource("7_k8qtg")
 
 [node name="Death" type="Node" parent="."]
 script = ExtResource("8_r42ip")
+
+[node name="ParticleEmitter" type="Node" parent="."]
+script = ExtResource("9_ajgra")
+particles = Array[PackedScene]([ExtResource("9_uc1mt")])
+
+[node name="ScreenEffect" type="Node" parent="."]
+script = ExtResource("12_vtg0j")
+effect = ExtResource("12_u5il0")
+time = 0.5
+
+[connection signal="killed" from="Death" to="ParticleEmitter" method="emit"]
+[connection signal="killed" from="Death" to="ScreenEffect" method="start"]

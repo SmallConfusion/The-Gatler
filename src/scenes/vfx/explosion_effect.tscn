@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpcmyoe3ey46k"]
+
+[ext_resource type="Shader" path="res://shaders/explosion_warp.gdshader" id="1_dsts5"]
+[ext_resource type="Texture2D" uid="uid://bnb0ah6gxki3b" path="res://icon.png" id="2_tdr6b"]
+[ext_resource type="Script" path="res://scenes/vfx/screen_effector.gd" id="3_pdp3o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_30c4m"]
+shader = ExtResource("1_dsts5")
+shader_parameter/t = 0.0
+
+[node name="ExplosionEffect" type="Sprite2D"]
+z_index = 1000
+material = SubResource("ShaderMaterial_30c4m")
+scale = Vector2(3, 3)
+texture = ExtResource("2_tdr6b")
+script = ExtResource("3_pdp3o")
+duration = 0.2

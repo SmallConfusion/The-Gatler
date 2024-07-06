@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dxfytd662m1kl" path="res://scenes/objects/player.tscn" id="1_milha"]
 [ext_resource type="Script" path="res://scenes/levels/game_manager.gd" id="1_ugmde"]
-[ext_resource type="Material" uid="uid://clhs8lek3u31k" path="res://shaders/wall_fade.tres" id="2_3bq5y"]
+[ext_resource type="Material" uid="uid://clhs8lek3u31k" path="res://shaders/materials/wall_fade.tres" id="2_p5i3g"]
 [ext_resource type="Texture2D" uid="uid://cj43g2wfpqj47" path="res://sprites/game/level/box.svg" id="2_t3yy4"]
 [ext_resource type="PackedScene" uid="uid://byddp4ekan6dx" path="res://scenes/objects/innocent.tscn" id="3_2st18"]
 [ext_resource type="Script" path="res://scripts/objects/level_wall_line.gd" id="3_yuddh"]
@@ -20,7 +20,7 @@ polygon = PackedVector2Array(16, 16, 16, 704, 1280, 720, 1272, 592, 1712, 592, 1
 modulate = Color(0.523376, 0.4064, 0.20977, 1)
 z_index = 5
 texture_repeat = 2
-material = ExtResource("2_3bq5y")
+material = ExtResource("2_p5i3g")
 position = Vector2(0, 720)
 points = PackedVector2Array(16, 0, 1280, 0, 1280, -128, 1720, -128, 1720, 0, 3696, 0)
 width = 32.0
@@ -33,7 +33,7 @@ script = ExtResource("3_yuddh")
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
 z_index = 5
 texture_repeat = 2
-material = ExtResource("2_3bq5y")
+material = ExtResource("2_p5i3g")
 points = PackedVector2Array(3696, 0, 16, 0)
 width = 32.0
 texture = ExtResource("2_t3yy4")
@@ -45,7 +45,7 @@ script = ExtResource("3_yuddh")
 modulate = Color(0.818155, 0.832719, 0.637525, 1)
 z_index = 5
 texture_repeat = 2
-material = ExtResource("2_3bq5y")
+material = ExtResource("2_p5i3g")
 points = PackedVector2Array(0, 16, 0, 704)
 width = 32.0
 texture = ExtResource("2_t3yy4")
@@ -57,7 +57,7 @@ script = ExtResource("3_yuddh")
 modulate = Color(0.818155, 0.832719, 0.637525, 1)
 z_index = 5
 texture_repeat = 2
-material = ExtResource("2_3bq5y")
+material = ExtResource("2_p5i3g")
 position = Vector2(3712, 720)
 rotation = 3.14159
 points = PackedVector2Array(0, 16, 0, 444.475, 0, 704)
@@ -77,6 +77,16 @@ Do not hurt them"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label3" type="Label" parent="Level"]
+offset_left = 3088.0
+offset_top = 560.0
+offset_right = 3320.0
+offset_bottom = 656.0
+text = "This is a turret
+Feel free to hurt it"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Innocent" parent="." instance=ExtResource("3_2st18")]
 position = Vector2(2216, 704)
 
@@ -84,5 +94,5 @@ position = Vector2(2216, 704)
 position = Vector2(564, 457)
 
 [node name="Sentry" parent="." instance=ExtResource("7_r6qyq")]
-position = Vector2(3216, 704)
+position = Vector2(3210, 671)
 rotation = 3.14159
