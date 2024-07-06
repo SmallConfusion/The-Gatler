@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://scenes/vfx/screen_effector.gd" id="3_pdp3o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_30c4m"]
+resource_local_to_scene = true
 shader = ExtResource("1_dsts5")
 shader_parameter/t = 0.0
 
