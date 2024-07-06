@@ -1,0 +1,11 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcsio6jfawoyk"]
+
+[ext_resource type="Script" path="res://scripts/components/sound_effect.gd" id="1_itamx"]
+[ext_resource type="AudioStream" uid="uid://cmdudsf5oldot" path="res://sounds/sound_files/explosion1.ogg" id="2_c33mg"]
+[ext_resource type="AudioStream" uid="uid://4twrxs4kke1w" path="res://sounds/sound_files/explosion2.ogg" id="3_kjlpc"]
+[ext_resource type="AudioStream" uid="uid://3lkn7ve3q8bv" path="res://sounds/sound_files/explosion3.ogg" id="4_r5je6"]
+[ext_resource type="AudioStream" uid="uid://ceshkquwc6i2h" path="res://sounds/sound_files/explosion4.ogg" id="5_o5m6t"]
+
+[node name="ExplosionSoundEffect" type="Node"]
+script = ExtResource("1_itamx")
+sounds = Array[AudioStream]([ExtResource("2_c33mg"), ExtResource("3_kjlpc"), ExtResource("4_r5je6"), ExtResource("5_o5m6t")])

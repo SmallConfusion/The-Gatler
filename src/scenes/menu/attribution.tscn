@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b16evga31w3ad"]
+
+[node name="Attribution" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 1244.0
+offset_bottom = 611.0
+text = "FireworkCloseCrack.mp3 by HerbertBoland -- https://freesound.org/s/142019/ -- License: Attribution 4.0
+
+CTS 7290.wav by areniporgen -- https://freesound.org/s/693421/ -- License: Creative Commons 0
+
+Buzz Magnets, Snake Eggs, Singing Magnets, Toy Magnet, Magnet Contact by OBXJohn -- https://freesound.org/s/275728/ -- License: Attribution 4.0
+
+CLICK_90.wav by Jaszunio15 -- https://freesound.org/s/421302/ -- License: Creative Commons 0
+
+R28-02-Large Fire Burning.wav by craigsmith -- https://freesound.org/s/483321/ -- License: Creative Commons 0
+
+Big Crash by deleted_user_3277771 -- https://freesound.org/s/185244/ -- License: Attribution NonCommercial 3.0
+
+Glass Ping by tix99 -- https://freesound.org/s/745014/ -- License: Creative Commons 0
+
+Ting sound from a metal cup by dermotte -- https://freesound.org/s/160672/ -- License: Attribution 4.0
+
+Chopping wood 02 by micahlg -- https://freesound.org/s/421929/ -- License: Creative Commons 0
+
+Chopping a tree trunk with an Axe. OWI.wav by JesterWhoo -- https://freesound.org/s/706978/ -- License: Creative Commons 0"

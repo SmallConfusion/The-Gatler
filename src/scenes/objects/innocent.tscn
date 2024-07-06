@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://byddp4ekan6dx"]
+[gd_scene load_steps=27 format=3 uid="uid://byddp4ekan6dx"]
 
 [ext_resource type="Script" path="res://scripts/components/hitbox.gd" id="1_0di2j"]
 [ext_resource type="PackedScene" uid="uid://c5sjqlc2chtq" path="res://scenes/stickman.tscn" id="1_qya6w"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://3vi3fg7ssyyj" path="res://scenes/vfx/particles/explosion_small.tscn" id="13_fl3nx"]
 [ext_resource type="Script" path="res://scripts/components/screen_effect.gd" id="14_h5e14"]
 [ext_resource type="PackedScene" uid="uid://cpcmyoe3ey46k" path="res://scenes/vfx/explosion_effect.tscn" id="15_qpg2o"]
+[ext_resource type="PackedScene" uid="uid://bcsio6jfawoyk" path="res://sounds/sound_effects/explosion_sound_effect.tscn" id="16_m1itd"]
 
 [sub_resource type="SkeletonModification2DFABRIK" id="SkeletonModification2DFABRIK_kjqv7"]
 target_nodepath = NodePath("HeadTarget")
@@ -186,7 +187,10 @@ script = ExtResource("14_h5e14")
 effect = ExtResource("15_qpg2o")
 time = 0.5
 
+[node name="ExplosionSoundEffect" parent="." instance=ExtResource("16_m1itd")]
+
 [connection signal="killed" from="Death" to="ParticleEmitter" method="emit"]
 [connection signal="killed" from="Death" to="ScreenEffect" method="start"]
+[connection signal="killed" from="Death" to="ExplosionSoundEffect" method="play_sound"]
 
 [editable path="Skeleton2D"]
