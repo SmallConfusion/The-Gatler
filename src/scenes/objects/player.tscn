@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dxfytd662m1kl"]
+[gd_scene load_steps=33 format=3 uid="uid://dxfytd662m1kl"]
 
 [ext_resource type="Script" path="res://scripts/objects/player.gd" id="1_6snto"]
 [ext_resource type="PackedScene" uid="uid://bwbq0bher7mux" path="res://scenes/vfx/particles/player_gun_fire.tscn" id="2_gaq08"]
@@ -19,6 +19,9 @@
 [ext_resource type="Shader" path="res://shaders/heat_bar.gdshader" id="17_gwk7e"]
 [ext_resource type="Texture2D" uid="uid://bnb0ah6gxki3b" path="res://icon.png" id="18_q0vsx"]
 [ext_resource type="Script" path="res://scripts/components/keep_offset.gd" id="19_jvqpk"]
+[ext_resource type="Script" path="res://scripts/components/keep_rotation.gd" id="20_ewuuw"]
+[ext_resource type="PackedScene" uid="uid://bl51w1rfwooyf" path="res://scenes/objects/health_bar.tscn" id="21_7jphs"]
+[ext_resource type="Shader" path="res://shaders/health_bar.gdshader" id="22_uum0e"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xclvi"]
 friction = 0.0
@@ -57,6 +60,13 @@ shader = ExtResource("17_gwk7e")
 shader_parameter/t = 0.415
 shader_parameter/red = false
 shader_parameter/gradient = SubResource("GradientTexture1D_rak5h")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_awbfy"]
+resource_local_to_scene = true
+shader = ExtResource("22_uum0e")
+shader_parameter/t = 0.0
+shader_parameter/scale = Vector2(1.281, 0.1)
+shader_parameter/outline_width = 0.015
 
 [node name="Player" type="RigidBody2D" groups=["player"]]
 z_index = 5
@@ -130,7 +140,7 @@ offset = Vector2(0, 54.855)
 [node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(8.17491, 5.68267)
+position = Vector2(2.60904, 6.87737)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -139,7 +149,7 @@ index = 1
 [node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-1.04315, 6.98054)
+position = Vector2(-6.84274, 6.1069)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -148,7 +158,7 @@ index = 2
 [node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-9.77311, 5.01214)
+position = Vector2(-13.0927, 2.47894)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -157,7 +167,7 @@ index = 3
 [node name="Sprite2D5" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-13.9301, 0.698508)
+position = Vector2(-13.2165, -2.30894)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -166,7 +176,7 @@ index = 4
 [node name="Sprite2D6" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-11.5691, -3.94197)
+position = Vector2(-7.15609, -6.01644)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -175,7 +185,7 @@ index = 5
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-3.79474, -6.73795)
+position = Vector2(2.25271, -6.90879)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -184,7 +194,7 @@ index = 6
 [node name="Sprite2D7" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(5.75521, -6.38117)
+position = Vector2(10.6074, -4.56843)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -193,7 +203,7 @@ index = 7
 [node name="Sprite2D8" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(12.6122, -3.03857)
+position = Vector2(13.9988, -0.0904557)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -202,7 +212,7 @@ index = 8
 [node name="Sprite2D9" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(13.5678, 1.72581)
+position = Vector2(10.84, 4.42985)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -253,5 +263,13 @@ texture = ExtResource("18_q0vsx")
 
 [node name="KeepOffset" type="Node" parent="HeatBar"]
 script = ExtResource("19_jvqpk")
+
+[node name="KeepRotation" type="Node" parent="HeatBar"]
+script = ExtResource("20_ewuuw")
+
+[node name="HealthBar" parent="." instance=ExtResource("21_7jphs")]
+material = SubResource("ShaderMaterial_awbfy")
+position = Vector2(56, -0.000202719)
+rotation = -1.5708
 
 [editable path="Skeleton2D"]

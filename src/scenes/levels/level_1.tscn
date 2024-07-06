@@ -121,28 +121,8 @@ texture_mode = 1
 joint_mode = 1
 script = ExtResource("3_yuddh")
 
-[node name="Label2" type="Label" parent="Level"]
-offset_left = 2088.0
-offset_top = 504.0
-offset_right = 2320.0
-offset_bottom = 600.0
-text = "This person is innocent
-Do not hurt them"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="Level"]
-offset_left = 3088.0
-offset_top = 560.0
-offset_right = 3320.0
-offset_bottom = 656.0
-text = "This is a turret
-Feel free to hurt it"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Innocent" parent="." instance=ExtResource("3_2st18")]
-position = Vector2(2216, 704)
+position = Vector2(2216, 677)
 
 [node name="Player" parent="." instance=ExtResource("1_milha")]
 position = Vector2(564, 457)

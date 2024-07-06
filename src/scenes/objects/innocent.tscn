@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://byddp4ekan6dx"]
+[gd_scene load_steps=26 format=3 uid="uid://byddp4ekan6dx"]
 
 [ext_resource type="Script" path="res://scripts/components/hitbox.gd" id="1_0di2j"]
 [ext_resource type="PackedScene" uid="uid://c5sjqlc2chtq" path="res://scenes/stickman.tscn" id="1_qya6w"]
@@ -9,6 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://b231tudwbd1w0" path="res://sprites/monitor.svg" id="7_la6l2"]
 [ext_resource type="Script" path="res://scripts/components/shaker.gd" id="8_7ibif"]
 [ext_resource type="Script" path="res://scripts/components/gradient_modulate.gd" id="9_f71m8"]
+[ext_resource type="PackedScene" uid="uid://bl51w1rfwooyf" path="res://scenes/objects/health_bar.tscn" id="10_1j6x5"]
+[ext_resource type="Shader" path="res://shaders/health_bar.gdshader" id="11_dx4xg"]
+[ext_resource type="Script" path="res://scripts/components/particle_emitter.gd" id="12_kht7o"]
+[ext_resource type="PackedScene" uid="uid://3vi3fg7ssyyj" path="res://scenes/vfx/particles/explosion_small.tscn" id="13_fl3nx"]
+[ext_resource type="Script" path="res://scripts/components/screen_effect.gd" id="14_h5e14"]
+[ext_resource type="PackedScene" uid="uid://cpcmyoe3ey46k" path="res://scenes/vfx/explosion_effect.tscn" id="15_qpg2o"]
 
 [sub_resource type="SkeletonModification2DFABRIK" id="SkeletonModification2DFABRIK_kjqv7"]
 target_nodepath = NodePath("HeadTarget")
@@ -72,10 +78,17 @@ colors = PackedColorArray(1, 0.42, 0.42, 1, 1, 0.972, 0.44, 1, 0.643, 1, 0.58, 1
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_tcddu"]
 gradient = SubResource("Gradient_yixdp")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lo5rn"]
+resource_local_to_scene = true
+shader = ExtResource("11_dx4xg")
+shader_parameter/t = 0.0
+shader_parameter/scale = Vector2(1.281, 0.1)
+shader_parameter/outline_width = 0.015
+
 [node name="Innocent" type="Node2D"]
 
 [node name="Skeleton2D" parent="." instance=ExtResource("1_qya6w")]
-position = Vector2(-32, -55)
+position = Vector2(-32, -28.1)
 modification_stack = SubResource("SkeletonModificationStack2D_21a37")
 
 [node name="LowerSpineBone2D" parent="Skeleton2D" index="0"]
@@ -114,6 +127,7 @@ position = Vector2(-8, 51)
 position = Vector2(72, 29)
 
 [node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(0, 26.9)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_0di2j")
@@ -130,17 +144,17 @@ health = 10.0
 script = ExtResource("4_1sish")
 
 [node name="Table" type="Sprite2D" parent="."]
-position = Vector2(0, -32)
+position = Vector2(0, -5.1)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("5_vjqfw")
 
 [node name="Desktop" type="Sprite2D" parent="."]
-position = Vector2(-29, -80)
+position = Vector2(-29, -53.1)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("6_0k2pn")
 
 [node name="Monitor" type="Sprite2D" parent="."]
-position = Vector2(-46, -85)
+position = Vector2(-46, -58.1)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_la6l2")
 
@@ -158,5 +172,21 @@ speed = 0.1
 script = ExtResource("9_f71m8")
 nodes = [NodePath("../Skeleton2D")]
 gradient = SubResource("GradientTexture1D_tcddu")
+
+[node name="HealthBar" parent="." instance=ExtResource("10_1j6x5")]
+material = SubResource("ShaderMaterial_lo5rn")
+position = Vector2(0, 36.9)
+
+[node name="ParticleEmitter" type="Node" parent="."]
+script = ExtResource("12_kht7o")
+particles = Array[PackedScene]([ExtResource("13_fl3nx")])
+
+[node name="ScreenEffect" type="Node" parent="."]
+script = ExtResource("14_h5e14")
+effect = ExtResource("15_qpg2o")
+time = 0.5
+
+[connection signal="killed" from="Death" to="ParticleEmitter" method="emit"]
+[connection signal="killed" from="Death" to="ScreenEffect" method="start"]
 
 [editable path="Skeleton2D"]

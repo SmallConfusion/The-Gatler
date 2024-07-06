@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://bl51w1rfwooyf"]
+
+[ext_resource type="Shader" path="res://shaders/health_bar.gdshader" id="1_5ohd1"]
+[ext_resource type="Texture2D" uid="uid://bnb0ah6gxki3b" path="res://icon.png" id="2_fv4v2"]
+[ext_resource type="Script" path="res://scripts/objects/health_bar.gd" id="3_slbuc"]
+[ext_resource type="Script" path="res://scripts/components/lock_rotation.gd" id="4_fqwjt"]
+[ext_resource type="Script" path="res://scripts/components/keep_offset.gd" id="5_i3qn2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k0w45"]
+resource_local_to_scene = true
+shader = ExtResource("1_5ohd1")
+shader_parameter/t = 0.0
+shader_parameter/scale = Vector2(1.281, 0.1)
+shader_parameter/outline_width = 0.015
+
+[node name="HealthBar" type="Sprite2D"]
+z_index = 10
+material = SubResource("ShaderMaterial_k0w45")
+scale = Vector2(1.28125, 0.1)
+texture = ExtResource("2_fv4v2")
+script = ExtResource("3_slbuc")
+
+[node name="LockRotation" type="Node" parent="."]
+script = ExtResource("4_fqwjt")
+
+[node name="KeepOffset" type="Node" parent="."]
+script = ExtResource("5_i3qn2")
