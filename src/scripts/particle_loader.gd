@@ -28,4 +28,8 @@ func _spawn(p : GPUParticles2D):
 	p.z_index = -100
 	p.emitting = true
 	p.one_shot = true
-	add_child(p)
+	
+	if p.get_parent():
+		p.reparent(self, false)
+	else:
+		add_child(p)

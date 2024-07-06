@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7d6le151hsls"]
+[gd_scene load_steps=9 format=3 uid="uid://c7d6le151hsls"]
 
 [ext_resource type="Script" path="res://scripts/ui/load_scene_button.gd" id="1_3ka77"]
 [ext_resource type="PackedScene" uid="uid://d4fbjm3v6knfp" path="res://scenes/levels/level_1.tscn" id="2_u2rer"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/particle_loader.gd" id="5_k2411"]
 [ext_resource type="PackedScene" uid="uid://bp5kfcciuh753" path="res://scenes/vfx/particles/player_bullet_death.tscn" id="6_e2yeh"]
 [ext_resource type="PackedScene" uid="uid://bwbq0bher7mux" path="res://scenes/vfx/particles/player_gun_fire.tscn" id="7_31kdk"]
+[ext_resource type="PackedScene" uid="uid://3vi3fg7ssyyj" path="res://scenes/vfx/particles/explosion_small.tscn" id="8_ft86s"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -64,4 +65,4 @@ vertical_alignment = 1
 [node name="ParticleLoader" type="Node2D" parent="."]
 position = Vector2(588, 344)
 script = ExtResource("5_k2411")
-particles = Array[PackedScene]([ExtResource("6_e2yeh"), ExtResource("7_31kdk")])
+particles = Array[PackedScene]([ExtResource("6_e2yeh"), ExtResource("7_31kdk"), ExtResource("8_ft86s")])
