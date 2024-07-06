@@ -12,7 +12,6 @@ var cool_down_speed := 1.0
 
 
 func _physics_process(delta):
-	print(linear_velocity)
 	var pointing_direction := (get_global_mouse_position() - global_position)
 	var force := Vector2.ZERO
 

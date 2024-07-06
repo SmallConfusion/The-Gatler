@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d4fbjm3v6knfp"]
+[gd_scene load_steps=8 format=3 uid="uid://d4fbjm3v6knfp"]
 
 [ext_resource type="PackedScene" uid="uid://dxfytd662m1kl" path="res://scenes/objects/player.tscn" id="1_milha"]
 [ext_resource type="Script" path="res://scenes/levels/game_manager.gd" id="1_ugmde"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cj43g2wfpqj47" path="res://sprites/game/level/box.svg" id="2_t3yy4"]
 [ext_resource type="PackedScene" uid="uid://byddp4ekan6dx" path="res://scenes/objects/innocent.tscn" id="3_2st18"]
 [ext_resource type="Script" path="res://scripts/objects/level_wall_line.gd" id="3_yuddh"]
+[ext_resource type="PackedScene" uid="uid://c6p87lemetbn0" path="res://scenes/objects/enemies/sentry.tscn" id="7_r6qyq"]
 
 [node name="Node2D" type="Node2D" groups=["game_manager"]]
 script = ExtResource("1_ugmde")
@@ -81,3 +82,7 @@ position = Vector2(2216, 704)
 
 [node name="Player" parent="." instance=ExtResource("1_milha")]
 position = Vector2(564, 457)
+
+[node name="Sentry" parent="." instance=ExtResource("7_r6qyq")]
+position = Vector2(3216, 704)
+rotation = 3.14159
