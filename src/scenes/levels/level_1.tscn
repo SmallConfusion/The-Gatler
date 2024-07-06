@@ -19,6 +19,7 @@ polygon = PackedVector2Array(8, 0, 0, 720, 1280, 720, 1408, 600, 1576, 600, 1576
 
 [node name="Line2D" type="Line2D" parent="Level"]
 modulate = Color(0.523376, 0.4064, 0.20977, 1)
+z_index = 5
 texture_repeat = 2
 material = SubResource("ShaderMaterial_wfsef")
 position = Vector2(0, 720)
@@ -29,11 +30,11 @@ texture_mode = 1
 joint_mode = 1
 script = ExtResource("3_yuddh")
 
-[node name="Player" parent="." instance=ExtResource("1_milha")]
-position = Vector2(719, 354)
-
 [node name="Innocent" parent="." instance=ExtResource("3_2st18")]
-position = Vector2(-256, 645)
+position = Vector2(1032, 705)
 
 [node name="Sentry" parent="." instance=ExtResource("4_1juoe")]
 position = Vector2(476, 16)
+
+[node name="Player" parent="." instance=ExtResource("1_milha")]
+position = Vector2(564, 457)
