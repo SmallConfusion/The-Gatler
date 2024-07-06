@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwbq0bher7mux"]
+
+[ext_resource type="Texture2D" uid="uid://dep5bfdiq3tsl" path="res://sprites/game/gun/shell.svg" id="1_6g3qs"]
+[ext_resource type="Script" path="res://scripts/components/paticles_no_autoplay.gd" id="2_tqj6t"]
+
+[sub_resource type="Curve" id="Curve_ucmcd"]
+_data = [Vector2(0, 0.667732), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_3o3nf"]
+curve = SubResource("Curve_ucmcd")
+
+[sub_resource type="Gradient" id="Gradient_eq8n1"]
+colors = PackedColorArray(0.762404, 0.762404, 0.762404, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0s8vt"]
+gradient = SubResource("Gradient_eq8n1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ljc8a"]
+lifetime_randomness = 0.7
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 3.65
+angle_min = -720.0
+angle_max = 720.0
+inherit_velocity_ratio = 1.0
+direction = Vector3(-1, 0, 0)
+spread = 60.0
+initial_velocity_min = 300.0
+initial_velocity_max = 500.0
+angular_velocity_min = -2000.0
+angular_velocity_max = 2000.0
+gravity = Vector3(0, 500, 0)
+damping_min = 113.335
+damping_max = 213.0
+scale_min = 0.3
+scale_max = 0.3
+color_initial_ramp = SubResource("GradientTexture1D_0s8vt")
+alpha_curve = SubResource("CurveTexture_3o3nf")
+
+[node name="PlayerGunFire" type="GPUParticles2D"]
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_ljc8a")
+texture = ExtResource("1_6g3qs")
+fixed_fps = 60
+
+[node name="ParticlesNoAutoplay" type="Node" parent="."]
+script = ExtResource("2_tqj6t")

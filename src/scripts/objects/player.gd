@@ -29,8 +29,10 @@ func _physics_process(delta):
 		$Gun.fire_cooldown()
 		
 		gun_heat += delta * heat_up_speed
+		$PlayerGunFire.emitting = true
 	else:
 		gun_heat -= delta * cool_down_speed
+		$PlayerGunFire.emitting = false
 	
 	gun_heat = clamp(gun_heat, 0, 1)
 	

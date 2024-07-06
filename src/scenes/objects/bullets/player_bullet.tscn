@@ -1,14 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://f2no3a12nwma"]
+[gd_scene load_steps=12 format=3 uid="uid://f2no3a12nwma"]
 
 [ext_resource type="Script" path="res://scripts/objects/bullet.gd" id="1_lcclh"]
 [ext_resource type="Texture2D" uid="uid://c4oqke5doi8wh" path="res://sprites/game/gun/smaller_bullet.svg" id="2_q588a"]
 [ext_resource type="Script" path="res://scripts/components/bullet_movement.gd" id="3_b6pxg"]
 [ext_resource type="Script" path="res://scripts/components/free_offscreen.gd" id="3_p0map"]
-[ext_resource type="Script" path="res://scripts/components/death.gd" id="5_llu0b"]
 [ext_resource type="Script" path="res://scripts/components/hurtbox.gd" id="6_taqbn"]
 [ext_resource type="Script" path="res://scripts/components/health.gd" id="6_yiw07"]
 [ext_resource type="Script" path="res://scripts/components/hitbox.gd" id="7_47vwf"]
 [ext_resource type="Script" path="res://scripts/components/hit_staticbody.gd" id="8_f0q7g"]
+[ext_resource type="Script" path="res://scripts/components/death_particles.gd" id="9_vftqb"]
+[ext_resource type="PackedScene" uid="uid://bp5kfcciuh753" path="res://scenes/vfx/particles/player_bullet_death.tscn" id="10_vjeac"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_idbpn"]
 radius = 4.0
@@ -25,9 +26,6 @@ script = ExtResource("3_p0map")
 
 [node name="BulletMovement" type="Node" parent="."]
 script = ExtResource("3_b6pxg")
-
-[node name="Death" type="Node" parent="."]
-script = ExtResource("5_llu0b")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("6_yiw07")
@@ -56,3 +54,7 @@ script = ExtResource("8_f0q7g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitStaticbody"]
 shape = SubResource("CircleShape2D_idbpn")
+
+[node name="DeathParticles" type="Node" parent="."]
+script = ExtResource("9_vftqb")
+particles = Array[PackedScene]([ExtResource("10_vjeac")])

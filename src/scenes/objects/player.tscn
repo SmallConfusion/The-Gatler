@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://dxfytd662m1kl"]
+[gd_scene load_steps=23 format=3 uid="uid://dxfytd662m1kl"]
 
 [ext_resource type="Script" path="res://scripts/objects/player.gd" id="1_6snto"]
+[ext_resource type="PackedScene" uid="uid://bwbq0bher7mux" path="res://scenes/vfx/particles/player_gun_fire.tscn" id="2_gaq08"]
 [ext_resource type="PackedScene" uid="uid://c5sjqlc2chtq" path="res://scenes/stickman.tscn" id="2_ycj2h"]
 [ext_resource type="Script" path="res://scripts/components/gun.gd" id="3_exkqj"]
 [ext_resource type="Texture2D" uid="uid://qyg67a2l4b5m" path="res://sprites/game/gun/foothold.svg" id="3_ignr3"]
@@ -48,6 +49,9 @@ continuous_cd = 1
 linear_damp = 0.2
 angular_damp = 1e+10
 script = ExtResource("1_6snto")
+
+[node name="PlayerGunFire" parent="." instance=ExtResource("2_gaq08")]
+position = Vector2(-32, 0.00011584)
 
 [node name="Skeleton2D" parent="." instance=ExtResource("2_ycj2h")]
 position = Vector2(-67, 0.000242539)
@@ -108,7 +112,7 @@ offset = Vector2(0, 54.855)
 [node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(5.23319, -6.49257)
+position = Vector2(-6.4681, -6.20813)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -117,7 +121,7 @@ index = 1
 [node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(12.3555, -3.29168)
+position = Vector2(3.02617, -6.83451)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -126,7 +130,7 @@ index = 2
 [node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(13.6966, 1.44942)
+position = Vector2(11.1045, -4.26295)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -135,7 +139,7 @@ index = 3
 [node name="Sprite2D5" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(8.62886, 5.51232)
+position = Vector2(13.9869, 0.303295)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -144,7 +148,7 @@ index = 4
 [node name="Sprite2D6" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-0.476419, 6.99595)
+position = Vector2(10.3246, 4.72763)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -153,7 +157,7 @@ index = 5
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-9.35877, 5.20609)
+position = Vector2(1.83142, 6.93985)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -162,7 +166,7 @@ index = 6
 [node name="Sprite2D7" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-13.8621, 0.980245)
+position = Vector2(-7.51875, 5.90484)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -171,7 +175,7 @@ index = 7
 [node name="Sprite2D8" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-11.8791, -3.70427)
+position = Vector2(-13.3508, 2.10689)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -180,7 +184,7 @@ index = 8
 [node name="Sprite2D9" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-4.33782, -6.65551)
+position = Vector2(-12.9359, -2.6769)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")

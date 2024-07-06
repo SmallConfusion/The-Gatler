@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://bp5kfcciuh753"]
+
+[ext_resource type="Texture2D" uid="uid://c4oqke5doi8wh" path="res://sprites/game/gun/smaller_bullet.svg" id="1_3anmy"]
+[ext_resource type="Script" path="res://scripts/components/particles_autoplay.gd" id="1_vanxj"]
+[ext_resource type="Script" path="res://scripts/components/particles_free_on_end.gd" id="2_o1cpd"]
+[ext_resource type="Script" path="res://scripts/components/particles_oneshot.gd" id="4_6kdo3"]
+
+[sub_resource type="Curve" id="Curve_p4dy3"]
+_data = [Vector2(0, 0.626198), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_kbveb"]
+curve = SubResource("Curve_p4dy3")
+
+[sub_resource type="Gradient" id="Gradient_uqswj"]
+colors = PackedColorArray(0.356863, 0.356863, 0.356863, 0.556863, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vkwrb"]
+gradient = SubResource("Gradient_uqswj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8pmys"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 3.0
+angle_min = -45.0
+angle_max = 45.0
+spread = 180.0
+initial_velocity_min = 210.95
+initial_velocity_max = 450.55
+gravity = Vector3(0, 2000, 0)
+damping_min = 500.0
+damping_max = 500.0
+scale_min = 0.1
+scale_max = 0.1
+color_initial_ramp = SubResource("GradientTexture1D_vkwrb")
+alpha_curve = SubResource("CurveTexture_kbveb")
+
+[node name="PlayerBulletDeath" type="GPUParticles2D"]
+z_index = 10
+z_as_relative = false
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_8pmys")
+texture = ExtResource("1_3anmy")
+lifetime = 0.2
+explosiveness = 0.94
+fixed_fps = 60
+visibility_rect = Rect2(-94.1785, -55.3249, 170.494, 187.508)
+trail_enabled = true
+trail_lifetime = 0.04
+trail_sections = 4
+trail_section_subdivisions = 2
+
+[node name="ParticlesAutoplay" type="Node" parent="."]
+script = ExtResource("1_vanxj")
+
+[node name="ParticlesFreeOnEnd" type="Node" parent="."]
+script = ExtResource("2_o1cpd")
+
+[node name="ParticlesOneshot" type="Node" parent="."]
+script = ExtResource("4_6kdo3")
