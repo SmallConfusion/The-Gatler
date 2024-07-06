@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://f2no3a12nwma"]
+[gd_scene load_steps=11 format=3 uid="uid://f2no3a12nwma"]
 
 [ext_resource type="Script" path="res://scripts/objects/bullet.gd" id="1_lcclh"]
 [ext_resource type="Texture2D" uid="uid://c4oqke5doi8wh" path="res://sprites/game/gun/smaller_bullet.svg" id="2_q588a"]
 [ext_resource type="Script" path="res://scripts/components/bullet_movement.gd" id="3_b6pxg"]
+[ext_resource type="Script" path="res://scripts/components/free_offscreen.gd" id="3_p0map"]
 [ext_resource type="Script" path="res://scripts/components/death.gd" id="5_llu0b"]
 [ext_resource type="Script" path="res://scripts/components/hurtbox.gd" id="6_taqbn"]
 [ext_resource type="Script" path="res://scripts/components/health.gd" id="6_yiw07"]
@@ -18,6 +19,9 @@ script = ExtResource("1_lcclh")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_q588a")
+
+[node name="FreeOffscreen" type="Node2D" parent="."]
+script = ExtResource("3_p0map")
 
 [node name="BulletMovement" type="Node" parent="."]
 script = ExtResource("3_b6pxg")

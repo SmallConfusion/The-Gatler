@@ -1,4 +1,5 @@
 extends Line2D
+class_name WallLine
 
 
 func _ready():
