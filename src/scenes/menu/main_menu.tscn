@@ -36,6 +36,7 @@ scene = ExtResource("2_u2rer")
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 visible = false
 script = ExtResource("3_pj0m8")
+debug = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasGroup"]
 anchors_preset = 15
