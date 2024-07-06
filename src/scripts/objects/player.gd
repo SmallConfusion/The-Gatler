@@ -51,6 +51,7 @@ func _physics_process(delta):
 	
 	if gun_heat > 1.0:
 		locked = true
+		$GunLockSoundEffect.play_sound()
 	
 	gun_heat = clamp(gun_heat, 0, 1)
 	

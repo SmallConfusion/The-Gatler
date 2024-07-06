@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dxfytd662m1kl"]
+[gd_scene load_steps=40 format=3 uid="uid://dxfytd662m1kl"]
 
 [ext_resource type="Script" path="res://scripts/objects/player.gd" id="1_6snto"]
 [ext_resource type="PackedScene" uid="uid://bwbq0bher7mux" path="res://scenes/vfx/particles/player_gun_fire.tscn" id="2_gaq08"]
@@ -28,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://ddnuc7k00x4l4" path="res://sounds/sound_files/shot_hit2.ogg" id="25_r86kj"]
 [ext_resource type="AudioStream" uid="uid://d3qlu5htvk010" path="res://sounds/sound_files/shot_hit3.ogg" id="26_b4mp0"]
 [ext_resource type="AudioStream" uid="uid://fq1m43lqjng7" path="res://sounds/sound_files/shot_hit4.ogg" id="27_s7tge"]
+[ext_resource type="AudioStream" uid="uid://bj6gtq88sbath" path="res://sounds/sound_files/gun_lock.ogg" id="29_nbpdh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xclvi"]
 friction = 0.0
@@ -146,7 +147,7 @@ offset = Vector2(0, 54.855)
 [node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-12.612, -3.03885)
+position = Vector2(-12.4194, 3.23101)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -155,7 +156,7 @@ index = 1
 [node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-5.75465, -6.3813)
+position = Vector2(-13.6675, -1.51643)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -164,7 +165,7 @@ index = 2
 [node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(3.79533, -6.73787)
+position = Vector2(-8.52046, -5.55432)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -173,7 +174,7 @@ index = 3
 [node name="Sprite2D5" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(11.5694, -3.94171)
+position = Vector2(0.61344, -6.99328)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -182,7 +183,7 @@ index = 4
 [node name="Sprite2D6" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(13.9301, 0.698814)
+position = Vector2(9.46031, -5.16001)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -191,7 +192,7 @@ index = 5
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(9.77267, 5.01236)
+position = Vector2(13.8806, -0.912309)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -200,7 +201,7 @@ index = 6
 [node name="Sprite2D7" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(1.04253, 6.98056)
+position = Vector2(11.806, 3.76227)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -209,7 +210,7 @@ index = 7
 [node name="Sprite2D8" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-8.17541, 5.68249)
+position = Vector2(4.20724, 6.67644)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -218,7 +219,7 @@ index = 8
 [node name="Sprite2D9" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-13.568, 1.72551)
+position = Vector2(-5.36013, 6.46663)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -288,5 +289,13 @@ rotation = -1.5708
 [node name="ShotHitSoundEffect" type="Node" parent="."]
 script = ExtResource("23_pd27s")
 sounds = Array[AudioStream]([ExtResource("24_dcesl"), ExtResource("25_r86kj"), ExtResource("26_b4mp0"), ExtResource("27_s7tge")])
+
+[node name="GunLockSoundEffect" type="Node" parent="."]
+script = ExtResource("23_pd27s")
+sounds = Array[AudioStream]([ExtResource("29_nbpdh")])
+min_volume = 9.0
+max_volume = 9.0
+min_pitch = 0.95
+max_pitch = 1.05
 
 [editable path="Skeleton2D"]
