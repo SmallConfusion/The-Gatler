@@ -34,8 +34,11 @@ func _physics_process(delta):
 	else:
 		gun_heat -= delta * cool_down_speed
 		$PlayerGunFire.emitting = false
-		if gun_heat <= 0:
+		if gun_heat <= 0 and locked:
 			locked = false
+			
+			if Input.is_action_pressed("Fire"):
+				start_audio()
 	
 	if gun_heat > 1.0:
 		locked = true
@@ -46,6 +49,8 @@ func _physics_process(delta):
 	apply_central_force(force)
 	
 	$HeatBar.material.set_shader_parameter("t", gun_heat)
+	$HeatBar.material.set_shader_parameter("red", locked)
+	
 	RenderingServer.global_shader_parameter_set("gun_heat", gun_heat)
 	
 	$Skeleton2D/HeadTarget.global_position = lerp($Skeleton2D/HeadTarget.global_position, global_position + Vector2(100, 0).rotated((-pointing_direction).angle()), delta * 20)

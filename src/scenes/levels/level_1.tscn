@@ -14,7 +14,7 @@ script = ExtResource("1_ugmde")
 [node name="Level" type="Node2D" parent="."]
 
 [node name="Polygon2D" type="Polygon2D" parent="Level"]
-polygon = PackedVector2Array(16, 16, 16, 704, 1280, 720, 1272, 592, 1712, 592, 1728, 712, 3696, 720, 3696, 8)
+polygon = PackedVector2Array(16, 16, 16, 704, 1280, 720, 1272, 592, 1712, 592, 1728, 712, 4280, 704, 4280, -856, 3704, -856, 2768, -856, 2768, -312, 3704, -312, 3696, 8)
 
 [node name="Floor" type="Line2D" parent="Level"]
 modulate = Color(0.523376, 0.4064, 0.20977, 1)
@@ -22,7 +22,7 @@ z_index = 5
 texture_repeat = 2
 material = ExtResource("2_p5i3g")
 position = Vector2(0, 720)
-points = PackedVector2Array(16, 0, 1280, 0, 1280, -128, 1720, -128, 1720, 0, 3696, 0)
+points = PackedVector2Array(16, 0, 1280, 0, 1280, -128, 1720, -128, 1720, 0, 4280, 0)
 width = 32.0
 texture = ExtResource("2_t3yy4")
 texture_mode = 1
@@ -34,7 +34,20 @@ modulate = Color(0.912289, 0.912289, 0.912289, 1)
 z_index = 5
 texture_repeat = 2
 material = ExtResource("2_p5i3g")
-points = PackedVector2Array(3696, 0, 16, 0)
+points = PackedVector2Array(3696, -64, 3696, 0, 16, 0)
+width = 32.0
+texture = ExtResource("2_t3yy4")
+texture_mode = 1
+joint_mode = 1
+script = ExtResource("3_yuddh")
+
+[node name="WallLine5" type="Line2D" parent="Level"]
+modulate = Color(0.912289, 0.912289, 0.912289, 1)
+z_index = 5
+texture_repeat = 2
+material = ExtResource("2_p5i3g")
+position = Vector2(584, -872)
+points = PackedVector2Array(3696, 0, 2184, 0)
 width = 32.0
 texture = ExtResource("2_t3yy4")
 texture_mode = 1
@@ -58,9 +71,50 @@ modulate = Color(0.818155, 0.832719, 0.637525, 1)
 z_index = 5
 texture_repeat = 2
 material = ExtResource("2_p5i3g")
-position = Vector2(3712, 720)
+position = Vector2(4296, 720)
 rotation = 3.14159
-points = PackedVector2Array(0, 16, 0, 444.475, 0, 704)
+points = PackedVector2Array(0, 16, 0, 1576)
+width = 32.0
+texture = ExtResource("2_t3yy4")
+texture_mode = 1
+joint_mode = 1
+script = ExtResource("3_yuddh")
+
+[node name="Floor2" type="Line2D" parent="Level"]
+modulate = Color(0.523376, 0.4064, 0.20977, 1)
+z_index = 5
+texture_repeat = 2
+material = ExtResource("2_p5i3g")
+position = Vector2(512, -208)
+points = PackedVector2Array(2256, -104, 3184, -104, 3184, -48)
+width = 32.0
+texture = ExtResource("2_t3yy4")
+texture_mode = 1
+joint_mode = 1
+script = ExtResource("3_yuddh")
+
+[node name="WallLine4" type="Line2D" parent="Level"]
+modulate = Color(0.818155, 0.832719, 0.637525, 1)
+z_index = 5
+texture_repeat = 2
+material = ExtResource("2_p5i3g")
+position = Vector2(3832, 0)
+rotation = 3.14159
+points = PackedVector2Array(135.999, 296, 136, 16.0003)
+width = 32.0
+texture = ExtResource("2_t3yy4")
+texture_mode = 1
+joint_mode = 1
+script = ExtResource("3_yuddh")
+
+[node name="WallLine6" type="Line2D" parent="Level"]
+modulate = Color(0.818155, 0.832719, 0.637525, 1)
+z_index = 5
+texture_repeat = 2
+material = ExtResource("2_p5i3g")
+position = Vector2(2784, -624)
+rotation = 9.42476
+points = PackedVector2Array(31.998, 232, 32.0027, -296)
 width = 32.0
 texture = ExtResource("2_t3yy4")
 texture_mode = 1
