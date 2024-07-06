@@ -87,7 +87,6 @@ particles = Array[PackedScene]([ExtResource("9_uc1mt")])
 [node name="ScreenEffect" type="Node" parent="."]
 script = ExtResource("12_vtg0j")
 effect = ExtResource("12_u5il0")
-time = 0.5
 
 [node name="HealthBar" parent="." instance=ExtResource("13_ooswl")]
 material = SubResource("ShaderMaterial_y2fdq")

@@ -1,0 +1,92 @@
+[gd_scene load_steps=19 format=3 uid="uid://dx6bhit61qwfj"]
+
+[ext_resource type="Shader" path="res://shaders/servers.gdshader" id="1_d3g2l"]
+[ext_resource type="Texture2D" uid="uid://bxv31y8pj632q" path="res://sprites/game/servers.svg" id="2_7uu6h"]
+[ext_resource type="Script" path="res://scripts/components/hitbox.gd" id="3_inf28"]
+[ext_resource type="Script" path="res://scripts/components/health.gd" id="4_8r8qi"]
+[ext_resource type="PackedScene" uid="uid://bl51w1rfwooyf" path="res://scenes/objects/health_bar.tscn" id="5_kqfw3"]
+[ext_resource type="Shader" path="res://shaders/health_bar.gdshader" id="6_0vksu"]
+[ext_resource type="Script" path="res://scripts/components/death.gd" id="7_vcsqx"]
+[ext_resource type="Script" path="res://scripts/components/particle_emitter.gd" id="8_dlimn"]
+[ext_resource type="PackedScene" uid="uid://b2tqactjkiajh" path="res://scenes/vfx/particles/explosion_large.tscn" id="9_kgoaj"]
+[ext_resource type="Script" path="res://scripts/components/screen_effect.gd" id="10_t03r3"]
+[ext_resource type="PackedScene" uid="uid://3qw8pbmjfhiu" path="res://scenes/vfx/explosion_effect_large.tscn" id="11_e42c5"]
+[ext_resource type="PackedScene" uid="uid://bcsio6jfawoyk" path="res://sounds/sound_effects/explosion_sound_effect.tscn" id="12_mxkpw"]
+
+[sub_resource type="Gradient" id="Gradient_1btgs"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.133621, 0.310345, 0.556035, 0.706897, 0.883621)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0.35, 1, 0, 1, 0.0833335, 0, 1, 1, 1, 0, 0.9, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ejfwb"]
+noise_type = 5
+frequency = 0.0345
+fractal_octaves = 2
+fractal_lacunarity = 1.465
+fractal_gain = 5.89
+fractal_weighted_strength = 0.6
+domain_warp_amplitude = 29.035
+domain_warp_frequency = 0.14
+domain_warp_fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_a8v42"]
+seamless = true
+color_ramp = SubResource("Gradient_1btgs")
+noise = SubResource("FastNoiseLite_ejfwb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7hvls"]
+shader = ExtResource("1_d3g2l")
+shader_parameter/light_color = SubResource("NoiseTexture2D_a8v42")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_toltr"]
+size = Vector2(173, 142)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5qiua"]
+resource_local_to_scene = true
+shader = ExtResource("6_0vksu")
+shader_parameter/t = 0.0
+shader_parameter/scale = Vector2(1.281, 0.1)
+shader_parameter/outline_width = 0.015
+
+[node name="Servers" type="Node2D"]
+position = Vector2(2, 20)
+
+[node name="Servers" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7hvls")
+position = Vector2(1, -19)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_7uu6h")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_inf28")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(1.5, -19)
+shape = SubResource("RectangleShape2D_toltr")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("4_8r8qi")
+health = 20.0
+
+[node name="HealthBar" parent="." instance=ExtResource("5_kqfw3")]
+material = SubResource("ShaderMaterial_5qiua")
+position = Vector2(0, 68)
+
+[node name="Death" type="Node" parent="."]
+script = ExtResource("7_vcsqx")
+
+[node name="ParticleEmitter" type="Node" parent="."]
+script = ExtResource("8_dlimn")
+particles = Array[PackedScene]([ExtResource("9_kgoaj")])
+
+[node name="ScreenEffect" type="Node" parent="."]
+script = ExtResource("10_t03r3")
+effect = ExtResource("11_e42c5")
+
+[node name="ExplosionSoundEffect" parent="." instance=ExtResource("12_mxkpw")]
+
+[connection signal="killed" from="Death" to="ParticleEmitter" method="emit"]
+[connection signal="killed" from="Death" to="ScreenEffect" method="start"]
+[connection signal="killed" from="Death" to="ExplosionSoundEffect" method="play_sound"]

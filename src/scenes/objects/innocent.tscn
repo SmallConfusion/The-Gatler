@@ -185,7 +185,6 @@ particles = Array[PackedScene]([ExtResource("13_fl3nx")])
 [node name="ScreenEffect" type="Node" parent="."]
 script = ExtResource("14_h5e14")
 effect = ExtResource("15_qpg2o")
-time = 0.5
 
 [node name="ExplosionSoundEffect" parent="." instance=ExtResource("16_m1itd")]
 
