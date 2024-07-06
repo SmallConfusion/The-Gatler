@@ -82,3 +82,10 @@ common/physics_ticks_per_second=120
 [rendering]
 
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+
+[shader_globals]
+
+gun_heat={
+"type": "float",
+"value": 1.0
+}

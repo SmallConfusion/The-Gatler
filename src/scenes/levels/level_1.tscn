@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://d4fbjm3v6knfp"]
 
 [ext_resource type="PackedScene" uid="uid://dxfytd662m1kl" path="res://scenes/objects/player.tscn" id="1_milha"]
-[ext_resource type="Material" uid="uid://clhs8lek3u31k" path="res://wall_fade.tres" id="1_oughd"]
 [ext_resource type="Script" path="res://scenes/levels/game_manager.gd" id="1_ugmde"]
+[ext_resource type="Material" uid="uid://clhs8lek3u31k" path="res://shaders/wall_fade.tres" id="2_3bq5y"]
 [ext_resource type="Texture2D" uid="uid://cj43g2wfpqj47" path="res://sprites/game/level/box.svg" id="2_t3yy4"]
 [ext_resource type="PackedScene" uid="uid://byddp4ekan6dx" path="res://scenes/objects/innocent.tscn" id="3_2st18"]
 [ext_resource type="Script" path="res://scripts/objects/level_wall_line.gd" id="3_yuddh"]
@@ -19,7 +19,7 @@ polygon = PackedVector2Array(16, 16, 16, 704, 1280, 720, 1272, 592, 1712, 592, 1
 modulate = Color(0.523376, 0.4064, 0.20977, 1)
 z_index = 5
 texture_repeat = 2
-material = ExtResource("1_oughd")
+material = ExtResource("2_3bq5y")
 position = Vector2(0, 720)
 points = PackedVector2Array(16, 0, 1280, 0, 1280, -128, 1720, -128, 1720, 0, 3696, 0)
 width = 32.0
@@ -32,7 +32,7 @@ script = ExtResource("3_yuddh")
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
 z_index = 5
 texture_repeat = 2
-material = ExtResource("1_oughd")
+material = ExtResource("2_3bq5y")
 points = PackedVector2Array(3696, 0, 16, 0)
 width = 32.0
 texture = ExtResource("2_t3yy4")
@@ -44,7 +44,7 @@ script = ExtResource("3_yuddh")
 modulate = Color(0.818155, 0.832719, 0.637525, 1)
 z_index = 5
 texture_repeat = 2
-material = ExtResource("1_oughd")
+material = ExtResource("2_3bq5y")
 points = PackedVector2Array(0, 16, 0, 704)
 width = 32.0
 texture = ExtResource("2_t3yy4")
@@ -56,7 +56,7 @@ script = ExtResource("3_yuddh")
 modulate = Color(0.818155, 0.832719, 0.637525, 1)
 z_index = 5
 texture_repeat = 2
-material = ExtResource("1_oughd")
+material = ExtResource("2_3bq5y")
 position = Vector2(3712, 720)
 rotation = 3.14159
 points = PackedVector2Array(0, 16, 0, 444.475, 0, 704)

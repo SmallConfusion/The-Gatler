@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dyb6s5waic3vt"]
+
+[ext_resource type="Shader" path="res://shaders/gun_glow.gdshader" id="1_4gbna"]
+
+[resource]
+shader = ExtResource("1_4gbna")
