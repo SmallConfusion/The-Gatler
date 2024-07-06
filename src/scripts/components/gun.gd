@@ -1,6 +1,8 @@
 extends Node2D
 class_name Gun
 
+signal fired
+
 @export var bullet_scene : PackedScene
 
 @export var cooldown : float = 1.
@@ -24,6 +26,8 @@ func fire_cooldown():
 
 
 func _fire():
+	emit_signal("fired")
+	
 	var bullet = bullet_scene.instantiate()
 	bullet.global_position = global_position
 	

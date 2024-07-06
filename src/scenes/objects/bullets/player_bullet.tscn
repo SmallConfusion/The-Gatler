@@ -28,9 +28,6 @@ script = ExtResource("1_lcclh")
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_q588a")
 
-[node name="FreeOffscreen" type="Node2D" parent="."]
-script = ExtResource("3_p0map")
-
 [node name="BulletMovement" type="Node" parent="."]
 script = ExtResource("3_b6pxg")
 
@@ -78,6 +75,10 @@ max_volume = -5.0
 [node name="ScreenShake" type="Node" parent="."]
 script = ExtResource("17_a4bkt")
 group_to_shake = "shake1"
+
+[node name="FreeOffscreen" type="Node" parent="."]
+script = ExtResource("3_p0map")
+margin = 128
 
 [connection signal="hit" from="Hurtbox" to="SoundEffect" method="play_sound"]
 [connection signal="hit" from="Hurtbox" to="ScreenShake" method="shake"]

@@ -1,6 +1,11 @@
 extends Gun
 class_name AutofireGun
 
+@export var offscreen : Offscreen
+
+
 func _process(delta):
 	super(delta)
-	fire_cooldown()
+	
+	if offscreen.is_onscreen():
+		fire_cooldown()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c6p87lemetbn0"]
+[gd_scene load_steps=22 format=3 uid="uid://c6p87lemetbn0"]
 
 [ext_resource type="Script" path="res://scripts/components/enemy/aim.gd" id="1_6ojdo"]
 [ext_resource type="Texture2D" uid="uid://dvc105lcjqp7e" path="res://sprites/game/sentry/sentry_base.svg" id="1_b3206"]
@@ -15,6 +15,9 @@
 [ext_resource type="Shader" path="res://shaders/health_bar.gdshader" id="13_fq83w"]
 [ext_resource type="PackedScene" uid="uid://bl51w1rfwooyf" path="res://scenes/objects/health_bar.tscn" id="13_ooswl"]
 [ext_resource type="PackedScene" uid="uid://bcsio6jfawoyk" path="res://sounds/sound_effects/explosion_sound_effect.tscn" id="15_ru08q"]
+[ext_resource type="Script" path="res://scripts/components/sound_effect.gd" id="16_jy8w5"]
+[ext_resource type="AudioStream" uid="uid://d2jt3xxqlc6q6" path="res://sounds/sound_files/shoot_laser_heavy.ogg" id="17_tfaf7"]
+[ext_resource type="Script" path="res://scripts/components/offscreen.gd" id="18_uh2d6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ronsb"]
 size = Vector2(69, 18)
@@ -49,9 +52,10 @@ shape = SubResource("RectangleShape2D_ronsb")
 position = Vector2(0, -0.549999)
 script = ExtResource("1_6ojdo")
 
-[node name="AutofireGun" type="Node2D" parent="Aim"]
+[node name="AutofireGun" type="Node2D" parent="Aim" node_paths=PackedStringArray("offscreen")]
 position = Vector2(53, 0)
 script = ExtResource("3_66cjj")
+offscreen = NodePath("../../Offscreen")
 bullet_scene = ExtResource("4_54mxp")
 
 [node name="SentryGun" type="Sprite2D" parent="Aim"]
@@ -91,6 +95,17 @@ position = Vector2(0, -49)
 
 [node name="ExplosionSoundEffect" parent="." instance=ExtResource("15_ru08q")]
 
+[node name="ShootSoundEffect" type="Node" parent="."]
+script = ExtResource("16_jy8w5")
+sounds = Array[AudioStream]([ExtResource("17_tfaf7")])
+min_volume = -5.0
+max_volume = -8.0
+min_pitch = 0.8
+
+[node name="Offscreen" type="Node" parent="."]
+script = ExtResource("18_uh2d6")
+
+[connection signal="fired" from="Aim/AutofireGun" to="ShootSoundEffect" method="play_sound"]
 [connection signal="killed" from="Death" to="ParticleEmitter" method="emit"]
 [connection signal="killed" from="Death" to="ScreenEffect" method="start"]
 [connection signal="killed" from="Death" to="ExplosionSoundEffect" method="play_sound"]
