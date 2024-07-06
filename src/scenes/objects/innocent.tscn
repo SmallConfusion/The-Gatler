@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://byddp4ekan6dx"]
+[gd_scene load_steps=19 format=3 uid="uid://byddp4ekan6dx"]
 
 [ext_resource type="Script" path="res://scripts/components/hitbox.gd" id="1_0di2j"]
 [ext_resource type="PackedScene" uid="uid://c5sjqlc2chtq" path="res://scenes/stickman.tscn" id="1_qya6w"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bt5gkdainwgc8" path="res://sprites/desktop.svg" id="6_0k2pn"]
 [ext_resource type="Texture2D" uid="uid://b231tudwbd1w0" path="res://sprites/monitor.svg" id="7_la6l2"]
 [ext_resource type="Script" path="res://scripts/components/shaker.gd" id="8_7ibif"]
+[ext_resource type="Script" path="res://scripts/components/gradient_modulate.gd" id="9_f71m8"]
 
 [sub_resource type="SkeletonModification2DFABRIK" id="SkeletonModification2DFABRIK_kjqv7"]
 target_nodepath = NodePath("HeadTarget")
@@ -63,6 +64,13 @@ modifications/4 = SubResource("SkeletonModification2DTwoBoneIK_t3t3e")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6ebx"]
 size = Vector2(147, 64)
+
+[sub_resource type="Gradient" id="Gradient_yixdp"]
+offsets = PackedFloat32Array(0, 0.246377, 0.442029, 0.623188, 0.782609, 1)
+colors = PackedColorArray(1, 0.42, 0.42, 1, 1, 0.972, 0.44, 1, 0.643, 1, 0.58, 1, 0.41, 0.419833, 1, 1, 0.872, 0.52, 1, 1, 1, 0.53, 0.984333, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tcddu"]
+gradient = SubResource("Gradient_yixdp")
 
 [node name="Innocent" type="Node2D"]
 
@@ -145,5 +153,10 @@ script = ExtResource("8_7ibif")
 shake = [NodePath("../Skeleton2D/LeftArmTarget"), NodePath("../Skeleton2D/RightArmTarget"), NodePath("../Skeleton2D/LeftLegTarget"), NodePath("../Skeleton2D/RightLegTarget"), NodePath("../Skeleton2D/HeadTarget")]
 intensity = 10.0
 speed = 0.1
+
+[node name="GradientModulate" type="Node" parent="." node_paths=PackedStringArray("nodes")]
+script = ExtResource("9_f71m8")
+nodes = [NodePath("../Skeleton2D")]
+gradient = SubResource("GradientTexture1D_tcddu")
 
 [editable path="Skeleton2D"]
