@@ -32,6 +32,8 @@ func _physics_process(delta):
 	else:
 		gun_heat -= delta * cool_down_speed
 	
+	gun_heat = clamp(gun_heat, 0, 1)
+	
 	apply_central_force(force)
 	
 	RenderingServer.global_shader_parameter_set("gun_heat", gun_heat)
