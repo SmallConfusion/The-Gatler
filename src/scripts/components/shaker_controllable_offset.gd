@@ -1,24 +1,18 @@
-extends Node
-class_name Shaker
-
-@export var shake_nodes : Array[Node2D]
-@export var intensity := 1.0
-@export var rotation_intensity := 0.
-@export var speed := 1.0
-
-var op : Array[Vector2]
-var o_rotation : Array[float]
-
-var noise := FastNoiseLite.new()
+extends ShakerControllable
+class_name ShakerControllableOffset
 
 
 func _ready():
+	intensity = 0
+	speed = 0
+	
 	noise.seed = randi()
 	noise.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
 	
 	for node in shake_nodes:
-		op.append(node.position)
+		op.append(node.offset)
 		o_rotation.append(node.rotation)
+
 
 func _process(delta):
 	var i := 0.
@@ -28,7 +22,7 @@ func _process(delta):
 		var y := noise.get_noise_2d(Time.get_ticks_msec() * speed, (i + 0.3333) * 100) * intensity
 		var r := noise.get_noise_2d(Time.get_ticks_msec() * speed, (i + 0.6667) * 100) * rotation_intensity
 		
-		node.position = op[i] + Vector2(x, y)
+		node.offset = op[i] + Vector2(x, y)
 		node.rotation = o_rotation[i] + r
 		
 		i += 1

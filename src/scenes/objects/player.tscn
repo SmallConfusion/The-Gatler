@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dxfytd662m1kl"]
+[gd_scene load_steps=39 format=3 uid="uid://dxfytd662m1kl"]
 
 [ext_resource type="Script" path="res://scripts/objects/player.gd" id="1_6snto"]
 [ext_resource type="PackedScene" uid="uid://bwbq0bher7mux" path="res://scenes/vfx/particles/player_gun_fire.tscn" id="2_gaq08"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://scripts/components/death.gd" id="7_eu0sl"]
 [ext_resource type="PackedScene" uid="uid://f2no3a12nwma" path="res://scenes/objects/bullets/player_bullet.tscn" id="7_ivlbb"]
 [ext_resource type="Script" path="res://scripts/objects/gun_barrel.gd" id="8_rhdoc"]
+[ext_resource type="Script" path="res://scripts/components/shaker_controllable_offset.gd" id="13_e7y67"]
 [ext_resource type="AudioStream" uid="uid://oa4rhloo53wh" path="res://sounds/sound_files/shoot.ogg" id="16_newyv"]
 [ext_resource type="Shader" path="res://shaders/heat_bar.gdshader" id="17_gwk7e"]
 [ext_resource type="Texture2D" uid="uid://bnb0ah6gxki3b" path="res://icon.png" id="18_q0vsx"]
@@ -145,7 +146,7 @@ offset = Vector2(0, 54.855)
 [node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-0.382609, 6.99739)
+position = Vector2(4.88058, -6.56087)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -154,7 +155,7 @@ index = 1
 [node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-9.28876, 5.23734)
+position = Vector2(12.1732, -3.45733)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -163,7 +164,7 @@ index = 2
 [node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-13.8486, 1.02668)
+position = Vector2(13.7699, 1.26393)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -172,7 +173,7 @@ index = 3
 [node name="Sprite2D5" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-11.9285, -3.66437)
+position = Vector2(8.92346, 5.39379)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -181,7 +182,7 @@ index = 4
 [node name="Sprite2D6" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-4.42696, -6.64082)
+position = Vector2(-0.0983471, 6.99983)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -190,7 +191,7 @@ index = 5
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(5.14603, -6.50996)
+position = Vector2(-9.07414, 5.33057)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -199,7 +200,7 @@ index = 6
 [node name="Sprite2D7" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(12.3111, -3.33302)
+position = Vector2(-13.804, 1.16708)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -208,7 +209,7 @@ index = 7
 [node name="Sprite2D8" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(13.7157, 1.40348)
+position = Vector2(-12.0749, -3.5425)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -217,7 +218,7 @@ index = 8
 [node name="Sprite2D9" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(8.70257, 5.48328)
+position = Vector2(-4.69575, -6.5945)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -240,6 +241,13 @@ shape = SubResource("CapsuleShape2D_n08da")
 zoom = Vector2(0.75, 0.75)
 position_smoothing_enabled = true
 position_smoothing_speed = 15.0
+rotation_smoothing_speed = 0.0
+
+[node name="ShakerControllableOffset" type="Node" parent="Camera2D" node_paths=PackedStringArray("shake_nodes") groups=["shake1"]]
+script = ExtResource("13_e7y67")
+shake_nodes = [NodePath("..")]
+intensity = 10.0
+rotation_intensity = 10.0
 
 [node name="Hitbox" type="Area2D" parent="."]
 script = ExtResource("5_mnns8")

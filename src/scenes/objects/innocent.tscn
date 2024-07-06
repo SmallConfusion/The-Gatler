@@ -159,13 +159,13 @@ position = Vector2(-46, -58.1)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_la6l2")
 
-[node name="Shaker" type="Node" parent="." node_paths=PackedStringArray("shake")]
+[node name="Shaker" type="Node" parent="." node_paths=PackedStringArray("shake_nodes")]
 script = ExtResource("8_7ibif")
-shake = [NodePath("../Skeleton2D/LeftArmTarget"), NodePath("../Skeleton2D/RightArmTarget"), NodePath("../Skeleton2D/LeftLegTarget"), NodePath("../Skeleton2D/RightLegTarget"), NodePath("../Skeleton2D/HeadTarget")]
+shake_nodes = [NodePath("../Skeleton2D/LeftArmTarget"), NodePath("../Skeleton2D/RightArmTarget"), NodePath("../Skeleton2D/LeftLegTarget"), NodePath("../Skeleton2D/RightLegTarget"), NodePath("../Skeleton2D/HeadTarget")]
 
-[node name="Shaker2" type="Node" parent="." node_paths=PackedStringArray("shake")]
+[node name="Shaker2" type="Node" parent="." node_paths=PackedStringArray("shake_nodes")]
 script = ExtResource("8_7ibif")
-shake = [NodePath("../Skeleton2D/LeftArmTarget"), NodePath("../Skeleton2D/RightArmTarget"), NodePath("../Skeleton2D/LeftLegTarget"), NodePath("../Skeleton2D/RightLegTarget"), NodePath("../Skeleton2D/HeadTarget")]
+shake_nodes = [NodePath("../Skeleton2D/LeftArmTarget"), NodePath("../Skeleton2D/RightArmTarget"), NodePath("../Skeleton2D/LeftLegTarget"), NodePath("../Skeleton2D/RightLegTarget"), NodePath("../Skeleton2D/HeadTarget")]
 intensity = 10.0
 speed = 0.1
 

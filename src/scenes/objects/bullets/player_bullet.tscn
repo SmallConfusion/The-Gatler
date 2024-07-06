@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://f2no3a12nwma"]
+[gd_scene load_steps=19 format=3 uid="uid://f2no3a12nwma"]
 
 [ext_resource type="Script" path="res://scripts/objects/bullet.gd" id="1_lcclh"]
 [ext_resource type="Texture2D" uid="uid://c4oqke5doi8wh" path="res://sprites/game/gun/smaller_bullet.svg" id="2_q588a"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://ddnuc7k00x4l4" path="res://sounds/sound_files/shot_hit2.ogg" id="14_6mfql"]
 [ext_resource type="AudioStream" uid="uid://d3qlu5htvk010" path="res://sounds/sound_files/shot_hit3.ogg" id="15_ipa5h"]
 [ext_resource type="AudioStream" uid="uid://fq1m43lqjng7" path="res://sounds/sound_files/shot_hit4.ogg" id="16_44e2q"]
+[ext_resource type="Script" path="res://scripts/components/screen_shake.gd" id="17_a4bkt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_idbpn"]
 radius = 4.0
@@ -74,5 +75,10 @@ sounds = Array[AudioStream]([ExtResource("13_nknw0"), ExtResource("14_6mfql"), E
 min_volume = -10.0
 max_volume = -5.0
 
+[node name="ScreenShake" type="Node" parent="."]
+script = ExtResource("17_a4bkt")
+group_to_shake = "shake1"
+
 [connection signal="hit" from="Hurtbox" to="SoundEffect" method="play_sound"]
+[connection signal="hit" from="Hurtbox" to="ScreenShake" method="shake"]
 [connection signal="killed" from="Death" to="ParticleEmitter" method="emit"]
