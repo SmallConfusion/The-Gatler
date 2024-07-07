@@ -176,6 +176,7 @@ material = SubResource("ShaderMaterial_5qiua")
 
 [node name="FinishLevel" type="Node" parent="."]
 script = ExtResource("8_50anh")
+level_index = 1
 
 [node name="DirectionIndicator" parent="." instance=ExtResource("9_cx7hq")]
 position = Vector2(179, -323)
