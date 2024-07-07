@@ -580,12 +580,14 @@ rotation = 1.69707
 scale = Vector2(0.300001, 0.300001)
 rest = Transform2D(0.3, 0, 0, 0.3, 0, 65)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="UpperSpineBone2D" type="Bone2D" parent="Innocent/Skeleton2D/LowerSpineBone2D"]
 position = Vector2(0, -86.6667)
 rotation = -3.14159
 rest = Transform2D(-1, -4.44253e-06, 4.44253e-06, -1, 0, -86.6667)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="HeadBone2D" type="Bone2D" parent="Innocent/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D"]
 position = Vector2(1.35896e-05, 90)
@@ -595,6 +597,7 @@ auto_calculate_length_and_angle = false
 length = 80.0
 bone_angle = -90.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="Head" type="Sprite2D" parent="Innocent/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/HeadBone2D"]
 z_index = 1
@@ -606,6 +609,7 @@ position = Vector2(-0.256619, 76.1606)
 rotation = -2.07223
 rest = Transform2D(-0.707104, -0.707109, 0.707109, -0.707104, -0.256619, 76.1606)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RightUpperArm" type="Sprite2D" parent="Innocent/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/RightUpperArmBone2D"]
 z_index = 2
@@ -620,6 +624,7 @@ auto_calculate_length_and_angle = false
 length = 90.0
 bone_angle = -90.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RightForearm" type="Sprite2D" parent="Innocent/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/RightUpperArmBone2D/RightForearmBone2D"]
 z_index = 2
@@ -631,6 +636,7 @@ position = Vector2(-0.256619, 76.1606)
 rotation = 2.0247
 rest = Transform2D(-0.707104, 0.70711, -0.70711, -0.707104, -0.256619, 76.1606)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="LeftUpperArm" type="Sprite2D" parent="Innocent/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/LeftUpperArmBone2D"]
 texture = ExtResource("11_0i5bo")
@@ -644,6 +650,7 @@ auto_calculate_length_and_angle = false
 length = 90.0
 bone_angle = 270.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="LeftForearm" type="Sprite2D" parent="Innocent/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/LeftUpperArmBone2D/LeftForearmBone2D"]
 texture = ExtResource("12_ogji8")
@@ -658,6 +665,7 @@ position = Vector2(0.256631, -6.16057)
 rotation = -0.785398
 rest = Transform2D(0.707107, -0.707107, 0.707107, 0.707107, 0.256631, -6.16057)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="LeftThigh" type="Sprite2D" parent="Innocent/Skeleton2D/LowerSpineBone2D/LeftThighBone2D"]
 texture = ExtResource("11_0i5bo")
@@ -671,6 +679,7 @@ auto_calculate_length_and_angle = false
 length = 90.0
 bone_angle = 270.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="LeftLowerLeg" type="Sprite2D" parent="Innocent/Skeleton2D/LowerSpineBone2D/LeftThighBone2D/LeftLowerLegBone2D"]
 texture = ExtResource("12_ogji8")
@@ -681,6 +690,7 @@ position = Vector2(0.256631, -6.16057)
 rotation = 0.785398
 rest = Transform2D(0.707107, 0.707107, -0.707107, 0.707107, 0.256631, -6.16057)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RightThigh" type="Sprite2D" parent="Innocent/Skeleton2D/LowerSpineBone2D/RightThighBone2D"]
 z_index = 1
@@ -695,6 +705,7 @@ auto_calculate_length_and_angle = false
 length = 90.0
 bone_angle = -90.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RightLowerLeg" type="Sprite2D" parent="Innocent/Skeleton2D/LowerSpineBone2D/RightThighBone2D/RightLowerLegBone2D"]
 z_index = 1
@@ -802,12 +813,14 @@ rotation = 1.69707
 scale = Vector2(0.300001, 0.300001)
 rest = Transform2D(0.3, 0, 0, 0.3, 0, 65)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="UpperSpineBone2D" type="Bone2D" parent="Innocent2/Skeleton2D/LowerSpineBone2D"]
 position = Vector2(0, -86.6667)
 rotation = -3.14159
 rest = Transform2D(-1, -4.44253e-06, 4.44253e-06, -1, 0, -86.6667)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="HeadBone2D" type="Bone2D" parent="Innocent2/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D"]
 position = Vector2(1.35896e-05, 90)
@@ -817,6 +830,7 @@ auto_calculate_length_and_angle = false
 length = 80.0
 bone_angle = -90.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="Head" type="Sprite2D" parent="Innocent2/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/HeadBone2D"]
 z_index = 1
@@ -828,6 +842,7 @@ position = Vector2(-0.256619, 76.1606)
 rotation = -2.07223
 rest = Transform2D(-0.707104, -0.707109, 0.707109, -0.707104, -0.256619, 76.1606)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RightUpperArm" type="Sprite2D" parent="Innocent2/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/RightUpperArmBone2D"]
 z_index = 2
@@ -842,6 +857,7 @@ auto_calculate_length_and_angle = false
 length = 90.0
 bone_angle = -90.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RightForearm" type="Sprite2D" parent="Innocent2/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/RightUpperArmBone2D/RightForearmBone2D"]
 z_index = 2
@@ -853,6 +869,7 @@ position = Vector2(-0.256619, 76.1606)
 rotation = 2.0247
 rest = Transform2D(-0.707104, 0.70711, -0.70711, -0.707104, -0.256619, 76.1606)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="LeftUpperArm" type="Sprite2D" parent="Innocent2/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/LeftUpperArmBone2D"]
 texture = ExtResource("11_0i5bo")
@@ -866,6 +883,7 @@ auto_calculate_length_and_angle = false
 length = 90.0
 bone_angle = 270.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="LeftForearm" type="Sprite2D" parent="Innocent2/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/LeftUpperArmBone2D/LeftForearmBone2D"]
 texture = ExtResource("12_ogji8")
@@ -880,6 +898,7 @@ position = Vector2(0.256631, -6.16057)
 rotation = -0.785398
 rest = Transform2D(0.707107, -0.707107, 0.707107, 0.707107, 0.256631, -6.16057)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="LeftThigh" type="Sprite2D" parent="Innocent2/Skeleton2D/LowerSpineBone2D/LeftThighBone2D"]
 texture = ExtResource("11_0i5bo")
@@ -893,6 +912,7 @@ auto_calculate_length_and_angle = false
 length = 90.0
 bone_angle = 270.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="LeftLowerLeg" type="Sprite2D" parent="Innocent2/Skeleton2D/LowerSpineBone2D/LeftThighBone2D/LeftLowerLegBone2D"]
 texture = ExtResource("12_ogji8")
@@ -903,6 +923,7 @@ position = Vector2(0.256631, -6.16057)
 rotation = 0.785398
 rest = Transform2D(0.707107, 0.707107, -0.707107, 0.707107, 0.256631, -6.16057)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RightThigh" type="Sprite2D" parent="Innocent2/Skeleton2D/LowerSpineBone2D/RightThighBone2D"]
 z_index = 1
@@ -917,6 +938,7 @@ auto_calculate_length_and_angle = false
 length = 90.0
 bone_angle = -90.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RightLowerLeg" type="Sprite2D" parent="Innocent2/Skeleton2D/LowerSpineBone2D/RightThighBone2D/RightLowerLegBone2D"]
 z_index = 1
@@ -1024,12 +1046,14 @@ rotation = 1.69707
 scale = Vector2(0.300001, 0.300001)
 rest = Transform2D(0.3, 0, 0, 0.3, 0, 65)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="UpperSpineBone2D" type="Bone2D" parent="Innocent3/Skeleton2D/LowerSpineBone2D"]
 position = Vector2(0, -86.6667)
 rotation = -3.14159
 rest = Transform2D(-1, -4.44253e-06, 4.44253e-06, -1, 0, -86.6667)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="HeadBone2D" type="Bone2D" parent="Innocent3/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D"]
 position = Vector2(1.35896e-05, 90)
@@ -1039,6 +1063,7 @@ auto_calculate_length_and_angle = false
 length = 80.0
 bone_angle = -90.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="Head" type="Sprite2D" parent="Innocent3/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/HeadBone2D"]
 z_index = 1
@@ -1050,6 +1075,7 @@ position = Vector2(-0.256619, 76.1606)
 rotation = -2.07223
 rest = Transform2D(-0.707104, -0.707109, 0.707109, -0.707104, -0.256619, 76.1606)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RightUpperArm" type="Sprite2D" parent="Innocent3/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/RightUpperArmBone2D"]
 z_index = 2
@@ -1064,6 +1090,7 @@ auto_calculate_length_and_angle = false
 length = 90.0
 bone_angle = -90.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RightForearm" type="Sprite2D" parent="Innocent3/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/RightUpperArmBone2D/RightForearmBone2D"]
 z_index = 2
@@ -1075,6 +1102,7 @@ position = Vector2(-0.256619, 76.1606)
 rotation = 2.0247
 rest = Transform2D(-0.707104, 0.70711, -0.70711, -0.707104, -0.256619, 76.1606)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="LeftUpperArm" type="Sprite2D" parent="Innocent3/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/LeftUpperArmBone2D"]
 texture = ExtResource("11_0i5bo")
@@ -1088,6 +1116,7 @@ auto_calculate_length_and_angle = false
 length = 90.0
 bone_angle = 270.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="LeftForearm" type="Sprite2D" parent="Innocent3/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/LeftUpperArmBone2D/LeftForearmBone2D"]
 texture = ExtResource("12_ogji8")
@@ -1102,6 +1131,7 @@ position = Vector2(0.256631, -6.16057)
 rotation = -0.785398
 rest = Transform2D(0.707107, -0.707107, 0.707107, 0.707107, 0.256631, -6.16057)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="LeftThigh" type="Sprite2D" parent="Innocent3/Skeleton2D/LowerSpineBone2D/LeftThighBone2D"]
 texture = ExtResource("11_0i5bo")
@@ -1115,6 +1145,7 @@ auto_calculate_length_and_angle = false
 length = 90.0
 bone_angle = 270.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="LeftLowerLeg" type="Sprite2D" parent="Innocent3/Skeleton2D/LowerSpineBone2D/LeftThighBone2D/LeftLowerLegBone2D"]
 texture = ExtResource("12_ogji8")
@@ -1125,6 +1156,7 @@ position = Vector2(0.256631, -6.16057)
 rotation = 0.785398
 rest = Transform2D(0.707107, 0.707107, -0.707107, 0.707107, 0.256631, -6.16057)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RightThigh" type="Sprite2D" parent="Innocent3/Skeleton2D/LowerSpineBone2D/RightThighBone2D"]
 z_index = 1
@@ -1139,6 +1171,7 @@ auto_calculate_length_and_angle = false
 length = 90.0
 bone_angle = -90.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RightLowerLeg" type="Sprite2D" parent="Innocent3/Skeleton2D/LowerSpineBone2D/RightThighBone2D/RightLowerLegBone2D"]
 z_index = 1
@@ -1246,12 +1279,14 @@ rotation = 1.69707
 scale = Vector2(0.300001, 0.300001)
 rest = Transform2D(0.3, 0, 0, 0.3, 0, 65)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="UpperSpineBone2D" type="Bone2D" parent="Innocent4/Skeleton2D/LowerSpineBone2D"]
 position = Vector2(0, -86.6667)
 rotation = -3.14159
 rest = Transform2D(-1, -4.44253e-06, 4.44253e-06, -1, 0, -86.6667)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="HeadBone2D" type="Bone2D" parent="Innocent4/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D"]
 position = Vector2(1.35896e-05, 90)
@@ -1261,6 +1296,7 @@ auto_calculate_length_and_angle = false
 length = 80.0
 bone_angle = -90.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="Head" type="Sprite2D" parent="Innocent4/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/HeadBone2D"]
 z_index = 1
@@ -1272,6 +1308,7 @@ position = Vector2(-0.256619, 76.1606)
 rotation = -2.07223
 rest = Transform2D(-0.707104, -0.707109, 0.707109, -0.707104, -0.256619, 76.1606)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RightUpperArm" type="Sprite2D" parent="Innocent4/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/RightUpperArmBone2D"]
 z_index = 2
@@ -1286,6 +1323,7 @@ auto_calculate_length_and_angle = false
 length = 90.0
 bone_angle = -90.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RightForearm" type="Sprite2D" parent="Innocent4/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/RightUpperArmBone2D/RightForearmBone2D"]
 z_index = 2
@@ -1297,6 +1335,7 @@ position = Vector2(-0.256619, 76.1606)
 rotation = 2.0247
 rest = Transform2D(-0.707104, 0.70711, -0.70711, -0.707104, -0.256619, 76.1606)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="LeftUpperArm" type="Sprite2D" parent="Innocent4/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/LeftUpperArmBone2D"]
 texture = ExtResource("11_0i5bo")
@@ -1310,6 +1349,7 @@ auto_calculate_length_and_angle = false
 length = 90.0
 bone_angle = 270.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="LeftForearm" type="Sprite2D" parent="Innocent4/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/LeftUpperArmBone2D/LeftForearmBone2D"]
 texture = ExtResource("12_ogji8")
@@ -1324,6 +1364,7 @@ position = Vector2(0.256631, -6.16057)
 rotation = -0.785398
 rest = Transform2D(0.707107, -0.707107, 0.707107, 0.707107, 0.256631, -6.16057)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="LeftThigh" type="Sprite2D" parent="Innocent4/Skeleton2D/LowerSpineBone2D/LeftThighBone2D"]
 texture = ExtResource("11_0i5bo")
@@ -1337,6 +1378,7 @@ auto_calculate_length_and_angle = false
 length = 90.0
 bone_angle = 270.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="LeftLowerLeg" type="Sprite2D" parent="Innocent4/Skeleton2D/LowerSpineBone2D/LeftThighBone2D/LeftLowerLegBone2D"]
 texture = ExtResource("12_ogji8")
@@ -1347,6 +1389,7 @@ position = Vector2(0.256631, -6.16057)
 rotation = 0.785398
 rest = Transform2D(0.707107, 0.707107, -0.707107, 0.707107, 0.256631, -6.16057)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RightThigh" type="Sprite2D" parent="Innocent4/Skeleton2D/LowerSpineBone2D/RightThighBone2D"]
 z_index = 1
@@ -1361,6 +1404,7 @@ auto_calculate_length_and_angle = false
 length = 90.0
 bone_angle = -90.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RightLowerLeg" type="Sprite2D" parent="Innocent4/Skeleton2D/LowerSpineBone2D/RightThighBone2D/RightLowerLegBone2D"]
 z_index = 1
@@ -1501,12 +1545,14 @@ rotation = 1.69707
 scale = Vector2(0.300001, 0.300001)
 rest = Transform2D(0.3, 0, 0, 0.3, 0, 65)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="UpperSpineBone2D" type="Bone2D" parent="Innocent5/Skeleton2D/LowerSpineBone2D"]
 position = Vector2(0, -86.6667)
 rotation = -3.14159
 rest = Transform2D(-1, -4.44253e-06, 4.44253e-06, -1, 0, -86.6667)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="HeadBone2D" type="Bone2D" parent="Innocent5/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D"]
 position = Vector2(1.35896e-05, 90)
@@ -1516,6 +1562,7 @@ auto_calculate_length_and_angle = false
 length = 80.0
 bone_angle = -90.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="Head" type="Sprite2D" parent="Innocent5/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/HeadBone2D"]
 z_index = 1
@@ -1527,6 +1574,7 @@ position = Vector2(-0.256619, 76.1606)
 rotation = -2.07223
 rest = Transform2D(-0.707104, -0.707109, 0.707109, -0.707104, -0.256619, 76.1606)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RightUpperArm" type="Sprite2D" parent="Innocent5/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/RightUpperArmBone2D"]
 z_index = 2
@@ -1541,6 +1589,7 @@ auto_calculate_length_and_angle = false
 length = 90.0
 bone_angle = -90.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RightForearm" type="Sprite2D" parent="Innocent5/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/RightUpperArmBone2D/RightForearmBone2D"]
 z_index = 2
@@ -1552,6 +1601,7 @@ position = Vector2(-0.256619, 76.1606)
 rotation = 2.0247
 rest = Transform2D(-0.707104, 0.70711, -0.70711, -0.707104, -0.256619, 76.1606)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="LeftUpperArm" type="Sprite2D" parent="Innocent5/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/LeftUpperArmBone2D"]
 texture = ExtResource("11_0i5bo")
@@ -1565,6 +1615,7 @@ auto_calculate_length_and_angle = false
 length = 90.0
 bone_angle = 270.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="LeftForearm" type="Sprite2D" parent="Innocent5/Skeleton2D/LowerSpineBone2D/UpperSpineBone2D/LeftUpperArmBone2D/LeftForearmBone2D"]
 texture = ExtResource("12_ogji8")
@@ -1579,6 +1630,7 @@ position = Vector2(0.256631, -6.16057)
 rotation = -0.785398
 rest = Transform2D(0.707107, -0.707107, 0.707107, 0.707107, 0.256631, -6.16057)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="LeftThigh" type="Sprite2D" parent="Innocent5/Skeleton2D/LowerSpineBone2D/LeftThighBone2D"]
 texture = ExtResource("11_0i5bo")
@@ -1592,6 +1644,7 @@ auto_calculate_length_and_angle = false
 length = 90.0
 bone_angle = 270.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="LeftLowerLeg" type="Sprite2D" parent="Innocent5/Skeleton2D/LowerSpineBone2D/LeftThighBone2D/LeftLowerLegBone2D"]
 texture = ExtResource("12_ogji8")
@@ -1602,6 +1655,7 @@ position = Vector2(0.256631, -6.16057)
 rotation = 0.785398
 rest = Transform2D(0.707107, 0.707107, -0.707107, 0.707107, 0.256631, -6.16057)
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RightThigh" type="Sprite2D" parent="Innocent5/Skeleton2D/LowerSpineBone2D/RightThighBone2D"]
 z_index = 1
@@ -1616,6 +1670,7 @@ auto_calculate_length_and_angle = false
 length = 90.0
 bone_angle = -90.0
 editor_settings/show_bone_gizmo = false
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RightLowerLeg" type="Sprite2D" parent="Innocent5/Skeleton2D/LowerSpineBone2D/RightThighBone2D/RightLowerLegBone2D"]
 z_index = 1
@@ -1710,8 +1765,7 @@ group_to_shake = "shake2"
 [node name="InnocentKilled" type="Node" parent="Innocent5"]
 script = ExtResource("28_7ysjh")
 
-[node name="Player" parent="Innocent5" instance=ExtResource("1_2b5wi")]
-position = Vector2(-1, 746)
+[node name="Player" parent="." instance=ExtResource("1_2b5wi")]
 
 [connection signal="killed" from="Servers/Death" to="FinishLevel" method="finish_level"]
 [connection signal="killed" from="Innocent/Death" to="Innocent/ParticleEmitter" method="emit"]
