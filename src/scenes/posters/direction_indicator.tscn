@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://jcoirmpjxq71"]
+
+[ext_resource type="Texture2D" uid="uid://c15rtmjcdf72d" path="res://sprites/Arrow.svg" id="1_bjf8h"]
+
+[node name="DirectionIndicator" type="Node2D"]
+z_index = -5
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 100.0
+offset_bottom = 140.0
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 100.0
+offset_bottom = 34.0
+color = Color(1, 0.941333, 0.56, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 100.0
+offset_bottom = 34.0
+text = "CAUTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_top = 90.0
+offset_right = 100.0
+offset_bottom = 140.0
+text = "SERVERS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Arrow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(50, 70)
+rotation = 0.785398
+scale = Vector2(0.404762, 0.404762)
+texture = ExtResource("1_bjf8h")

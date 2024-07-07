@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d4fbjm3v6knfp"]
+[gd_scene load_steps=19 format=3 uid="uid://d4fbjm3v6knfp"]
 
 [ext_resource type="PackedScene" uid="uid://dxfytd662m1kl" path="res://scenes/objects/player.tscn" id="1_milha"]
 [ext_resource type="Material" uid="uid://clhs8lek3u31k" path="res://shaders/materials/wall_fade.tres" id="2_p5i3g"]
@@ -9,6 +9,10 @@
 [ext_resource type="Shader" path="res://shaders/health_bar.gdshader" id="8_8asmy"]
 [ext_resource type="PackedScene" uid="uid://dx6bhit61qwfj" path="res://scenes/objects/servers.tscn" id="8_afvet"]
 [ext_resource type="Script" path="res://scripts/components/finish_level.gd" id="8_mdyxp"]
+[ext_resource type="PackedScene" uid="uid://jcoirmpjxq71" path="res://scenes/posters/direction_indicator.tscn" id="10_ug0ky"]
+[ext_resource type="PackedScene" uid="uid://4bw6yya3pyya" path="res://scenes/posters/warning_turret.tscn" id="11_v8m6e"]
+[ext_resource type="PackedScene" uid="uid://bwd68e7cawt2l" path="res://scenes/posters/servers.tscn" id="12_6nk0n"]
+[ext_resource type="FontFile" uid="uid://dsw6l3evyfltv" path="res://theme/fonts/ComicSans.ttf" id="12_a5g43"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5qiua"]
 resource_local_to_scene = true
@@ -17,11 +21,29 @@ shader_parameter/t = 0.0
 shader_parameter/scale = Vector2(1.281, 0.1)
 shader_parameter/outline_width = 0.015
 
+[sub_resource type="Gradient" id="Gradient_okn1f"]
+offsets = PackedFloat32Array(0, 0.511364, 1)
+colors = PackedColorArray(1, 0.792024, 0.934531, 1, 1, 1, 1, 1, 0.736329, 0.901114, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ec8l7"]
+seed = 1
+frequency = 0.0115
+fractal_gain = 0.37
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8oij1"]
+color_ramp = SubResource("Gradient_okn1f")
+noise = SubResource("FastNoiseLite_ec8l7")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vk61j"]
+color_ramp = SubResource("Gradient_okn1f")
+noise = SubResource("FastNoiseLite_ec8l7")
+
 [node name="Node2D" type="Node2D" groups=["game_manager"]]
 
 [node name="Level" type="Node2D" parent="."]
 
 [node name="Polygon2D" type="Polygon2D" parent="Level"]
+z_index = -10
 color = Color(0.722164, 0.847565, 0.798014, 1)
 polygon = PackedVector2Array(16, 16, 16, 704, 1280, 720, 1272, 592, 1712, 592, 1728, 712, 4280, 704, 4280, -856, 3704, -856, 2768, -856, 2768, -312, 3704, -312, 3696, 8)
 
@@ -149,6 +171,96 @@ material = SubResource("ShaderMaterial_5qiua")
 [node name="FinishLevel" type="Node" parent="."]
 script = ExtResource("8_mdyxp")
 
+[node name="DirectionIndicator" parent="." instance=ExtResource("10_ug0ky")]
+position = Vector2(3550, 361)
+rotation = -0.0638528
+
+[node name="DirectionIndicator2" parent="." instance=ExtResource("10_ug0ky")]
+position = Vector2(3873, -559)
+rotation = -0.0181357
+
+[node name="Arrow" parent="DirectionIndicator2" index="4"]
+rotation = -0.785397
+
+[node name="DirectionIndicator3" parent="." instance=ExtResource("11_v8m6e")]
+position = Vector2(3133, 492)
+rotation = 0.0247545
+
+[node name="DirectionIndicator4" type="Node2D" parent="."]
+z_index = -5
+position = Vector2(3911, 273)
+rotation = 0.0124592
+
+[node name="TextureRect" type="TextureRect" parent="DirectionIndicator4"]
+offset_right = 187.0
+offset_bottom = 166.0
+texture = SubResource("NoiseTexture2D_8oij1")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="DirectionIndicator4"]
+offset_right = 187.0
+offset_bottom = 152.0
+theme_override_constants/line_spacing = -3
+theme_override_fonts/font = ExtResource("12_a5g43")
+text = "Sometimes we need to take a break midair, allowing our gun to cool down. This allows us to fly higher.
+
+- Julius Cesar"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="DirectionIndicator4"]
+offset_left = -0.00296528
+offset_top = 80.0062
+offset_right = 186.997
+offset_bottom = 232.006
+theme_override_constants/line_spacing = -3
+theme_override_font_sizes/font_size = 8
+text = "inspirationalquotesforyou.com"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="DirectionIndicator5" type="Node2D" parent="."]
+z_index = -5
+position = Vector2(2125, 401)
+rotation = -0.031948
+
+[node name="TextureRect" type="TextureRect" parent="DirectionIndicator5"]
+offset_right = 187.0
+offset_bottom = 166.0
+texture = SubResource("NoiseTexture2D_vk61j")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="DirectionIndicator5"]
+offset_right = 187.0
+offset_bottom = 152.0
+theme_override_constants/line_spacing = -3
+theme_override_fonts/font = ExtResource("12_a5g43")
+text = "Remember to always give 210%, put profits above family, and worship the company you work for.
+
+- Karl Marx"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="DirectionIndicator5"]
+offset_left = -0.00296528
+offset_top = 80.0062
+offset_right = 186.997
+offset_bottom = 232.006
+theme_override_constants/line_spacing = -3
+theme_override_font_sizes/font_size = 8
+text = "inspirationalquotesforyou.com"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Servers2" parent="." instance=ExtResource("12_6nk0n")]
+position = Vector2(3113, -601)
+rotation = 0.0258624
+
 [connection signal="killed" from="Servers/Death" to="FinishLevel" method="finish_level"]
 
 [editable path="Servers"]
+[editable path="DirectionIndicator2"]

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bwd68e7cawt2l"]
+
+[node name="Servers" type="Node2D"]
+z_index = -5
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 100.0
+offset_bottom = 140.0
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 100.0
+offset_bottom = 34.0
+color = Color(1, 0.683526, 0.901286, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 100.0
+offset_bottom = 34.0
+text = "ADVISORY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_top = 34.0
+offset_right = 100.0
+offset_bottom = 140.0
+theme_override_constants/line_spacing = -3
+text = "SERVERS
+
+DO NOT
+TOUCH
+
+-IT	"
+horizontal_alignment = 1
+vertical_alignment = 1

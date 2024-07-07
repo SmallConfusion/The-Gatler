@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwuae0tqlx8tu"]
+[gd_scene load_steps=13 format=3 uid="uid://cwuae0tqlx8tu"]
 
 [ext_resource type="PackedScene" uid="uid://dxfytd662m1kl" path="res://scenes/objects/player.tscn" id="1_gsxx8"]
 [ext_resource type="Material" uid="uid://clhs8lek3u31k" path="res://shaders/materials/wall_fade.tres" id="2_6sk3q"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://dx6bhit61qwfj" path="res://scenes/objects/servers.tscn" id="6_4erl7"]
 [ext_resource type="Shader" path="res://shaders/health_bar.gdshader" id="7_7l5v2"]
 [ext_resource type="Script" path="res://scripts/components/finish_level.gd" id="8_50anh"]
+[ext_resource type="PackedScene" uid="uid://jcoirmpjxq71" path="res://scenes/posters/direction_indicator.tscn" id="9_cx7hq"]
+[ext_resource type="PackedScene" uid="uid://4bw6yya3pyya" path="res://scenes/posters/warning_turret.tscn" id="10_iyyb8"]
+[ext_resource type="PackedScene" uid="uid://bwd68e7cawt2l" path="res://scenes/posters/servers.tscn" id="11_1lt5b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5qiua"]
 resource_local_to_scene = true
@@ -19,6 +22,7 @@ shader_parameter/outline_width = 0.015
 [node name="Level2" type="Node2D"]
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+z_index = -10
 color = Color(0.882353, 0.898039, 0.913725, 1)
 polygon = PackedVector2Array(-208, 80, 3284, 80, 3284, -2980, -208, -2980)
 
@@ -174,6 +178,37 @@ material = SubResource("ShaderMaterial_5qiua")
 
 [node name="FinishLevel" type="Node" parent="."]
 script = ExtResource("8_50anh")
+
+[node name="DirectionIndicator" parent="." instance=ExtResource("9_cx7hq")]
+position = Vector2(179, -323)
+rotation = -0.0492942
+
+[node name="DirectionIndicator2" parent="." instance=ExtResource("9_cx7hq")]
+position = Vector2(1282, -1440)
+
+[node name="WarningTurret" parent="." instance=ExtResource("10_iyyb8")]
+position = Vector2(58, -360)
+rotation = 0.0798021
+
+[node name="WarningTurret2" parent="." instance=ExtResource("10_iyyb8")]
+position = Vector2(233, -498)
+rotation = -0.0112994
+
+[node name="WarningTurret3" parent="." instance=ExtResource("10_iyyb8")]
+position = Vector2(636, -662)
+rotation = -0.201688
+
+[node name="WarningTurret4" parent="." instance=ExtResource("10_iyyb8")]
+position = Vector2(793, -489)
+rotation = 0.16082
+
+[node name="WarningTurret5" parent="." instance=ExtResource("10_iyyb8")]
+position = Vector2(1259, -822)
+rotation = -0.0726028
+
+[node name="Servers2" parent="." instance=ExtResource("11_1lt5b")]
+position = Vector2(2510, -2700)
+rotation = 0.0375842
 
 [connection signal="killed" from="Servers/Death" to="FinishLevel" method="finish_level"]
 
