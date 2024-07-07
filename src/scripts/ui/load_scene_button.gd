@@ -1,4 +1,5 @@
-extends Node
+extends Button
+class_name LoadSceneButton
 
 @export_file("*.tscn") var scene : String
 

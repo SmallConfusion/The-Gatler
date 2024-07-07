@@ -1,9 +1,9 @@
 extends CanvasGroup
 
-@export var debug := true
-
 func _ready():
-	if OS.is_debug_build() and debug:
+	var debug_settings : DebugSettings = get_tree().get_first_node_in_group("debug_settings")
+	
+	if OS.is_debug_build() and debug_settings and debug_settings.hide_splash_screen:
 		visible = false
 	else:
 		visible = true

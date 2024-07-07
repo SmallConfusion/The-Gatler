@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d4fbjm3v6knfp"]
+[gd_scene load_steps=11 format=3 uid="uid://d4fbjm3v6knfp"]
 
 [ext_resource type="PackedScene" uid="uid://dxfytd662m1kl" path="res://scenes/objects/player.tscn" id="1_milha"]
 [ext_resource type="Material" uid="uid://clhs8lek3u31k" path="res://shaders/materials/wall_fade.tres" id="2_p5i3g"]
@@ -6,7 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://byddp4ekan6dx" path="res://scenes/objects/innocent.tscn" id="3_2st18"]
 [ext_resource type="Script" path="res://scripts/objects/level_wall_line.gd" id="3_yuddh"]
 [ext_resource type="PackedScene" uid="uid://c6p87lemetbn0" path="res://scenes/objects/enemies/sentry.tscn" id="7_r6qyq"]
+[ext_resource type="Shader" path="res://shaders/health_bar.gdshader" id="8_8asmy"]
 [ext_resource type="PackedScene" uid="uid://dx6bhit61qwfj" path="res://scenes/objects/servers.tscn" id="8_afvet"]
+[ext_resource type="Script" path="res://scripts/components/finish_level.gd" id="8_mdyxp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5qiua"]
+resource_local_to_scene = true
+shader = ExtResource("8_8asmy")
+shader_parameter/t = 0.0
+shader_parameter/scale = Vector2(1.281, 0.1)
+shader_parameter/outline_width = 0.015
 
 [node name="Node2D" type="Node2D" groups=["game_manager"]]
 
@@ -133,3 +142,13 @@ rotation = 3.14159
 
 [node name="Servers" parent="." instance=ExtResource("8_afvet")]
 position = Vector2(3001, -379)
+
+[node name="HealthBar" parent="Servers" index="3"]
+material = SubResource("ShaderMaterial_5qiua")
+
+[node name="FinishLevel" type="Node" parent="."]
+script = ExtResource("8_mdyxp")
+
+[connection signal="killed" from="Servers/Death" to="FinishLevel" method="finish_level"]
+
+[editable path="Servers"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwuae0tqlx8tu"]
+[gd_scene load_steps=10 format=3 uid="uid://cwuae0tqlx8tu"]
 
 [ext_resource type="PackedScene" uid="uid://dxfytd662m1kl" path="res://scenes/objects/player.tscn" id="1_gsxx8"]
 [ext_resource type="Material" uid="uid://clhs8lek3u31k" path="res://shaders/materials/wall_fade.tres" id="2_6sk3q"]
@@ -6,6 +6,15 @@
 [ext_resource type="Script" path="res://scripts/objects/level_wall_line.gd" id="4_vn7ra"]
 [ext_resource type="PackedScene" uid="uid://c6p87lemetbn0" path="res://scenes/objects/enemies/sentry.tscn" id="5_0ng5f"]
 [ext_resource type="PackedScene" uid="uid://dx6bhit61qwfj" path="res://scenes/objects/servers.tscn" id="6_4erl7"]
+[ext_resource type="Shader" path="res://shaders/health_bar.gdshader" id="7_7l5v2"]
+[ext_resource type="Script" path="res://scripts/components/finish_level.gd" id="8_50anh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5qiua"]
+resource_local_to_scene = true
+shader = ExtResource("7_7l5v2")
+shader_parameter/t = 0.0
+shader_parameter/scale = Vector2(1.281, 0.1)
+shader_parameter/outline_width = 0.015
 
 [node name="Level2" type="Node2D"]
 
@@ -159,3 +168,13 @@ script = ExtResource("4_vn7ra")
 
 [node name="Servers" parent="." instance=ExtResource("6_4erl7")]
 position = Vector2(2737, -2491)
+
+[node name="HealthBar" parent="Servers" index="3"]
+material = SubResource("ShaderMaterial_5qiua")
+
+[node name="FinishLevel" type="Node" parent="."]
+script = ExtResource("8_50anh")
+
+[connection signal="killed" from="Servers/Death" to="FinishLevel" method="finish_level"]
+
+[editable path="Servers"]

@@ -25,3 +25,6 @@ shape = SubResource("CircleShape2D_y7265")
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 shape = SubResource("CircleShape2D_hrn2b")
+
+[node name="ScreenShake" parent="." index="9"]
+group_to_shake = "shake2"

@@ -147,7 +147,7 @@ offset = Vector2(0, 54.855)
 [node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(13.1057, 2.46171)
+position = Vector2(7.43767, -5.93045)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -156,7 +156,7 @@ index = 1
 [node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(6.87485, 6.09788)
+position = Vector2(13.3216, -2.15257)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -165,7 +165,7 @@ index = 2
 [node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-2.57284, 6.88078)
+position = Vector2(12.9722, 2.63252)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -174,7 +174,7 @@ index = 3
 [node name="Sprite2D5" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-10.8167, 4.44409)
+position = Vector2(6.55302, 6.18583)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -183,7 +183,7 @@ index = 4
 [node name="Sprite2D6" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-13.9993, -0.0720399)
+position = Vector2(-2.93245, 6.84472)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -192,7 +192,7 @@ index = 5
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-10.6314, -4.55446)
+position = Vector2(-11.0458, 4.30089)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -201,7 +201,7 @@ index = 6
 [node name="Sprite2D7" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-2.28905, -6.9058)
+position = Vector2(-13.9907, -0.255376)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -210,7 +210,7 @@ index = 7
 [node name="Sprite2D8" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(7.12441, -6.02584)
+position = Vector2(-10.3892, -4.69215)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -219,7 +219,7 @@ index = 8
 [node name="Sprite2D9" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(13.2043, -2.32632)
+position = Vector2(-1.92646, -6.93341)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -243,11 +243,16 @@ position_smoothing_enabled = true
 position_smoothing_speed = 15.0
 rotation_smoothing_speed = 0.0
 
-[node name="ShakerControllableOffset" type="Node" parent="Camera2D" node_paths=PackedStringArray("shake_nodes") groups=["shake1"]]
+[node name="Shaker1" type="Node" parent="Camera2D" node_paths=PackedStringArray("shake_nodes") groups=["shake1"]]
+script = ExtResource("13_e7y67")
+shake_time = 0.5
+shake_nodes = [NodePath("..")]
+intensity = 5.0
+
+[node name="Shaker2" type="Node" parent="Camera2D" node_paths=PackedStringArray("shake_nodes") groups=["shake2"]]
 script = ExtResource("13_e7y67")
 shake_nodes = [NodePath("..")]
 intensity = 10.0
-rotation_intensity = 10.0
 
 [node name="Hitbox" type="Area2D" parent="."]
 script = ExtResource("5_mnns8")
@@ -292,8 +297,8 @@ sounds = Array[AudioStream]([ExtResource("24_dcesl"), ExtResource("25_r86kj"), E
 [node name="GunLockSoundEffect" type="Node" parent="."]
 script = ExtResource("23_pd27s")
 sounds = Array[AudioStream]([ExtResource("29_nbpdh")])
-min_volume = 9.0
-max_volume = 9.0
+min_volume = 15.0
+max_volume = 15.0
 min_pitch = 0.95
 max_pitch = 1.05
 

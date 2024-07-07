@@ -166,7 +166,7 @@ shake_nodes = [NodePath("../Skeleton2D/LeftArmTarget"), NodePath("../Skeleton2D/
 [node name="Shaker2" type="Node" parent="." node_paths=PackedStringArray("shake_nodes")]
 script = ExtResource("8_7ibif")
 shake_nodes = [NodePath("../Skeleton2D/LeftArmTarget"), NodePath("../Skeleton2D/RightArmTarget"), NodePath("../Skeleton2D/LeftLegTarget"), NodePath("../Skeleton2D/RightLegTarget"), NodePath("../Skeleton2D/HeadTarget")]
-intensity = 10.0
+intensity = 5.0
 speed = 0.1
 
 [node name="GradientModulate" type="Node" parent="." node_paths=PackedStringArray("nodes")]
