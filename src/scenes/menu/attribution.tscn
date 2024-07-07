@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://b16evga31w3ad"]
+[gd_scene load_steps=2 format=3 uid="uid://b16evga31w3ad"]
+
+[ext_resource type="Script" path="res://scripts/ui/load_scene_button.gd" id="1_s8r32"]
 
 [node name="Attribution" type="Control"]
 layout_mode = 3
@@ -10,8 +12,10 @@ grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_right = 1244.0
-offset_bottom = 611.0
+offset_left = 311.0
+offset_right = 933.0
+offset_bottom = 600.0
+theme_override_font_sizes/normal_font_size = 10
 text = "FireworkCloseCrack.mp3 by HerbertBoland -- https://freesound.org/s/142019/ -- License: Attribution 4.0
 
 CTS 7290.wav by areniporgen -- https://freesound.org/s/693421/ -- License: Creative Commons 0
@@ -37,3 +41,20 @@ slinky-zwap2.aif by alienistcog -- https://freesound.org/s/124561/ -- License: C
 St Mullion Church Door Internal Shut_sel.wav by gropkcor -- https://freesound.org/s/392240/ -- License: Creative Commons 0
 
 heavy_sword_hit_w_ringout_01142023.mp3 by Artninja -- https://freesound.org/s/699984/ -- License: Attribution 4.0"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -115.0
+offset_right = 65.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Menu"
+script = ExtResource("1_s8r32")
+scene = "res://scenes/menu/main_menu.tscn"

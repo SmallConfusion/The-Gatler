@@ -15,22 +15,7 @@ polygon = PackedVector2Array(-208, 80, 3284, 80, 3284, -2980, -208, -2980)
 
 [node name="Polygon2D2" type="Polygon2D" parent="."]
 color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(604, -352, 744, -349, 741, -432, 605, -430)
-
-[node name="Polygon2D3" type="Polygon2D" parent="."]
-position = Vector2(598, -517)
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(604, -352, 744, -349, 741, -432, 605, -430)
-
-[node name="Polygon2D4" type="Polygon2D" parent="."]
-position = Vector2(1042, -998)
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(604, -352, 744, -349, 741, -432, 605, -430)
-
-[node name="Polygon2D5" type="Polygon2D" parent="."]
-position = Vector2(1465, -1456)
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(604, -352, 744, -349, 741, -432, 605, -430)
+polygon = PackedVector2Array(558, -350, 744, -349, 741, -432, 551, -427)
 
 [node name="Polygon2D6" type="Polygon2D" parent="."]
 position = Vector2(1929, -1988)
@@ -73,7 +58,7 @@ z_index = 5
 texture_repeat = 2
 material = ExtResource("2_6sk3q")
 position = Vector2(464, -440)
-points = PackedVector2Array(280, 96, 136, 96, 136, 8, 280, 8)
+points = PackedVector2Array(280, 96.0001, 82, 96, 82, 8, 280, 8)
 closed = true
 width = 32.0
 texture = ExtResource("3_luvw8")
@@ -109,16 +94,44 @@ joint_mode = 1
 script = ExtResource("4_vn7ra")
 
 [node name="Sentry2" parent="." instance=ExtResource("5_0ng5f")]
-position = Vector2(673, -481)
+position = Vector2(642, -481)
 rotation = 3.14159
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2(684, -719)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(558, -350, 744, -349, 741, -432, 551, -427)
 
 [node name="WallLine5" type="Line2D" parent="."]
 modulate = Color(0.974027, 0.977035, 0.947259, 1)
 z_index = 5
 texture_repeat = 2
 material = ExtResource("2_6sk3q")
-position = Vector2(1062, -960)
-points = PackedVector2Array(280, 96, 136, 96, 136, 8, 280, 8)
+position = Vector2(1148, -1159)
+points = PackedVector2Array(280, 96.0001, 82, 96, 82, 8, 280, 8)
+closed = true
+width = 32.0
+texture = ExtResource("3_luvw8")
+texture_mode = 1
+joint_mode = 1
+script = ExtResource("4_vn7ra")
+
+[node name="Sentry3" parent="." instance=ExtResource("5_0ng5f")]
+position = Vector2(1326, -1200)
+rotation = 3.14159
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+position = Vector2(1356, -1420)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(558, -350, 744, -349, 741, -432, 551, -427)
+
+[node name="WallLine6" type="Line2D" parent="."]
+modulate = Color(0.974027, 0.977035, 0.947259, 1)
+z_index = 5
+texture_repeat = 2
+material = ExtResource("2_6sk3q")
+position = Vector2(1820, -1860)
+points = PackedVector2Array(280, 96.0001, 82, 96, 82, 8, 280, 8)
 closed = true
 width = 32.0
 texture = ExtResource("3_luvw8")
@@ -127,40 +140,8 @@ joint_mode = 1
 script = ExtResource("4_vn7ra")
 
 [node name="Sentry4" parent="." instance=ExtResource("5_0ng5f")]
-position = Vector2(1271, -1001)
+position = Vector2(1998, -1901)
 rotation = 3.14159
-
-[node name="WallLine6" type="Line2D" parent="."]
-modulate = Color(0.974027, 0.977035, 0.947259, 1)
-z_index = 5
-texture_repeat = 2
-material = ExtResource("2_6sk3q")
-position = Vector2(1507, -1442)
-points = PackedVector2Array(280, 96, 136, 96, 136, 8, 280, 8)
-closed = true
-width = 32.0
-texture = ExtResource("3_luvw8")
-texture_mode = 1
-joint_mode = 1
-script = ExtResource("4_vn7ra")
-
-[node name="Sentry6" parent="." instance=ExtResource("5_0ng5f")]
-position = Vector2(1716, -1483)
-rotation = 3.14159
-
-[node name="WallLine7" type="Line2D" parent="."]
-modulate = Color(0.974027, 0.977035, 0.947259, 1)
-z_index = 5
-texture_repeat = 2
-material = ExtResource("2_6sk3q")
-position = Vector2(1930, -1902)
-points = PackedVector2Array(280, 96, 136, 96, 136, 8, 280, 8)
-closed = true
-width = 32.0
-texture = ExtResource("3_luvw8")
-texture_mode = 1
-joint_mode = 1
-script = ExtResource("4_vn7ra")
 
 [node name="WallLine8" type="Line2D" parent="."]
 modulate = Color(0.974027, 0.977035, 0.947259, 1)
@@ -175,10 +156,6 @@ texture = ExtResource("3_luvw8")
 texture_mode = 1
 joint_mode = 1
 script = ExtResource("4_vn7ra")
-
-[node name="Sentry8" parent="." instance=ExtResource("5_0ng5f")]
-position = Vector2(2139, -1943)
-rotation = 3.14159
 
 [node name="Servers" parent="." instance=ExtResource("6_4erl7")]
 position = Vector2(2737, -2491)

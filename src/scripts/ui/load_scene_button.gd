@@ -1,6 +1,6 @@
 extends Node
 
-@export var scene : PackedScene
+@export_file("*.tscn") var scene : String
 
 func _pressed():
-	get_tree().change_scene_to_packed(scene)
+	get_tree().change_scene_to_file(scene)

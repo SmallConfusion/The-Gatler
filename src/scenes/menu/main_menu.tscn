@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7d6le151hsls"]
+[gd_scene load_steps=9 format=3 uid="uid://c7d6le151hsls"]
 
 [ext_resource type="Script" path="res://scripts/ui/load_scene_button.gd" id="1_3ka77"]
-[ext_resource type="PackedScene" uid="uid://d4fbjm3v6knfp" path="res://scenes/levels/level_1.tscn" id="2_u2rer"]
 [ext_resource type="Texture2D" uid="uid://0oo5ey21amqi" path="res://sprites/ui/logo w text.svg" id="3_85oy4"]
 [ext_resource type="Script" path="res://scripts/ui/splash_screen.gd" id="3_pj0m8"]
 [ext_resource type="Script" path="res://scripts/particle_loader.gd" id="5_k2411"]
@@ -18,22 +17,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -96.0
-offset_top = -70.0
-offset_right = 96.0
-offset_bottom = 70.0
+offset_left = -98.0
+offset_top = -48.0
+offset_right = 98.0
+offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Play"
+alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme_type_variation = &"LevelSelectButton"
+text = "1"
 script = ExtResource("1_3ka77")
-scene = ExtResource("2_u2rer")
+scene = "res://scenes/levels/level_1.tscn"
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme_type_variation = &"LevelSelectButton"
+text = "2"
+script = ExtResource("1_3ka77")
+scene = "res://scenes/levels/level_2.tscn"
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 visible = false
@@ -67,3 +80,21 @@ vertical_alignment = 1
 position = Vector2(588, 344)
 script = ExtResource("5_k2411")
 particles = Array[PackedScene]([ExtResource("6_e2yeh"), ExtResource("7_31kdk"), ExtResource("8_ft86s"), ExtResource("9_laqf8")])
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -81.5
+offset_top = -268.0
+offset_right = 81.5
+offset_bottom = -206.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Attribution
+"
+script = ExtResource("1_3ka77")
+scene = "res://scenes/menu/attribution.tscn"
