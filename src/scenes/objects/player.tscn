@@ -147,7 +147,7 @@ offset = Vector2(0, 54.855)
 [node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-6.24677, 6.26454)
+position = Vector2(-10.0217, -4.88786)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -156,7 +156,7 @@ index = 1
 [node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-12.8388, 2.79124)
+position = Vector2(-1.39339, -6.96524)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -165,7 +165,7 @@ index = 2
 [node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-13.4235, -1.98811)
+position = Vector2(7.88695, -5.78351)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -174,7 +174,7 @@ index = 3
 [node name="Sprite2D5" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(-7.72712, -5.8372)
+position = Vector2(13.4769, -1.89561)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -183,7 +183,7 @@ index = 4
 [node name="Sprite2D6" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(1.58484, -6.955)
+position = Vector2(12.7609, 2.87927)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -192,7 +192,7 @@ index = 5
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(10.1552, -4.81848)
+position = Vector2(6.07387, 6.3069)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -201,7 +201,7 @@ index = 6
 [node name="Sprite2D7" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(13.9739, -0.42734)
+position = Vector2(-3.45515, 6.78347)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -210,7 +210,7 @@ index = 7
 [node name="Sprite2D8" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(11.254, 4.16376)
+position = Vector2(-11.3675, 4.08598)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -219,7 +219,7 @@ index = 8
 [node name="Sprite2D9" type="Sprite2D" parent="Node2D"]
 y_sort_enabled = true
 material = ExtResource("5_5qy4a")
-position = Vector2(3.26824, 6.80659)
+position = Vector2(-13.9608, -0.523392)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_mu68i")
 script = ExtResource("8_rhdoc")
@@ -229,9 +229,8 @@ index = 9
 position = Vector2(42, -0.00015204)
 script = ExtResource("3_exkqj")
 bullet_scene = ExtResource("7_ivlbb")
-cooldown = 0.05
-spread = 0.2
-spread_concentration = 2.1
+cooldown = 0.04
+spread_concentration = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -260,7 +259,7 @@ shape = SubResource("RectangleShape2D_ws7u3")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("6_5c56t")
-health = 10.0
+health = 3.0
 
 [node name="Death" type="Node" parent="."]
 script = ExtResource("7_eu0sl")

@@ -57,6 +57,7 @@ position = Vector2(53, 0)
 script = ExtResource("3_66cjj")
 offscreen = NodePath("../../Offscreen")
 bullet_scene = ExtResource("4_54mxp")
+cooldown = 2.0
 
 [node name="SentryGun" type="Sprite2D" parent="Aim"]
 scale = Vector2(0.3, 0.3)
@@ -75,7 +76,7 @@ shape = SubResource("RectangleShape2D_s5qnr")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("7_k8qtg")
-health = 10.0
+health = 5.0
 
 [node name="Death" type="Node" parent="."]
 script = ExtResource("8_r42ip")

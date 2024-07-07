@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4fbjm3v6knfp"]
+[gd_scene load_steps=8 format=3 uid="uid://d4fbjm3v6knfp"]
 
 [ext_resource type="PackedScene" uid="uid://dxfytd662m1kl" path="res://scenes/objects/player.tscn" id="1_milha"]
-[ext_resource type="Script" path="res://scenes/levels/game_manager.gd" id="1_ugmde"]
 [ext_resource type="Material" uid="uid://clhs8lek3u31k" path="res://shaders/materials/wall_fade.tres" id="2_p5i3g"]
 [ext_resource type="Texture2D" uid="uid://cj43g2wfpqj47" path="res://sprites/game/level/box.svg" id="2_t3yy4"]
 [ext_resource type="PackedScene" uid="uid://byddp4ekan6dx" path="res://scenes/objects/innocent.tscn" id="3_2st18"]
@@ -10,11 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://dx6bhit61qwfj" path="res://scenes/objects/servers.tscn" id="8_afvet"]
 
 [node name="Node2D" type="Node2D" groups=["game_manager"]]
-script = ExtResource("1_ugmde")
 
 [node name="Level" type="Node2D" parent="."]
 
 [node name="Polygon2D" type="Polygon2D" parent="Level"]
+color = Color(0.722164, 0.847565, 0.798014, 1)
 polygon = PackedVector2Array(16, 16, 16, 704, 1280, 720, 1272, 592, 1712, 592, 1728, 712, 4280, 704, 4280, -856, 3704, -856, 2768, -856, 2768, -312, 3704, -312, 3696, 8)
 
 [node name="Floor" type="Line2D" parent="Level"]
@@ -126,7 +125,7 @@ script = ExtResource("3_yuddh")
 position = Vector2(2216, 677)
 
 [node name="Player" parent="." instance=ExtResource("1_milha")]
-position = Vector2(564, 457)
+position = Vector2(498, 650)
 
 [node name="Sentry" parent="." instance=ExtResource("7_r6qyq")]
 position = Vector2(3210, 671)

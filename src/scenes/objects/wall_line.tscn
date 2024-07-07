@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhlo5fvhuis3d"]
+
+[ext_resource type="Material" uid="uid://clhs8lek3u31k" path="res://shaders/materials/wall_fade.tres" id="1_3wyi6"]
+[ext_resource type="Texture2D" uid="uid://cj43g2wfpqj47" path="res://sprites/game/level/box.svg" id="2_3dfum"]
+[ext_resource type="Script" path="res://scripts/objects/level_wall_line.gd" id="3_n77be"]
+
+[node name="WallLine2" type="Line2D"]
+modulate = Color(0.818155, 0.832719, 0.637525, 1)
+z_index = 5
+texture_repeat = 2
+material = ExtResource("1_3wyi6")
+points = PackedVector2Array(0, 16, 0, 704)
+width = 32.0
+texture = ExtResource("2_3dfum")
+texture_mode = 1
+joint_mode = 1
+script = ExtResource("3_n77be")

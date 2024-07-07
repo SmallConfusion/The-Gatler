@@ -1,0 +1,184 @@
+[gd_scene load_steps=7 format=3 uid="uid://cwuae0tqlx8tu"]
+
+[ext_resource type="PackedScene" uid="uid://dxfytd662m1kl" path="res://scenes/objects/player.tscn" id="1_gsxx8"]
+[ext_resource type="Material" uid="uid://clhs8lek3u31k" path="res://shaders/materials/wall_fade.tres" id="2_6sk3q"]
+[ext_resource type="Texture2D" uid="uid://cj43g2wfpqj47" path="res://sprites/game/level/box.svg" id="3_luvw8"]
+[ext_resource type="Script" path="res://scripts/objects/level_wall_line.gd" id="4_vn7ra"]
+[ext_resource type="PackedScene" uid="uid://c6p87lemetbn0" path="res://scenes/objects/enemies/sentry.tscn" id="5_0ng5f"]
+[ext_resource type="PackedScene" uid="uid://dx6bhit61qwfj" path="res://scenes/objects/servers.tscn" id="6_4erl7"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.882353, 0.898039, 0.913725, 1)
+polygon = PackedVector2Array(-208, 80, 3284, 80, 3284, -2980, -208, -2980)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(604, -352, 744, -349, 741, -432, 605, -430)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2(598, -517)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(604, -352, 744, -349, 741, -432, 605, -430)
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+position = Vector2(1042, -998)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(604, -352, 744, -349, 741, -432, 605, -430)
+
+[node name="Polygon2D5" type="Polygon2D" parent="."]
+position = Vector2(1465, -1456)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(604, -352, 744, -349, 741, -432, 605, -430)
+
+[node name="Polygon2D6" type="Polygon2D" parent="."]
+position = Vector2(1929, -1988)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(604, -352, 1014, -352, 1015, -435, 605, -430)
+
+[node name="Player" parent="." instance=ExtResource("1_gsxx8")]
+
+[node name="WallLine2" type="Line2D" parent="."]
+modulate = Color(0.974027, 0.977035, 0.947259, 1)
+z_index = 5
+texture_repeat = 2
+material = ExtResource("2_6sk3q")
+position = Vector2(-244, -417)
+points = PackedVector2Array(20, -2563, 20, 497)
+width = 32.0
+texture = ExtResource("3_luvw8")
+texture_mode = 1
+joint_mode = 1
+script = ExtResource("4_vn7ra")
+
+[node name="WallLine9" type="Line2D" parent="."]
+modulate = Color(0.974027, 0.977035, 0.947259, 1)
+z_index = 5
+texture_repeat = 2
+material = ExtResource("2_6sk3q")
+position = Vector2(3320, -2483)
+rotation = -3.14159
+points = PackedVector2Array(20, -2563, 20, 497)
+width = 32.0
+default_color = Color(0.882353, 0.898039, 0.913725, 1)
+texture = ExtResource("3_luvw8")
+texture_mode = 1
+joint_mode = 1
+script = ExtResource("4_vn7ra")
+
+[node name="WallLine4" type="Line2D" parent="."]
+modulate = Color(0.974027, 0.977035, 0.947259, 1)
+z_index = 5
+texture_repeat = 2
+material = ExtResource("2_6sk3q")
+position = Vector2(464, -440)
+points = PackedVector2Array(280, 96, 136, 96, 136, 8, 280, 8)
+closed = true
+width = 32.0
+texture = ExtResource("3_luvw8")
+texture_mode = 1
+joint_mode = 1
+script = ExtResource("4_vn7ra")
+
+[node name="WallLine3" type="Line2D" parent="."]
+modulate = Color(0.881456, 0.897606, 0.912273, 1)
+z_index = 5
+texture_repeat = 2
+material = ExtResource("2_6sk3q")
+position = Vector2(-184, 96)
+points = PackedVector2Array(-24, 0, 3468, 0)
+width = 32.0
+texture = ExtResource("3_luvw8")
+texture_mode = 1
+joint_mode = 1
+script = ExtResource("4_vn7ra")
+
+[node name="WallLine10" type="Line2D" parent="."]
+modulate = Color(0.881456, 0.897606, 0.912273, 1)
+z_index = 5
+texture_repeat = 2
+material = ExtResource("2_6sk3q")
+position = Vector2(3260, -2996)
+rotation = 3.14159
+points = PackedVector2Array(-24, 0, 3468, 0)
+width = 32.0
+texture = ExtResource("3_luvw8")
+texture_mode = 1
+joint_mode = 1
+script = ExtResource("4_vn7ra")
+
+[node name="Sentry2" parent="." instance=ExtResource("5_0ng5f")]
+position = Vector2(673, -481)
+rotation = 3.14159
+
+[node name="WallLine5" type="Line2D" parent="."]
+modulate = Color(0.974027, 0.977035, 0.947259, 1)
+z_index = 5
+texture_repeat = 2
+material = ExtResource("2_6sk3q")
+position = Vector2(1062, -960)
+points = PackedVector2Array(280, 96, 136, 96, 136, 8, 280, 8)
+closed = true
+width = 32.0
+texture = ExtResource("3_luvw8")
+texture_mode = 1
+joint_mode = 1
+script = ExtResource("4_vn7ra")
+
+[node name="Sentry4" parent="." instance=ExtResource("5_0ng5f")]
+position = Vector2(1271, -1001)
+rotation = 3.14159
+
+[node name="WallLine6" type="Line2D" parent="."]
+modulate = Color(0.974027, 0.977035, 0.947259, 1)
+z_index = 5
+texture_repeat = 2
+material = ExtResource("2_6sk3q")
+position = Vector2(1507, -1442)
+points = PackedVector2Array(280, 96, 136, 96, 136, 8, 280, 8)
+closed = true
+width = 32.0
+texture = ExtResource("3_luvw8")
+texture_mode = 1
+joint_mode = 1
+script = ExtResource("4_vn7ra")
+
+[node name="Sentry6" parent="." instance=ExtResource("5_0ng5f")]
+position = Vector2(1716, -1483)
+rotation = 3.14159
+
+[node name="WallLine7" type="Line2D" parent="."]
+modulate = Color(0.974027, 0.977035, 0.947259, 1)
+z_index = 5
+texture_repeat = 2
+material = ExtResource("2_6sk3q")
+position = Vector2(1930, -1902)
+points = PackedVector2Array(280, 96, 136, 96, 136, 8, 280, 8)
+closed = true
+width = 32.0
+texture = ExtResource("3_luvw8")
+texture_mode = 1
+joint_mode = 1
+script = ExtResource("4_vn7ra")
+
+[node name="WallLine8" type="Line2D" parent="."]
+modulate = Color(0.974027, 0.977035, 0.947259, 1)
+z_index = 5
+texture_repeat = 2
+material = ExtResource("2_6sk3q")
+position = Vector2(2389, -2431)
+points = PackedVector2Array(558, 96, 136, 96, 136, 8, 558, 8)
+closed = true
+width = 32.0
+texture = ExtResource("3_luvw8")
+texture_mode = 1
+joint_mode = 1
+script = ExtResource("4_vn7ra")
+
+[node name="Sentry8" parent="." instance=ExtResource("5_0ng5f")]
+position = Vector2(2139, -1943)
+rotation = 3.14159
+
+[node name="Servers" parent="." instance=ExtResource("6_4erl7")]
+position = Vector2(2737, -2491)
