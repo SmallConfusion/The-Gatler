@@ -20,10 +20,11 @@ func _update_health():
 	if tween:
 		tween.kill()
 	
-	tween = get_tree().create_tween()
+	if get_tree():
+		tween = get_tree().create_tween()
 	
-	tween.tween_method(func(x : float): material.set_shader_parameter("t", x),
-		last_health, health.get_health_fract(), 0.05).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
+		tween.tween_method(func(x : float): material.set_shader_parameter("t", x),
+			last_health, health.get_health_fract(), 0.05).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
 	
 	last_health = health.get_health_fract()
 
