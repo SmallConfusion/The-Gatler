@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d4fbjm3v6knfp"]
+[gd_scene load_steps=22 format=3 uid="uid://d4fbjm3v6knfp"]
 
 [ext_resource type="PackedScene" uid="uid://dxfytd662m1kl" path="res://scenes/objects/player.tscn" id="1_milha"]
 [ext_resource type="Material" uid="uid://clhs8lek3u31k" path="res://shaders/materials/wall_fade.tres" id="2_p5i3g"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://4bw6yya3pyya" path="res://scenes/posters/warning_turret.tscn" id="11_v8m6e"]
 [ext_resource type="PackedScene" uid="uid://bwd68e7cawt2l" path="res://scenes/posters/servers.tscn" id="12_6nk0n"]
 [ext_resource type="FontFile" uid="uid://dsw6l3evyfltv" path="res://theme/fonts/ComicSans.ttf" id="12_a5g43"]
+[ext_resource type="PackedScene" uid="uid://bgon6e4kxahyh" path="res://scenes/oil_inc_poster.tscn" id="14_ofn04"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5qiua"]
 resource_local_to_scene = true
@@ -305,6 +306,8 @@ autowrap_mode = 3
 [node name="Servers2" parent="." instance=ExtResource("12_6nk0n")]
 position = Vector2(3113, -601)
 rotation = 0.0258624
+
+[node name="OilIncPoster" parent="." instance=ExtResource("14_ofn04")]
 
 [connection signal="killed" from="Servers/Death" to="FinishLevel" method="finish_level"]
 

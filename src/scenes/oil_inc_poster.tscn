@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgon6e4kxahyh"]
+
+[ext_resource type="Texture2D" uid="uid://b7tyi58ob0fv2" path="res://sprites/oil_rig.svg" id="1_esp8l"]
+[ext_resource type="FontFile" uid="uid://cd0fb1va6a375" path="res://theme/fonts/BaskervvilleSC-Regular.ttf" id="2_loh14"]
+
+[node name="OilIncPoster" type="Node2D"]
+position = Vector2(161, 119)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -9.0
+offset_right = 224.0
+offset_bottom = 66.0
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 158.0
+offset_right = 224.0
+offset_bottom = 66.0
+color = Color(0.965333, 1, 0.48, 1)
+
+[node name="OilRig" type="Sprite2D" parent="."]
+position = Vector2(192, 40)
+scale = Vector2(0.472727, 0.472727)
+texture = ExtResource("1_esp8l")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -9.0
+offset_top = 3.0
+offset_right = 158.0
+offset_bottom = 69.0
+theme_override_fonts/font = ExtResource("2_loh14")
+theme_override_font_sizes/font_size = 48
+text = "Oil Inc"
+horizontal_alignment = 1
+vertical_alignment = 1
