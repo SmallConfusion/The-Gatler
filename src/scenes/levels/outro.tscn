@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkdjcl2so1mcp"]
 
-[ext_resource type="Script" path="res://scenes/levels/intro_out_title.gd" id="1_v53si"]
+[ext_resource type="Script" path="res://scenes/levels/outro.gd" id="1_smvye"]
 [ext_resource type="Script" path="res://scripts/ui/load_scene_button.gd" id="2_x0h3f"]
 
 [node name="IntroCutscene" type="Control"]
@@ -54,7 +54,7 @@ theme_override_font_sizes/font_size = 32
 text = "Hero Riding a Gatling Gun Shuts Down Oil Inc™ and All Workers Recieve $1 Million Pensions"
 horizontal_alignment = 1
 autowrap_mode = 2
-script = ExtResource("1_v53si")
+script = ExtResource("1_smvye")
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 1

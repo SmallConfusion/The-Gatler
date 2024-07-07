@@ -51,20 +51,20 @@ position = Vector2(0, -18)
 script = ExtResource("3_4b8sa")
 
 [node name="AutofireGun" type="Node2D" parent="Aim" node_paths=PackedStringArray("offscreen")]
-position = Vector2(86.85, -0.15)
+position = Vector2(71, -0.15)
 script = ExtResource("4_wtrqe")
 offscreen = NodePath("../../Offscreen")
 bullet_scene = ExtResource("4_m70mp")
 cooldown = 2.0
 
 [node name="SentryGun" type="Sprite2D" parent="Aim"]
-position = Vector2(33.85, -0.15)
+position = Vector2(7.85001, -0.15)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("5_j20dt")
 offset = Vector2(43.3333, 0)
 
 [node name="Hitbox2" type="Area2D" parent="Aim" node_paths=PackedStringArray("root_node")]
-position = Vector2(33.85, -0.15)
+position = Vector2(7.85001, -0.15)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_iyfj3")
