@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d4fbjm3v6knfp"]
+[gd_scene load_steps=21 format=3 uid="uid://d4fbjm3v6knfp"]
 
 [ext_resource type="PackedScene" uid="uid://dxfytd662m1kl" path="res://scenes/objects/player.tscn" id="1_milha"]
 [ext_resource type="Material" uid="uid://clhs8lek3u31k" path="res://shaders/materials/wall_fade.tres" id="2_p5i3g"]
@@ -21,6 +21,19 @@ shader_parameter/t = 0.0
 shader_parameter/scale = Vector2(1.281, 0.1)
 shader_parameter/outline_width = 0.015
 
+[sub_resource type="Gradient" id="Gradient_ssfsq"]
+offsets = PackedFloat32Array(0, 0.511364, 1)
+colors = PackedColorArray(1, 0.792024, 0.934531, 1, 1, 1, 1, 1, 0.736329, 0.901114, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_l6bi4"]
+seed = 1
+frequency = 0.0115
+fractal_gain = 0.37
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8oij1"]
+color_ramp = SubResource("Gradient_ssfsq")
+noise = SubResource("FastNoiseLite_l6bi4")
+
 [sub_resource type="Gradient" id="Gradient_okn1f"]
 offsets = PackedFloat32Array(0, 0.511364, 1)
 colors = PackedColorArray(1, 0.792024, 0.934531, 1, 1, 1, 1, 1, 0.736329, 0.901114, 1, 1)
@@ -29,10 +42,6 @@ colors = PackedColorArray(1, 0.792024, 0.934531, 1, 1, 1, 1, 1, 0.736329, 0.9011
 seed = 1
 frequency = 0.0115
 fractal_gain = 0.37
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8oij1"]
-color_ramp = SubResource("Gradient_okn1f")
-noise = SubResource("FastNoiseLite_ec8l7")
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vk61j"]
 color_ramp = SubResource("Gradient_okn1f")
@@ -170,6 +179,7 @@ material = SubResource("ShaderMaterial_5qiua")
 
 [node name="FinishLevel" type="Node" parent="."]
 script = ExtResource("8_mdyxp")
+next_scene = "res://scenes/levels/intro_out_cutscene.tscn"
 
 [node name="DirectionIndicator" parent="." instance=ExtResource("10_ug0ky")]
 position = Vector2(3550, 361)
@@ -251,6 +261,42 @@ offset_right = 186.997
 offset_bottom = 232.006
 theme_override_constants/line_spacing = -3
 theme_override_font_sizes/font_size = 8
+text = "inspirationalquotesforyou.com"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="DirectionIndicator6" type="Node2D" parent="."]
+z_index = -5
+position = Vector2(1970, 477)
+rotation = -0.031948
+
+[node name="TextureRect" type="TextureRect" parent="DirectionIndicator6"]
+offset_right = 90.0
+offset_bottom = 104.0
+texture = SubResource("NoiseTexture2D_vk61j")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="DirectionIndicator6"]
+offset_left = 0.0955837
+offset_top = -2.99848
+offset_right = 90.0956
+offset_bottom = 100.002
+theme_override_constants/line_spacing = -3
+theme_override_fonts/font = ExtResource("12_a5g43")
+text = "Get back to work or you'll get fired
+-Your boss"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="DirectionIndicator6"]
+offset_left = -47.0
+offset_top = 25.0
+offset_right = 140.0
+offset_bottom = 174.0
+theme_override_constants/line_spacing = -3
+theme_override_font_sizes/font_size = 6
 text = "inspirationalquotesforyou.com"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -35,8 +35,6 @@ position = Vector2(1929, -1988)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(604, -352, 1014, -352, 1015, -435, 605, -430)
 
-[node name="Player" parent="." instance=ExtResource("1_gsxx8")]
-
 [node name="WallLine2" type="Line2D" parent="."]
 modulate = Color(0.974027, 0.977035, 0.947259, 1)
 z_index = 5
@@ -209,6 +207,8 @@ rotation = -0.0726028
 [node name="Servers2" parent="." instance=ExtResource("11_1lt5b")]
 position = Vector2(2510, -2700)
 rotation = 0.0375842
+
+[node name="Player" parent="." instance=ExtResource("1_gsxx8")]
 
 [connection signal="killed" from="Servers/Death" to="FinishLevel" method="finish_level"]
 

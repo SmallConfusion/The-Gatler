@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://xk1vu6vpbuxi"]
+
+[ext_resource type="PackedScene" uid="uid://f2no3a12nwma" path="res://scenes/objects/bullets/player_bullet.tscn" id="1_g10w8"]
+[ext_resource type="Texture2D" uid="uid://dq6tonv6vw2t8" path="res://sprites/game/gun/bullet_large.svg" id="2_yfv0r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y7265"]
+radius = 13.0384
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hrn2b"]
+radius = 13.0384
+
+[node name="Bullet" instance=ExtResource("1_g10w8")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_yfv0r")
+
+[node name="BulletMovement" parent="." index="1"]
+speed = 500.0
+
+[node name="Hurtbox" parent="." index="3"]
+collision_mask = 1
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("CircleShape2D_y7265")
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("CircleShape2D_hrn2b")
+
+[node name="ScreenShake" parent="." index="9"]
+group_to_shake = "shake2"
