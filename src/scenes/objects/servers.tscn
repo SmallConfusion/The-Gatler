@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dx6bhit61qwfj"]
+[gd_scene load_steps=20 format=3 uid="uid://dx6bhit61qwfj"]
 
 [ext_resource type="Shader" path="res://shaders/servers.gdshader" id="1_d3g2l"]
 [ext_resource type="Texture2D" uid="uid://bxv31y8pj632q" path="res://sprites/game/servers.svg" id="2_7uu6h"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://scripts/components/screen_effect.gd" id="10_t03r3"]
 [ext_resource type="PackedScene" uid="uid://3qw8pbmjfhiu" path="res://scenes/vfx/explosion_effect_large.tscn" id="11_e42c5"]
 [ext_resource type="PackedScene" uid="uid://bcsio6jfawoyk" path="res://sounds/sound_effects/explosion_sound_effect.tscn" id="12_mxkpw"]
+[ext_resource type="Script" path="res://scripts/components/screen_shake.gd" id="13_c2ipk"]
 
 [sub_resource type="Gradient" id="Gradient_1btgs"]
 interpolation_mode = 1
@@ -87,6 +88,11 @@ effect = ExtResource("11_e42c5")
 
 [node name="ExplosionSoundEffect" parent="." instance=ExtResource("12_mxkpw")]
 
+[node name="ScreenShake" type="Node" parent="."]
+script = ExtResource("13_c2ipk")
+group_to_shake = "shake2"
+
 [connection signal="killed" from="Death" to="ParticleEmitter" method="emit"]
 [connection signal="killed" from="Death" to="ScreenEffect" method="start"]
 [connection signal="killed" from="Death" to="ExplosionSoundEffect" method="play_sound"]
+[connection signal="killed" from="Death" to="ScreenShake" method="shake"]

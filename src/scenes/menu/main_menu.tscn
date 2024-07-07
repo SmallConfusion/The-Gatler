@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7d6le151hsls"]
+[gd_scene load_steps=12 format=3 uid="uid://c7d6le151hsls"]
 
 [ext_resource type="Script" path="res://scripts/ui/load_scene_button.gd" id="1_3ka77"]
 [ext_resource type="Script" path="res://scripts/ui/load_level_button.gd" id="1_nxkf6"]
+[ext_resource type="Script" path="res://scripts/ui/fullscreen_button.gd" id="2_xsc41"]
 [ext_resource type="Texture2D" uid="uid://0oo5ey21amqi" path="res://sprites/ui/logo w text.svg" id="3_85oy4"]
 [ext_resource type="Script" path="res://scripts/ui/splash_screen.gd" id="3_pj0m8"]
 [ext_resource type="Script" path="res://scripts/particle_loader.gd" id="5_k2411"]
@@ -36,6 +37,22 @@ text = "Attribution
 "
 script = ExtResource("1_3ka77")
 scene = "res://scenes/menu/attribution.tscn"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -81.5
+offset_top = -189.0
+offset_right = 81.5
+offset_bottom = -127.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Fullscreen"
+script = ExtResource("2_xsc41")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -106,4 +123,3 @@ particles = Array[PackedScene]([ExtResource("9_laqf8"), ExtResource("8_ft86s"), 
 
 [node name="DebugSettings" type="Node" parent="." groups=["debug_settings"]]
 script = ExtResource("10_ise33")
-hide_splash_screen = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c6p87lemetbn0"]
+[gd_scene load_steps=23 format=3 uid="uid://c6p87lemetbn0"]
 
 [ext_resource type="Script" path="res://scripts/components/enemy/aim.gd" id="1_6ojdo"]
 [ext_resource type="Texture2D" uid="uid://dvc105lcjqp7e" path="res://sprites/game/sentry/sentry_base.svg" id="1_b3206"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://scripts/components/sound_effect.gd" id="16_jy8w5"]
 [ext_resource type="AudioStream" uid="uid://d2jt3xxqlc6q6" path="res://sounds/sound_files/shoot_laser_heavy.ogg" id="17_tfaf7"]
 [ext_resource type="Script" path="res://scripts/components/offscreen.gd" id="18_uh2d6"]
+[ext_resource type="Script" path="res://scripts/components/screen_shake.gd" id="19_p6p4r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ronsb"]
 size = Vector2(69, 18)
@@ -105,7 +106,12 @@ min_pitch = 0.8
 [node name="Offscreen" type="Node" parent="."]
 script = ExtResource("18_uh2d6")
 
+[node name="ScreenShake" type="Node" parent="."]
+script = ExtResource("19_p6p4r")
+group_to_shake = "shake2"
+
 [connection signal="fired" from="Aim/AutofireGun" to="ShootSoundEffect" method="play_sound"]
 [connection signal="killed" from="Death" to="ParticleEmitter" method="emit"]
 [connection signal="killed" from="Death" to="ScreenEffect" method="start"]
 [connection signal="killed" from="Death" to="ExplosionSoundEffect" method="play_sound"]
+[connection signal="killed" from="Death" to="ScreenShake" method="shake"]
