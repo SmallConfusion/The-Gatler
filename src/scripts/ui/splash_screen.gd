@@ -3,7 +3,7 @@ extends CanvasGroup
 func _ready():
 	var debug_settings : DebugSettings = get_tree().get_first_node_in_group("debug_settings")
 	
-	if OS.is_debug_build() and debug_settings and debug_settings.hide_splash_screen:
+	if (OS.is_debug_build() and debug_settings and debug_settings.hide_splash_screen) or Global.particles_loaded:
 		visible = false
 	else:
 		visible = true
@@ -15,4 +15,3 @@ func _ready():
 		await tween.finished
 		
 		visible = false
-	

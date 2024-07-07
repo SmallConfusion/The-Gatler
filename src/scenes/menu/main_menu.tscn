@@ -19,6 +19,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -81.5
+offset_top = -268.0
+offset_right = 81.5
+offset_bottom = -206.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Attribution
+"
+script = ExtResource("1_3ka77")
+scene = "res://scenes/menu/attribution.tscn"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -53,6 +71,7 @@ scene = "res://scenes/levels/level_2.tscn"
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 visible = false
+z_index = 1000
 script = ExtResource("3_pj0m8")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasGroup"]
@@ -80,28 +99,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ParticleLoader" type="Node2D" parent="."]
+z_index = -4096
 position = Vector2(588, 344)
 script = ExtResource("5_k2411")
-particles = Array[PackedScene]([ExtResource("6_e2yeh"), ExtResource("7_31kdk"), ExtResource("8_ft86s"), ExtResource("9_laqf8")])
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -81.5
-offset_top = -268.0
-offset_right = 81.5
-offset_bottom = -206.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Attribution
-"
-script = ExtResource("1_3ka77")
-scene = "res://scenes/menu/attribution.tscn"
+particles = Array[PackedScene]([ExtResource("9_laqf8"), ExtResource("8_ft86s"), ExtResource("6_e2yeh"), ExtResource("7_31kdk")])
 
 [node name="DebugSettings" type="Node" parent="." groups=["debug_settings"]]
 script = ExtResource("10_ise33")
-unlock_all_levels = false
+hide_splash_screen = false

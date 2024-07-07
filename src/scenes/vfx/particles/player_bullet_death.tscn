@@ -32,7 +32,7 @@ gravity = Vector3(0, 2000, 0)
 damping_min = 500.0
 damping_max = 500.0
 scale_min = 0.1
-scale_max = 0.1
+scale_max = 0.3
 color_initial_ramp = SubResource("GradientTexture1D_vkwrb")
 alpha_curve = SubResource("CurveTexture_kbveb")
 
@@ -46,7 +46,6 @@ lifetime = 0.2
 explosiveness = 0.94
 fixed_fps = 60
 visibility_rect = Rect2(-94.1785, -55.3249, 170.494, 187.508)
-trail_enabled = true
 trail_lifetime = 0.04
 trail_sections = 4
 trail_section_subdivisions = 2
