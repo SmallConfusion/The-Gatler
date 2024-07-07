@@ -1,7 +1,7 @@
 ; Engine configuration file.
 ; It's best edited using the editor UI and not directly,
 ; since the parameters that go here are not all obvious.
-; 
+;
 ; Format:
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
@@ -21,6 +21,7 @@ config/icon="res://icon.png"
 
 SoundManager="*res://scripts/autoload/sound_manager.gd"
 Global="*res://scripts/autoload/global.gd"
+Music="*res://scripts/autoload/music.gd"
 
 [display]
 
@@ -93,4 +94,3 @@ gun_heat={
 "type": "float",
 "value": 1.0
 }
-
